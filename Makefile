@@ -51,7 +51,8 @@ dis:
 	  cat gold/MBE-Z$$z-L1.bin >> gold/MBE-full.bin; \
 	done
 	sha256sum gold/MBE-full.bin >> manifest.sha256
-	for f in gold/*.bin; do \
+	# Только по одной зоне: MBE-full.bin = 33792 слова > лимит 32768, disbesm6 падает
+	for f in gold/*-Z*-L1.bin; do \
 	  n=$$(basename "$$f" .bin); \
 	  disbesm6 -a0 -e0 "$$f" > "dis/$$n.asm" 2> "dis/$$n.err"; \
 	done
@@ -66,27 +67,23 @@ xref:
 	grep -nE 'увв|сда|счрж|конд' dis/MBE-*.asm > analysis/io.txt
 	python3 tools/xref.py > analysis/xref.txt
 
-# Фаза 5 — побайтовая сверка эталон ↔ реконструкция, ANSI срезан.
+# Фаза 5 — независимое переизвлечение из эталона и побайтовая сверка с gold/.
+# (Реконструированные .be пока отсутствуют; проверяется round-trip дампов.)
 verify:
-	mkdir -p verify
-	$(V) gold/MBE-Z0137-L1.bin /tmp/reasm/MBE-Z0137-L1.bin --disasm \
-	  --disasm-path /usr/local/bin/disbesm6 \
-	  | sed -r 's/\x1B\[[0-9;]*m//g' | tee verify/report.txt
+	bash tools/verify-roundtrip.sh
 
 # Фаза 6 — сравнение версий 06/78 ↔ 12/77 (сдвиг +0400₈).
 versions:
 	mkdir -p analysis
-	for d in $$(seq 95 127); do \
-	  z=$$(printf '%04o' $$d); \
-	  tools/disbesm_extract.sh $(DISK) $$z 1 -o /tmp/v137-$$z.bin; \
-	done
-	for d in $$(seq 352 383); do \
-	  z=$$(printf '%04o' $$d); \
-	  tools/disbesm_extract.sh $(DISK) $$z 1 -o /tmp/v540-$$z.bin; \
-	done
-	python3 tools/compare_shifted.py 0400 /tmp/v137-0137.bin /tmp/v540-0540.bin \
+	# Полные диапазоны: 33 зоны NEW и 32 зоны OLD (не одна зона!)
+	besmtool dump $(DISK) --start=95  --length=33 --to-file=/tmp/v137-full.bin > /dev/null
+	besmtool dump $(DISK) --start=352 --length=32 --to-file=/tmp/v540-full.bin > /dev/null
+	# compare_shifted.py ест 16-разрядные восьмеричные СТРОКИ, не бинарник
+	python3 tools/bin_to_octal.py /tmp/v137-full.bin > /tmp/v137-full.oct
+	python3 tools/bin_to_octal.py /tmp/v540-full.bin > /tmp/v540-full.oct
+	python3 tools/compare_shifted.py 0400 /tmp/v137-full.oct /tmp/v540-full.oct \
 	  | tee analysis/mbe_diff.txt
-	$(V) /tmp/v137-0137.bin /tmp/v540-0540.bin --disasm \
+	$(V) /tmp/v137-full.bin /tmp/v540-full.bin \
 	  | sed -r 's/\x1B\[[0-9;]*m//g' | tee -a analysis/mbe_diff.txt
 
 # Итоговая проверка воспроизводимости (критерии успеха, раздел 7 PLAN).
