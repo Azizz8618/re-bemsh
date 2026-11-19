@@ -7,7 +7,8 @@ SHELL := /usr/bin/env bash
 DISK  ?= 2348
 V     := tools/disbesm_verify.sh
 
-.PHONY: stage0 inventory dis xref verify versions check clean annotate procedures variables
+.PHONY: stage0 inventory dis xref verify versions check clean annotate procedures variables \
+        rebuild-zone rebuild-all rebuild-check check-all unittest
 
 # Фаза 0 — проверка конфигурации инструментов и образа.
 stage0:
@@ -137,3 +138,57 @@ variables:
 	@disbesm6 -a10000 -e10000 -nsym/MBE.named.validated.tab \
 	  gold/MBE-Z0137-L1.bin > dis/MBE-Z0137-validated-named.asm
 	@echo "имен в листинге: $$(grep -cE 'MBEENTRY|INITCELL|CNT[0-6]|SUB[0-9]+' dis/MBE-Z0137-validated-named.asm || true)"
+
+# --- Фаза A2 (docs/PLAN-NEXT.md): универсальная сборка зон из .be ---
+
+# Универсальная сборка одной зоны: make rebuild-zone Z=0137 [MODE=B|MBE2|ASM]
+Z ?= 0137
+MODE ?= B
+
+rebuild-zone:
+	@if [ -z "$(Z)" ]; then \
+	  echo 'Использование: make rebuild-zone Z=<восьмеричная_зона> [MODE=B|MBE2|ASM]'; \
+	  echo 'Пример: make rebuild-zone Z=0137 MODE=B'; \
+	  exit 2; \
+	fi
+	@echo '=== rebuild-zone: зона $(Z), режим $(MODE) ==='
+	env -u BESM6_PATH bash tools/rebuild-zone.sh "$(Z)" "$(MODE)"
+
+# Все зоны, для которых есть .be-исходник (сейчас только 0137).
+rebuild-all:
+	@found=0; ok=0; fail=0; \
+	for be in bemsh/*.be; do \
+	  [ -e "$$be" ] || { echo 'rebuild-all: нет .be-исходников'; break; }; \
+	  base=$$(basename "$$be" .be); \
+	  zone=$$(printf '%s' "$$base" | grep -oE 'Z[0-7]{4}' | head -1 | tr -d Z); \
+	  [ -n "$$zone" ] || continue; \
+	  case "$$base" in MBE2-*) mode=MBE2;; ASM-*) mode=ASM;; *) mode=B;; esac; \
+	  found=$$((found + 1)); \
+	  echo "=== rebuild-all: зона $$zone ($$mode) ==="; \
+	  if env -u BESM6_PATH bash tools/rebuild-zone.sh "$$zone" "$$mode"; then \
+	    ok=$$((ok + 1)); \
+	  else \
+	    fail=$$((fail + 1)); \
+	  fi; \
+	done; \
+	echo "=== rebuild-all: найдено=$$found PASS=$$ok FAIL=$$fail ==="; \
+	[ "$$fail" -eq 0 ]
+
+# Регрессионная проверка эталонной зоны 0137 (1024/1024).
+rebuild-check:
+	@echo '=== rebuild-check: зона 0137 (эталон 1024/1024) ==='
+	@out=$$(env -u BESM6_PATH bash tools/rebuild-zone.sh 0137 B 2>&1); \
+	  printf '%s\n' "$$out"; \
+	  printf '%s\n' "$$out" | grep -q 'WORDS: всего=1024 совпало=1024 различий=0' \
+	    || { echo 'rebuild-check: FAIL (счётчик слов)'; exit 1; }; \
+	  printf '%s\n' "$$out" | grep -q '^RESULT: PASS' \
+	    || { echo 'rebuild-check: FAIL (RESULT)'; exit 1; }; \
+	  echo 'rebuild-check: OK (RESULT: PASS, 1024/1024)'
+
+# 6 unit-тестов аннотатора (docs/AUTOMATION.md).
+unittest:
+	python3 -m unittest tools/tests/test_annotate_zone.py -v
+
+# Агрегатная проверка: фаза 0 + новая реконструкция + round-trip + тесты.
+check-all: stage0 rebuild-check verify unittest
+	@echo '=== check-all: все проверки пройдены ==='

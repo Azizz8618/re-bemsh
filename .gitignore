@@ -2,6 +2,8 @@ dumps/*
 *.bin
 *.xz
 *.lz4
+__pycache__/
+*.pyc
 gold/*.bin
 verify/*.bin
 *.b6
