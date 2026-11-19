@@ -56,6 +56,9 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 
 ## Документация
 
+**Семантика всех 69 зон:** [SEMANTIC/INDEX.md](docs/SEMANTIC/INDEX.md)
+(стандарт — [SEMANTIC-STANDARD.md](docs/SEMANTIC-STANDARD.md)).
+
 **Сводка и статус:** [FINAL-REPORT.md](docs/FINAL-REPORT.md) — итоговый
 отчёт по всем фазам; [STATUS.md](docs/STATUS.md) — одностраничный статус
 (команды → ожидаемый результат, remotes, правило read-only образов);
