@@ -26,7 +26,8 @@
 
 - [docs/PLAN.md](docs/PLAN.md) — подробный план дизассемблирования (7 фаз);
 - [docs/DISBESM6-GUIDE.md](docs/DISBESM6-GUIDE.md) — практическое руководство по `disbesm6`;
-- [docs/ADJACENT.md](docs/ADJACENT.md), [docs/ADJACENT-2.md](docs/ADJACENT-2.md) — смежные проекты.
+- [docs/ADJACENT.md](docs/ADJACENT.md), [docs/ADJACENT-2.md](docs/ADJACENT-2.md) — смежные проекты;
+- [docs/ANCHORS.md](docs/ANCHORS.md) — якоря верификации и ограничение «листинг ≠ дамп».
 
 ## Структура
 
