@@ -2,3 +2,9 @@ dumps/*
 *.bin
 *.xz
 *.lz4
+gold/*.bin
+verify/*.bin
+*.b6
+*.orig
+*.dis
+*.diff
