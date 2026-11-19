@@ -466,6 +466,27 @@ def main(argv=None):
     gold_path = os.path.join(
         "gold", os.path.basename(args.input)[:-4] + ".bin"
     )
+    # Шапка зависит от транслируемого объекта: зоны 0055-0060 — автокод ИТМ,
+    # 0137-0177 — МАКРО-БЕМШ 06/78, 0540-0577 — ВАР.12/77.
+    base = os.path.basename(args.input)
+    if base.startswith("ASM-"):
+        text_prefix, kind = "ASM", "ASM"
+        product = "ТРАНСЛЯТОР С А/К И Т М (автокод ИТМ, .75)"
+    elif base.startswith("MBE2-"):
+        text_prefix, kind = "MBE2", "MBE2"
+        product = "ТРАНСЛЯТОР С М/К БЕМШ ВАР.12/77"
+    else:
+        text_prefix, kind = "MBE", "B"
+        product = "ТРАНСЛЯТОР С М/К БЕМШ ВЕР.06/78"
+
+    def fix_header(text):
+        return (text
+            .replace("MBE-Z", text_prefix + "-Z")
+            .replace("ТРАНСЛЯТОР С М/К БЕМШ ВЕР.06/78", product)
+            .replace("gold/MBE-Z", "gold/" + text_prefix + "-Z")
+            .replace("rebuild-zone.sh %s B" % zone,
+                     "rebuild-zone.sh %s %s" % (zone, kind)))
+
     if args.raw_all:
         if not os.path.exists(gold_path):
             parser.error("нет gold-дампа для --raw-all: %s" % gold_path)
@@ -486,6 +507,8 @@ def main(argv=None):
         words, symbols = parse_listing(args.input)
         text = convert(words, symbols, zone, gold_path)
         nwords_out = len(words)
+
+    text = fix_header(text)
 
     if UNKNOWN_MNEMONICS:
         print(
