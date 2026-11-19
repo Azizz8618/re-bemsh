@@ -266,5 +266,107 @@ class TestDis2Be(unittest.TestCase):
         self.assertEqual(op, "'1100'")
 
 
+class TestDis2BeHeaderAndSource(unittest.TestCase):
+    """Шапка .be и определение источника (обычный/полный листинг)."""
+
+    def _convert_file(self, relpath, *extra_args):
+        """Прогнать main() на файле репозитория, вернуть текст .be."""
+        src = os.path.join(REPO_ROOT, relpath)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = os.path.join(tmp, "out.be")
+            dis2be.main(["--input", src, "--output", out] + list(extra_args))
+            with open(out, encoding="utf-8") as handle:
+                return handle.read()
+
+    def test_full_listing_header_has_no_bogus_range(self):
+        """В шапке полного листинга нет '1024-1023', есть источник."""
+        header = dis2be.build_header(
+            "0055", 1024, 1023, data_addrs=[1, 2, 3, 4, 5], source="full"
+        )
+        head = "\n".join(header)
+        self.assertNotIn("1024-1023", head)
+        self.assertIn("*   Слова 1-5 — КОНД: таблицы, данные, забелы.", header)
+        self.assertIn(
+            "*   Источник: принудительная трассировка (все адреса W_CODE).",
+            header,
+        )
+        self.assertIn("навязано принудительно", head)
+        self.assertIn("не вычислено по достижимости", head)
+        # На реальном листинге шапка тоже исправлена.
+        text = self._convert_file("dis/ASM-Z0055-full.asm")
+        self.assertNotIn("1024-1023", "\n".join(text.splitlines()[:12]))
+        self.assertIn(
+            "*   Источник: принудительная трассировка (все адреса W_CODE).",
+            text,
+        )
+
+    def test_zone_from_input_all_five_forms(self):
+        """Зона распознаётся во всех пяти форматах имени файла."""
+        cases = {
+            "MBE-Z0137-L1.asm": "0137",
+            "MBE2-Z0540-L1.asm": "0540",
+            "ASM-Z0055-L1.asm": "0055",
+            "ASM-Z0055-full.asm": "0055",
+            "Z0055.asm": "0055",
+        }
+        for name, zone in cases.items():
+            with self.subTest(name=name):
+                self.assertEqual(dis2be.zone_from_input(name), zone)
+                self.assertEqual(
+                    dis2be.zone_from_input(os.path.join("dis", name)), zone
+                )
+
+    def test_original_source_explicit_matches_fixture_bytes(self):
+        """--source original: вывод побайтово равен эталону MBE-Z0137.be."""
+        gold = os.path.join(
+            REPO_ROOT, "tools", "tests", "fixtures", "MBE-Z0137.be"
+        )
+        text = self._convert_file("dis/MBE-Z0137-L1.asm", "--source", "original")
+        with open(gold, "rb") as handle:
+            expected = handle.read()
+        self.assertEqual(text.encode("utf-8"), expected)
+        self.assertIn("*   Слова 5-1023 — КОНД: таблицы, данные, забелы.", text)
+        self.assertNotIn("Источник: принудительная трассировка", text)
+
+    def test_full_listing_kond_lines_under_30(self):
+        """ASM-Z0055-full: слов КОНД < 30 (практически всё — код)."""
+        text = self._convert_file("dis/ASM-Z0055-full.asm")
+        kond = [l for l in text.splitlines() if l.lstrip().startswith("КОНД ")]
+        self.assertLess(len(kond), 30)
+        self.assertGreater(len(kond), 0)
+
+    def test_no_data_words_header_line(self):
+        """Данных нет — отдельная строка вместо бредового диапазона."""
+        header = dis2be.build_header("0055", 1024, 1023, data_addrs=[])
+        self.assertIn(
+            "*   Данных/забелов нет: все слова восстановлены как код.",
+            header,
+        )
+        self.assertNotIn("1024-1023", "\n".join(header))
+        # И на принудительном листинге без данных (dis-forced/Z0055.asm).
+        text = self._convert_file("dis-forced/Z0055.asm")
+        self.assertIn("Данных/забелов нет: все слова восстановлены как код.", text)
+
+    def test_legacy_range_is_omitted(self):
+        """Если first_data > last_data, строка диапазона не печатается."""
+        header = dis2be.build_header("0055", 1024, 1023)
+        self.assertFalse(
+            any("КОНД: таблицы" in line for line in header),
+            "диапазон 1024-1023 не должен печататься",
+        )
+
+    def test_source_autodetect_and_override(self):
+        """-full.asm и dis-forced/Z*.asm → full; --source original меняет."""
+        self.assertEqual(dis2be.source_from_input("ASM-Z0055-full.asm"), "full")
+        self.assertEqual(dis2be.source_from_input("dis-forced/Z0137.asm"), "full")
+        self.assertEqual(
+            dis2be.source_from_input("dis/MBE-Z0137-L1.asm"), "original"
+        )
+        text = self._convert_file(
+            "dis/ASM-Z0055-full.asm", "--source", "original"
+        )
+        self.assertNotIn("Источник: принудительная трассировка", text)
+
+
 if __name__ == "__main__":
     unittest.main()

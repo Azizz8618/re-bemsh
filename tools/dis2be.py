@@ -302,12 +302,19 @@ def format_data_line(raw, word_addr):
     return "        КОНД В'%s'    ,слово %s" % (raw, word_addr)
 
 
-def build_header(zone, nwords, last_code_addr):
-    """Шапка исходника (точно как в bemsh/MBE-Z0137.be)."""
+def build_header(zone, nwords, last_code_addr, data_addrs=None,
+                 source="original"):
+    """Шапка исходника (точно как в bemsh/MBE-Z0137.be).
+
+    ``data_addrs`` — фактические адреса слов данных/забелов (числа).
+    Диапазон данных НЕ выводится из ``nwords``: в принудительном листинге
+    код занимает все адреса, и наивный расчёт даёт бредовый ``1024-1023``.
+    Пустой список означает «данных нет», ``None`` сохраняет старое
+    поведение для режима ``--raw-all`` (там адреса не разбираются).
+    ``source='full'`` добавляет пометку о принудительной трассировке.
+    """
     nbytes = nwords * 6
-    first_data = (last_code_addr + 1) if last_code_addr is not None else 0
-    last_data = nwords - 1
-    return [
+    lines = [
         "***************************************************",
         "* MBE-Z{0} — реконструкция зоны {0}₈ ({1} слова)".format(zone, nwords),
         "*   ТРАНСЛЯТОР С М/К БЕМШ ВЕР.06/78, том 2348.",
@@ -315,9 +322,34 @@ def build_header(zone, nwords, last_code_addr):
         "*   Слова 0-%s — команды (сверены побайтово)." % (
             last_code_addr if last_code_addr is not None else -1
         ),
-        "*   Слова %s-%s — КОНД: таблицы, данные, забелы." % (
-            first_data, last_data
-        ),
+    ]
+
+    if data_addrs is None:
+        # Устаревший путь (--raw-all): фактические адреса неизвестны.
+        first_data = (last_code_addr + 1) if last_code_addr is not None else 0
+        last_data = nwords - 1
+    else:
+        data_addrs = sorted(data_addrs)
+        first_data = data_addrs[0] if data_addrs else None
+        last_data = data_addrs[-1] if data_addrs else None
+
+    if data_addrs is not None and not data_addrs:
+        lines.append("*   Данных/забелов нет: все слова восстановлены как код.")
+    elif first_data is not None and first_data <= last_data:
+        lines.append(
+            "*   Слова %s-%s — КОНД: таблицы, данные, забелы."
+            % (first_data, last_data)
+        )
+    # first_data > last_data — строку диапазона не печатаем вовсе.
+
+    if source == "full":
+        lines.append("*   Источник: принудительная трассировка (все адреса W_CODE).")
+        lines.append(
+            "*   ВНИМАНИЕ: разбиение на код/данные навязано принудительно,"
+        )
+        lines.append("*             а не вычислено по достижимости.")
+
+    lines.extend([
         "*   Сборка и сверка: tools/rebuild-zone.sh %s B" % zone,
         "*   Статус: ПОДЛЕЖИТ ПРОВЕРКЕ (rebuild-zone.sh).",
         "***************************************************",
@@ -326,7 +358,8 @@ def build_header(zone, nwords, last_code_addr):
         "Z%s   СТАРТ 1" % zone,
         "        Е",
         "        М",
-    ]
+    ])
+    return lines
 
 
 def raw_word_from_halves(word):
@@ -344,11 +377,13 @@ def raw_word_from_halves(word):
     return "%016o" % (((left & 0xFFFFFF) << 24) | (right & 0xFFFFFF))
 
 
-def convert(words, symbols, zone, gold_path=None):
+def convert(words, symbols, zone, gold_path=None, source="original"):
     """Собрать текст .be из разобранных слов.
 
     Если задан gold-дамп, подавленная disbesm6 правая половина берётся
     оттуда: это может быть 0 (`зп`) или 02200000₈ (`мода`).
+    ``source`` ('original'|'full') управляет пометкой в шапке: полный
+    листинг получен принудительной трассировкой всех адресов как W_CODE.
     """
     gold = None
     if gold_path and os.path.exists(gold_path):
@@ -368,8 +403,15 @@ def convert(words, symbols, zone, gold_path=None):
 
     out = []
     code_addrs = [w.addr_int for w in words if w.kind == "code" and w.addr_int is not None]
+    data_addrs = [
+        w.addr_int for w in words
+        if w.kind in ("data", "zero") and w.addr_int is not None
+    ]
     last_code_addr = max(code_addrs) if code_addrs else None
-    out.extend(build_header(zone, len(words), last_code_addr))
+    out.extend(build_header(
+        zone, len(words), last_code_addr,
+        data_addrs=data_addrs, source=source,
+    ))
 
     for word in words:
         if word.kind == "data":
@@ -426,10 +468,28 @@ def convert(words, symbols, zone, gold_path=None):
 
 def zone_from_input(path):
     """Вывести номер зоны (восьмеричный) из имени файла листинга."""
-    match = re.search(r"(?:MBE|MBE2|ASM)-Z([0-7]+)-L1\.asm$", os.path.basename(path))
+    match = re.search(
+        r"(?:(?:MBE|MBE2|ASM)-)?Z([0-7]+)(?:-L1|-full)?\.asm$",
+        os.path.basename(path),
+    )
     if not match:
         raise ValueError("не удалось определить зону из имени %r" % path)
     return match.group(1)
+
+
+def source_from_input(path):
+    """Автоопределение источника листинга: 'full' или 'original'.
+
+    Полным считается листинг с суффиксом ``-full.asm`` и листинг из
+    каталога ``dis-forced/`` (там все адреса помечены как W_CODE).
+    """
+    base = os.path.basename(path)
+    if re.search(r"-full\.asm$", base):
+        return "full"
+    normalized = path.replace("\\", "/")
+    if re.search(r"(?:^|/)dis-forced/Z[0-7]+\.asm$", normalized):
+        return "full"
+    return "original"
 
 
 def default_output(path):
@@ -447,6 +507,13 @@ def main(argv=None):
     parser.add_argument("--output", help="выходной .be (по умолчанию из имени входа)")
     parser.add_argument("--zone", help="номер зоны (восьмеричный); иначе из имени")
     parser.add_argument(
+        "--source",
+        choices=("full", "original"),
+        default=None,
+        help="тип листинга: full — принудительная трассировка (все адреса "
+             "W_CODE), original — обычная. По умолчанию из имени файла.",
+    )
+    parser.add_argument(
         "--raw-all",
         action="store_true",
         help="аварийный режим: всё слово как КОНД из gold (байты точны, семантика НЕ восстановлена)",
@@ -455,6 +522,7 @@ def main(argv=None):
 
     zone = args.zone or zone_from_input(args.input)
     output = args.output or default_output(args.input)
+    source = args.source or source_from_input(args.input)
 
     if OPS_IMPORT_ERROR is not None:
         print(
@@ -493,8 +561,11 @@ def main(argv=None):
         with open(gold_path, "rb") as handle:
             blob = handle.read()
         nwords = len(blob) // 6
-        out = list(build_header(zone, nwords, None))
-        out[6] = "*   РЕЖИМ RAW-ALL: байты точны, СЕМАНТИКА НЕ ВОССТАНОВЛЕНА."
+        out = list(build_header(zone, nwords, None, source=source))
+        rebuild = "*   Сборка и сверка: tools/rebuild-zone.sh %s B" % zone
+        out[out.index(rebuild)] = (
+            "*   РЕЖИМ RAW-ALL: байты точны, СЕМАНТИКА НЕ ВОССТАНОВЛЕНА."
+        )
         out.append("*** КОД МОДУЛЯ")
         out.append("*")
         for i in range(nwords):
@@ -505,7 +576,7 @@ def main(argv=None):
         nwords_out = nwords
     else:
         words, symbols = parse_listing(args.input)
-        text = convert(words, symbols, zone, gold_path)
+        text = convert(words, symbols, zone, gold_path, source=source)
         nwords_out = len(words)
 
     text = fix_header(text)
