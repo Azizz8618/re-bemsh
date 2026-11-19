@@ -46,6 +46,8 @@ make check       # итоговая проверка
 
 ## Документация
 
+**Сводка:** [FINAL-REPORT.md](docs/FINAL-REPORT.md).
+
 **Планы и методы:** [PLAN.md](docs/PLAN.md), [DISBESM6-GUIDE.md](docs/DISBESM6-GUIDE.md),
 [TOOLS.md](docs/TOOLS.md), [XREF-METHODOLOGY.md](docs/XREF-METHODOLOGY.md),
 [VERIFY.md](docs/VERIFY.md), [ROADMAP.md](docs/ROADMAP.md).

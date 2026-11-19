@@ -7,7 +7,7 @@ SHELL := /usr/bin/env bash
 DISK  ?= 2348
 V     := tools/disbesm_verify.sh
 
-.PHONY: stage0 inventory dis xref verify versions check clean
+.PHONY: stage0 inventory dis xref verify versions check clean annotate procedures variables
 
 # Фаза 0 — проверка конфигурации инструментов и образа.
 stage0:
@@ -102,3 +102,38 @@ clean:
 	rm -f sym/*.tab
 	rm -f verify/*.txt verify/*.bin verify/*.diff
 	rm -f analysis/*.txt
+
+# --- Автоматизация аннотирования и аналитических сводок (docs/AUTOMATION.md) ---
+
+# Пересобрать аннотированные листинги из карт bemsh/comments-*.tab.
+# Карты комментариев: ADDRESS<TAB>COMMENT; шапка (если есть) — bemsh/header-<zone>.txt.
+# Если карт нет — подсказка и успешный выход (ничего не портим).
+annotate:
+	@for m in bemsh/comments-*.tab; do \
+	  if [ ! -e "$$m" ]; then \
+	    echo 'annotate: карт комментариев (bemsh/comments-*.tab) нет.'; \
+	    echo '  Формат карты: ADDRESS<TAB>COMMENT, комментарий <= 55 символов.'; \
+	    echo '  Пример: python3 tools/annotate_zone.py --input dis/MBE-Z0147-L1.asm --output bemsh/annotated-MBE-Z0147-L1.asm --comment-file bemsh/comments-0147.tab'; \
+	    echo '  Проверка: python3 tools/annotate_zone.py --verify-only --input dis/MBE-Z0147-L1.asm --output bemsh/annotated-MBE-Z0147-L1.asm'; \
+	    exit 0; \
+	  fi; \
+	  zone=$${m##*/comments-}; zone=$${zone%.tab}; \
+	  src="dis/MBE-Z$${zone}-L1.asm"; out="bemsh/annotated-MBE-Z$${zone}-L1.asm"; \
+	  hdr="bemsh/header-$${zone}.txt"; \
+	  if [ ! -f "$$src" ]; then echo "annotate: нет $$src" >&2; exit 1; fi; \
+	  set -- --input "$$src" --output "$$out" --comment-file "$$m" --force; \
+	  if [ -f "$$hdr" ]; then set -- "$$@" --header "$$hdr"; fi; \
+	  python3 tools/annotate_zone.py "$$@" || exit $$?; \
+	done
+
+# grep-сводка границ процедур из analysis/procedures*.md.
+procedures:
+	@echo '--- сводка границ процедур: analysis/procedures*.md ---'
+	@grep -nE '^## |A[0-9]{5}|пб \(М[0-9]+\)|ГИПОТЕЗА' analysis/procedures*.md | head -120
+
+# Валидация таблицы переменных disbesm6 на зоне 0137.
+variables:
+	@echo '--- валидация sym/MBE.named.validated.tab на зоне 0137 ---'
+	@disbesm6 -a10000 -e10000 -nsym/MBE.named.validated.tab \
+	  gold/MBE-Z0137-L1.bin > dis/MBE-Z0137-validated-named.asm
+	@echo "имен в листинге: $$(grep -cE 'MBEENTRY|INITCELL|CNT[0-6]|SUB[0-9]+' dis/MBE-Z0137-validated-named.asm || true)"
