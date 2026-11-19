@@ -31,7 +31,8 @@
 - [docs/DISBESM6-GUIDE.md](docs/DISBESM6-GUIDE.md) — практическое руководство по `disbesm6`;
 - [docs/ADJACENT.md](docs/ADJACENT.md), [docs/ADJACENT-2.md](docs/ADJACENT-2.md) — смежные проекты;
 - [docs/ANCHORS.md](docs/ANCHORS.md) — якоря верификации и ограничение «листинг ≠ дамп»;
-- [docs/COPIES-2348.md](docs/COPIES-2348.md) — три копии тома 2348 и чем они различаются.
+- [docs/COPIES-2348.md](docs/COPIES-2348.md) — три копии тома 2348 и чем они различаются;
+- [docs/VERSIONS-SCAN.md](docs/VERSIONS-SCAN.md) — версии транслятора на 2048/2148/2248.
 
 ## Структура
 
