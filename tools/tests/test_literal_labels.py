@@ -78,10 +78,12 @@ class LabelTests(unittest.TestCase):
         self.assertEqual(len(labels), len(set(labels)))
 
     def test_curated_globals(self):
-        self.assertEqual(self.rows["70000"]["label"], "SYSC70")
-        # 70707 occurs only inside data words / ЭКВ definitions, so it is not
-        # an operand to relabel; the curated name is still in the dictionary.
+        # Curated names are static knowledge; the live index changes after
+        # the batch application (literals become labels and disappear).
         self.assertEqual(LL.CURATED_LABELS["70707"], "ITM707")
+        self.assertEqual(LL.CURATED_LABELS["70000"], "SYSC70")
+        if "70000" in self.rows:
+            self.assertEqual(self.rows["70000"]["label"], "SYSC70")
 
     def test_constant_only_value_gets_no_label(self):
         # A value may be CONSTANT under Э50 and ADDRESS under СЧ — then it
@@ -98,6 +100,10 @@ class LabelTests(unittest.TestCase):
         self.assertEqual(overlap, set(), sorted(overlap)[:10])
 
     def test_table_file_matches_index(self):
+        """After batch application the table must be internally consistent
+        and every stored label must actually be declared in some .be source.
+        (It is NOT required to equal a freshly scanned pre-application index.)
+        """
         table = ROOT / "sym" / "ALL_LABELS.tab"
         if not table.exists():
             self.skipTest("table not generated yet")
@@ -107,8 +113,20 @@ class LabelTests(unittest.TestCase):
                 continue
             parts = line.split("\t")
             self.assertEqual(len(parts), 6, line)
+            self.assertLessEqual(len(parts[0]), 6, line)
             seen[parts[1]] = parts[0]
-        self.assertEqual(set(seen), set(self.rows))
+        self.assertTrue(seen)
+        be_text = "\n".join(
+            p.read_text(encoding="utf-8")
+            for p in (ROOT / "bemsh").glob("*.be")
+        )
+        declared = set()
+        for line in be_text.splitlines():
+            parts = line.strip().split()
+            if len(parts) >= 3 and parts[1] == "ЭКВ":
+                declared.add(parts[0])
+        missing = {lab for lab in seen.values() if lab not in declared}
+        self.assertEqual(missing, set(), sorted(missing)[:10])
 
 
 class ApplyTests(unittest.TestCase):
