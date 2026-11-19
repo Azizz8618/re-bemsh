@@ -6,17 +6,17 @@
 
 set -euo pipefail
 
-DISK=""; ZONE=""; LENGTH="1"; OUTPUT=""
+DISK=""; ZONE=""; LENGTH="1"; OUTPUT=""; HAVE_LENGTH=0
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --output) OUTPUT="$2"; shift 2 ;;
         -o) OUTPUT="$2"; shift 2 ;;
-        -h|--help) echo "disbesm_extract.sh <disk> <zone> <length> [-o <file>]"; exit 0 ;;
+        -h|--help) echo "disbesm_extract.sh <disk> <zone-octal> [length] [-o <file>]"; exit 0 ;;
         *)
             if [[ -z "$DISK" ]]; then DISK="$1"
             elif [[ -z "$ZONE" ]]; then ZONE="$1"
-            elif [[ -z "$LENGTH" || "$LENGTH" == "1" ]]; then LENGTH="$1"; fi
+            elif [[ "$HAVE_LENGTH" -eq 0 ]]; then LENGTH="$1"; HAVE_LENGTH=1; fi
             shift ;;
     esac
 done
@@ -30,11 +30,14 @@ if [[ -z "$OUTPUT" ]]; then
     OUTPUT="G${ZONE}-L${LENGTH}"
 fi
 
-# zeropad zone to 6 digits
-ZONE_PAD=$(printf '%06o' "$(printf '%d' "0${ZONE}")")
+# Номер зоны ЗАДАЁТСЯ ВОСЬМЕРИЧНЫМ (137, 537; ведущий ноль допустим).
+# Исправлено 19.11.2026: исходная версия использовала printf '%d' "0${ZONE}",
+# из-за чего bash трактовал число как восьмеричное и десятичные 95/351
+# молча извлекали НЕ те зоны.
+ZONE_DEC=$((8#$ZONE))
+ZONE_PAD=$(printf '%06o' "$ZONE_DEC")
 
-besmtool dump "$DISK" --start="0${ZONE_PAD}" --length="$LENGTH" --to-file="$OUTPUT" > /dev/null 2>&1
-if [[ $? -ne 0 ]]; then
+if ! besmtool dump "$DISK" --start="0${ZONE_PAD}" --length="$LENGTH" --to-file="$OUTPUT" > /dev/null 2>&1; then
     echo "ОШИБКА: besmtool dump не удался для zone=$ZONE, length=$LENGTH"
     exit 1
 fi

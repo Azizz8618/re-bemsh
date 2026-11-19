@@ -22,7 +22,11 @@
 - `besmtool` — дамп зон с томов SIMH (8 байт/слово → 6 байт/слово);
 - `dispak`, `dtran` — эмуляторы и трансляторы для проверки.
 
-Подробный план: [docs/PLAN.md](docs/PLAN.md).
+Документация:
+
+- [docs/PLAN.md](docs/PLAN.md) — подробный план дизассемблирования (7 фаз);
+- [docs/DISBESM6-GUIDE.md](docs/DISBESM6-GUIDE.md) — практическое руководство по `disbesm6`;
+- [docs/ADJACENT.md](docs/ADJACENT.md), [docs/ADJACENT-2.md](docs/ADJACENT-2.md) — смежные проекты.
 
 ## Структура
 
