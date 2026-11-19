@@ -10,3 +10,5 @@ verify/*.bin
 *.orig
 *.dis
 *.diff
+*.bak.*
+*.bak
