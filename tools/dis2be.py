@@ -281,7 +281,20 @@ def format_code_line(mnem, operand, word_addr, side, note=None):
     comment = ",слово %s, %s. часть" % (word_addr, side)
     if note:
         comment += " (%s)" % note
-    return "        " + mnem_field + op_field + comment
+    line = "        " + mnem_field + op_field + comment
+    # МАКРО-БЕМШ 06/78 ломает строку ровно в 80 колонок: комментарий
+    # переходит на новую строку и даёт «ОПЕРАЦИИ НЕТ». Держим <=78.
+    if len(line) > 79:
+        base = "        " + mnem_field + op_field + comment.split(" (")[0]
+        if note:
+            room = 79 - len(base) - 3
+            if room > 3:
+                line = base + " (" + note[:room] + ")"
+            else:
+                line = base
+        else:
+            line = base[:78]
+    return line
 
 
 def format_data_line(raw, word_addr):

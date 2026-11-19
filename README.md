@@ -30,8 +30,17 @@ make dis         # Фазы 2-3: 69 зон → gold/ + 71 поозонный .as
 make verify      # Фаза 5: независимое переизвлечение, 69/69 идентично
 make versions    # Фаза 6: VER.06/78 ↔ VAR.12/77
 make xref        # Фаза 4: граф переходов (требует dis/)
-make check       # итоговая проверка
+make rebuild-all # Фаза A3: собрать все 69 .be → 0 отличий от gold/
+make rebuild-check  # регрессия эталонной зоны 0137 (1024/1024, PASS)
+make unittest    # 21 unit-тест (аннотатор + конвертер)
+make check-all   # агрегат: stage0 + rebuild-check + verify + unittest
+make check       # базовая итоговая проверка (версии, md5 образа)
 ```
+
+Текущий результат: **69/69 зон восстановлены в `.be` побайтово**
+(66 семантических + RAW; точное число RAW уточняется субагентом
+RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
+проверки пройдены.
 
 Эталонный образ — `/usr/local/share/besm6/2348` (только чтение). md5 целого
 файла **не инвариант** (том используется другими проектами для PERSO-записи);
@@ -47,12 +56,25 @@ make check       # итоговая проверка
 
 ## Документация
 
-**Сводка и следующий план:** [FINAL-REPORT.md](docs/FINAL-REPORT.md),
-[PLAN-NEXT.md](docs/PLAN-NEXT.md).
+**Сводка и статус:** [FINAL-REPORT.md](docs/FINAL-REPORT.md) — итоговый
+отчёт по всем фазам; [STATUS.md](docs/STATUS.md) — одностраничный статус
+(команды → ожидаемый результат, remotes, правило read-only образов);
+[ROADMAP.md](docs/ROADMAP.md) — закрытые пункты и открытая работа;
+[PLAN-NEXT.md](docs/PLAN-NEXT.md) — план Фаз A–E.
+
+**Реконструкция и эксперименты:** [DIS2BE.md](docs/DIS2BE.md) (конвертер),
+[REBUILD-TOOL.md](docs/REBUILD-TOOL.md) (универсальная сборка),
+[MACRO-COMMANDS.md](docs/MACRO-COMMANDS.md) (каталог из 37 макрокоманд),
+[MACRO-TABLE-FORMAT-VERIFIED.md](docs/MACRO-TABLE-FORMAT-VERIFIED.md)
+(2 ячейки ГС на макрос; `[TAG|VAL]` не подтверждена),
+[DYNAMIC-TRACE.md](docs/DYNAMIC-TRACE.md),
+[analysis/MEMORY-MAP.md](analysis/MEMORY-MAP.md) (0154 → `02000₈`),
+[analysis/REBUILD-ALL.md](analysis/REBUILD-ALL.md) (69/69 зон, 0 отличий).
 
 **Планы и методы:** [PLAN.md](docs/PLAN.md), [DISBESM6-GUIDE.md](docs/DISBESM6-GUIDE.md),
 [TOOLS.md](docs/TOOLS.md), [XREF-METHODOLOGY.md](docs/XREF-METHODOLOGY.md),
-[VERIFY.md](docs/VERIFY.md), [ROADMAP.md](docs/ROADMAP.md).
+[VERIFY.md](docs/VERIFY.md), [AUTOMATION.md](docs/AUTOMATION.md),
+[COMMENTING-STANDARD.md](docs/COMMENTING-STANDARD.md).
 
 **Образы и версии:** [ANCHORS.md](docs/ANCHORS.md), [COPIES-2348.md](docs/COPIES-2348.md),
 [IMAGES.md](docs/IMAGES.md), [VERSIONS-SCAN.md](docs/VERSIONS-SCAN.md),

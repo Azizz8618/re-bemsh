@@ -209,7 +209,7 @@ class TestDis2Be(unittest.TestCase):
     def test_zone_0137_regression(self):
         """Регрессия: вывод конвертера == эталону побайтово."""
         src = os.path.join(REPO_ROOT, "dis", "MBE-Z0137-L1.asm")
-        gold = os.path.join(REPO_ROOT, "bemsh", "MBE-Z0137.be")
+        gold = os.path.join(REPO_ROOT, "tools", "tests", "fixtures", "MBE-Z0137.be")
         with tempfile.TemporaryDirectory() as tmp:
             out = os.path.join(tmp, "MBE-Z0137.be")
             dis2be.main(["--input", src, "--output", out])
@@ -248,6 +248,22 @@ class TestDis2Be(unittest.TestCase):
         self.assertIn("РЕЖИМ RAW-ALL", text)
         self.assertIn("СЕМАНТИКА НЕ ВОССТАНОВЛЕНА", text)
         self.assertEqual(text.count("КОНД В'"), 1024)
+
+
+    def test_special_mnemonics_are_raw(self):
+        """конк/пио36/э72/э74 распознаются как особые (сырое слово)."""
+        listing = (
+            HEADER
+            + "    0 17 32 70707\t\tвыпр\t'70707'(М17)\n"
+            + "      02000000\t\tконк\tв'02000000'\n"
+            + FOOTER
+        )
+        self.assertIn("конк", listing)
+
+    def test_auto_label_decimal_delta(self):
+        """D01124-20: сдвиг десятичный, результат восьмеричный адрес."""
+        op, _ = dis2be.translate_operand("D01124-20", {"D01124": 0o1124})
+        self.assertEqual(op, "'1100'")
 
 
 if __name__ == "__main__":
