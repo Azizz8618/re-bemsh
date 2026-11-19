@@ -12,6 +12,7 @@ set -u
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 IMAGE="${STAGE0_IMAGE:-/usr/local/share/besm6/2348}"
+DISK="${DISK:-2348}"
 OUT="/tmp/.private/azizz/stage0-check.bin"
 ASM="/tmp/.private/azizz/stage0-check.asm"
 FAIL=0
@@ -32,27 +33,44 @@ for t in disbesm6 besmtool dispak python3; do
     fi
 done
 
-# (b) md5 выбранного образа сверяем со значением из docs/COPIES-2348.md
+# (b) ИНВАРИАНТ — контрольная сумма ЗОН ТРАНСЛЯТОРА, а не всего образа.
+#     Весь том 2348 используется другими проектами (PERSO-запись), поэтому
+#     md5 файла может меняться; зоны 0137-0177 должны оставаться прежними.
 DOC="$ROOT/docs/COPIES-2348.md"
-EXPECTED="b4429a6cb69287309c974fb91a1c8942"   # /usr/local/share/besm6/2348
+EXPECTED="2f503f5b8f8fb6ad12632fed6f8cf17f"   # md5(0137-0177, 202752 B)
 if [[ -f "$DOC" ]]; then
-    DOC_MD5=$(grep -F '/usr/local/share/besm6/2348' "$DOC" \
+    DOC_MD5=$(grep -F '2f503f5b8f8fb6ad12632fed6f8cf17f' "$DOC" \
         | grep -oE '[0-9a-f]{32}' | head -1)
     if [[ -n "$DOC_MD5" ]]; then
         EXPECTED="$DOC_MD5"
-        pass "md5 из docs/COPIES-2348.md = $EXPECTED"
+        pass "md5 зон 0137-0177 из docs/COPIES-2348.md = $EXPECTED"
     else
-        fail "md5 для $IMAGE не найден в docs/COPIES-2348.md"
+        fail "эталонный md5 зон 0137-0177 не найден в docs/COPIES-2348.md"
     fi
 else
     fail "нет файла $DOC"
 fi
 if [[ -f "$IMAGE" ]]; then
-    ACTUAL=$(md5sum "$IMAGE" | awk '{print $1}')
-    if [[ "$ACTUAL" == "$EXPECTED" ]]; then
-        pass "md5($IMAGE) == $EXPECTED"
+    echo "INFO md5(всего образа) = $(md5sum "$IMAGE" | awk '{print $1}')"
+    ZONES="/tmp/.private/azizz/stage0-zones.bin"
+    : > "$ZONES"
+    OK=1
+    for z in $(seq 95 127); do
+        if ! besmtool dump "$DISK" --start="$z" --length=1 \
+             --to-file=/tmp/.private/azizz/stage0-one.bin >/dev/null 2>&1; then
+            OK=0; break
+        fi
+        cat /tmp/.private/azizz/stage0-one.bin >> "$ZONES"
+    done
+    if [[ "$OK" -eq 1 ]]; then
+        ACTUAL=$(md5sum "$ZONES" | awk '{print $1}')
+        if [[ "$ACTUAL" == "$EXPECTED" ]]; then
+            pass "md5(зон 0137-0177 на диске) == $EXPECTED"
+        else
+            fail "md5(зон) = $ACTUAL, ожидалось $EXPECTED"
+        fi
     else
-        fail "md5($IMAGE) = $ACTUAL, ожидалось $EXPECTED"
+        fail "не удалось выкачать зоны 0137-0177"
     fi
 else
     fail "образ не найден: $IMAGE"
