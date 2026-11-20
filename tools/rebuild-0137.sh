@@ -60,9 +60,18 @@ grep -a "ЧИCЛO OШИБOK=0000" "$WORK/listing.out" >/dev/null || {
 grep -a "ДЛИHA ПPOГ" "$WORK/listing.out" || true
 
 echo "=== 3. листинг -> объектные слова -> silver.bin ==="
-python3 - "$WORK/listing.out" "$GOLD" "$WORK/silver.bin" <<'PY'
+python3 - "$WORK/listing.out" "$GOLD" "$WORK/silver.bin" "$BE" <<'PY'
 import re, sys
-listing, gold, silver = sys.argv[1], sys.argv[2], sys.argv[3]
+listing, gold, silver, be = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+def start_base(be_path):
+    for line in open(be_path, encoding="utf-8"):
+        if line.lstrip().startswith("*"):
+            continue
+        m = re.search(r"\bСТАРТ\b\s+'?([0-7]+)'?", line)
+        if m:
+            return int(m.group(1), 8)
+    return 1
+HEADER_BASE = start_base(be)
 RE_WORD = re.compile(r"^([0-7]{16})\b")
 RE_CMD  = re.compile(r"^(\d{2})\s+(\d{2,3})\s+(\d{4,5})\b")
 words, pending = {}, None
@@ -90,10 +99,16 @@ for line in open(listing, encoding="utf-8"):
             pending = None
 g = open(gold, "rb").read()
 NW = len(g) // 6
+def matched(base):
+    return sum(1 for i in range(NW)
+               if words.get(base + i) == int.from_bytes(g[i*6:(i+1)*6], "big"))
+BASE = 1
+if HEADER_BASE != 1 and matched(HEADER_BASE) > matched(1):
+    BASE = HEADER_BASE
 ok = bad = 0
 out = bytearray()
 for i in range(NW):
-    got = words.get(i + 1)          # СТАРТ 1: слово i -> адрес i+1
+    got = words.get(BASE + i)       # слово i -> адрес BASE+i
     if got is None:
         bad += 1
         out += b"\x00" * 6

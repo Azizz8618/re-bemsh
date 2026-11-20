@@ -31,7 +31,7 @@ SOURCE = Path("/home/azizz/Yandex.Disk/re-dispak/testdks/mbe60_bemsh.txt")
 ENTRY_WORDS = ("ВХОД", "ВХОДН", "ВХОДС", "ВХОДБ")
 CALL_MNEMONICS = ("ПВ", "ПВО", "ВЖМ")
 
-RE_START = re.compile(r"^\s*(\S+)\s+СТАРТ\s+(\d+)")
+RE_START = re.compile(r"^\s*(\S+)\s+СТАРТ\s+'?([0-7]+)'?")
 RE_ENTRY = re.compile(
     r"^\s*(?:[^\s*]+\s+)?(" + "|".join(ENTRY_WORDS) + r")\b(.*)$"
 )
@@ -90,7 +90,7 @@ def scan_be_file(path):
         if m:
             starts.append({
                 "label": m.group(1),
-                "value": int(m.group(2), 10),
+                "value": int(m.group(2), 8),
                 "line": lineno,
             })
             continue

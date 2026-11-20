@@ -87,6 +87,15 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 [OPCODES-020-021-047-032.md](docs/OPCODES-020-021-047-032.md)
 (это не экстракоды; `032` = `УВВ`).
 
+**Адреса загрузки:** [RESIDENT-ZONES.md](analysis/RESIDENT-ZONES.md)
+(13 резидентов с измеренной базой ОП, 56 нерезидентов-оверлеев),
+[RAM-SNAPSHOT-EXTRA.md](analysis/RAM-SNAPSHOT-EXTRA.md)
+(0170/0171 найдены как оверлеи 0154/0155 по 02000/04000).
+Шапки `СТАРТ '<база>'`: `docs/SEMANTIC/*-START-TOP-*.md` —
+резиденты по карте ОП, остальные `10000₈`; для 0147 (`0`),
+0152/0157 (`76000`) база осталась декоративной из-за ошибок
+транслятора `НОЛЬ ЗАПРОШЕН` / `ПЕРЕПОЛН СЧА`.
+
 **Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
 (5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)
 (6 блок-схем, рендер `drakon_markup.py`).

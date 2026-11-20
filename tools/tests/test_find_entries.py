@@ -18,7 +18,11 @@ class TestBeScanning(unittest.TestCase):
         self.assertEqual(len(results), 69)
         for r in results:
             self.assertEqual(len(r["starts"]), 1, r["file"])
-            self.assertEqual(r["starts"][0]["value"], 1, r["file"])
+            # База СТАРТ теперь адрес загрузки (резиденты) или 10000.
+            self.assertIn(r["starts"][0]["value"],
+                          (0, 1, 0o2000, 0o4000, 0o6000,
+                           0o24000, 0o26000, 0o70000,
+                           0o74000, 0o76000, 0o10000), r["file"])
 
     def test_comment_entry_mentions_are_ignored(self):
         content = (
