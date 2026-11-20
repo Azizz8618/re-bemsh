@@ -73,6 +73,17 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 [CALL-TRACE-RUNTIME.md](analysis/CALL-TRACE-RUNTIME.md),
 [CALL-TARGETS-MONITOR80.md](analysis/CALL-TARGETS-MONITOR80.md).
 
+**Идентификация и правила БЕМШ:**
+[TRANSLATOR-VS-USER-PROGRAM.md](docs/TRANSLATOR-VS-USER-PROGRAM.md)
+(зоны 0137–0177 — сам транслятор, не программа пользователя),
+[MBE60-VS-TRANSLATOR.md](docs/MBE60-VS-TRANSLATOR.md),
+[EQU-VS-XREF.md](docs/EQU-VS-XREF.md) (`ЭКВ` не является внешней связью),
+[VHODN-VNESHN-SYNTAX.md](docs/VHODN-VNESHN-SYNTAX.md),
+[XLABEL-AUDIT.md](docs/XLABEL-AUDIT.md).
+Коды `020/021/032/047` разобраны в
+[OPCODES-020-021-047-032.md](docs/OPCODES-020-021-047-032.md)
+(это не экстракоды; `032` = `УВВ`).
+
 **Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
 (5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)
 (6 блок-схем, рендер `drakon_markup.py`).
