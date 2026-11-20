@@ -128,10 +128,11 @@ class LabelTests(unittest.TestCase):
         missing = {lab for lab in seen.values() if lab not in declared}
         # Labels retired by the procedure-label/pointer re-audit are allowed
         # only if the rename is documented in a fix report.
-        fix_text = "\n".join(
-            p.read_text(encoding="utf-8")
-            for p in (ROOT / "docs" / "SEMANTIC").glob("*-CONSTANT-FIX.md")
-        )
+        fix_docs = list((ROOT / "docs" / "SEMANTIC").glob("*-CONSTANT-FIX.md"))
+        extra = ROOT / "docs" / "EXTERNAL-OFFSET-FIX.md"
+        if extra.exists():
+            fix_docs.append(extra)
+        fix_text = "\n".join(p.read_text(encoding="utf-8") for p in fix_docs)
         undocumented = {lab for lab in missing if lab not in fix_text}
         self.assertEqual(undocumented, set(), sorted(undocumented)[:10])
 
