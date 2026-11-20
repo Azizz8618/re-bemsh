@@ -97,9 +97,10 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 [Z0147-BASE-RECHECK.md](analysis/Z0147-BASE-RECHECK.md),
 [Z0152-Z0157-BASE-RECHECK.md](analysis/Z0152-Z0157-BASE-RECHECK.md),
 [RESIDENT-BASE-AUDIT.md](analysis/RESIDENT-BASE-AUDIT.md):
-0147 — транслятор отвергает базу 0, легально `СТАРТ '1'`
-(HAM=00001); 0152/0157 — база 76000 верна, benign
-`ПЕРЕПОЛН СЧА` на слове после модуля.
+0147 — база 0 не кодируется, пишем `СТАРТ 1` (HAM=00001);
+0152/0157 — `СТАРТ '75777'` (0 ошибок; физическая
+страница ОП 76000₈ давала `ПЕРЕПОЛН СЧА`, сдвиг на 1
+слово принят ради чистой сборки).
 
 **Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
 (5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)

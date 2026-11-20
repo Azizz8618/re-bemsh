@@ -22,7 +22,7 @@ class TestBeScanning(unittest.TestCase):
             self.assertIn(r["starts"][0]["value"],
                           (0, 1, 0o2000, 0o4000, 0o6000,
                            0o24000, 0o26000, 0o70000,
-                           0o74000, 0o76000, 0o10000), r["file"])
+                           0o74000, 0o75777, 0o76000, 0o10000), r["file"])
 
     def test_comment_entry_mentions_are_ignored(self):
         content = (
