@@ -56,6 +56,10 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 
 ## Документация
 
+**Программа 2 (МАКРО-БЕМШ 06/78), полный разбор:**
+[PROGRAM2-INDEX.md](docs/PROGRAM2-INDEX.md) — тексты со ссылками, регистры
+с динамическими значениями, логика 3 проходов и 20 процедур.
+
 **Как это работает (главное):** [MACRO-BEMSH-ARCHITECTURE.md](docs/MACRO-BEMSH-ARCHITECTURE.md) —
 подробное описание языка, конвейера, машинной модели и процедур.
 
