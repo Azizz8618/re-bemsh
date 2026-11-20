@@ -92,9 +92,14 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 [RAM-SNAPSHOT-EXTRA.md](analysis/RAM-SNAPSHOT-EXTRA.md)
 (0170/0171 найдены как оверлеи 0154/0155 по 02000/04000).
 Шапки `СТАРТ '<база>'`: `docs/SEMANTIC/*-START-TOP-*.md` —
-резиденты по карте ОП, остальные `10000₈`; для 0147 (`0`),
-0152/0157 (`76000`) база осталась декоративной из-за ошибок
-транслятора `НОЛЬ ЗАПРОШЕН` / `ПЕРЕПОЛН СЧА`.
+резиденты по карте ОП, остальные `10000₈`. Особые случаи
+разобраны в [START-SPECIAL-FIX.md](docs/SEMANTIC/START-SPECIAL-FIX.md),
+[Z0147-BASE-RECHECK.md](analysis/Z0147-BASE-RECHECK.md),
+[Z0152-Z0157-BASE-RECHECK.md](analysis/Z0152-Z0157-BASE-RECHECK.md),
+[RESIDENT-BASE-AUDIT.md](analysis/RESIDENT-BASE-AUDIT.md):
+0147 — транслятор отвергает базу 0, легально `СТАРТ '1'`
+(HAM=00001); 0152/0157 — база 76000 верна, benign
+`ПЕРЕПОЛН СЧА` на слове после модуля.
 
 **Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
 (5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)

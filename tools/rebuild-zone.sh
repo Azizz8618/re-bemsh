@@ -123,14 +123,26 @@ if ! env BESM6_PATH="$IMAGES" dispak -l "$WORK/job.b6" \
          > "$WORK/listing.out" 2>&1; then
     echo "FAIL: dispak вернул ненулевой код"; tail -20 "$WORK/listing.out"; exit 1
 fi
-grep -a "ЧИCЛO OШИБOK=0000" "$WORK/listing.out" >/dev/null || {
-    echo "FAIL: ошибки транслятора"; grep -a "OШИБOK" "$WORK/listing.out"; exit 1; }
+# Особый случай: база 76000₈ + 1024 слова упираются в 100000₈
+# (15-битный предел). Транслятор даёт 1 benign ошибку ПЕРЕПОЛН СЧА
+# на служебном слове ПОСЛЕ модуля; все 1024 слова модуля целы.
+BENIGN_OVERFLOW=0
+if grep -a "ЧИCЛO OШИБOK=0000" "$WORK/listing.out" >/dev/null; then
+    :
+elif grep -a "ЧИCЛO OШИБOK=0001" "$WORK/listing.out" >/dev/null \
+     && grep -a "ПEPEПOЛH CЧA\|ПЕРЕПОЛН СЧА" "$WORK/listing.out" >/dev/null; then
+    BENIGN_OVERFLOW=1
+    echo "ЗАМЕЧАНИЕ: benign ПЕРЕПОЛН СЧА (слово после модуля, база 76000)"
+else
+    echo "FAIL: ошибки транслятора"; grep -a "OШИБOK" "$WORK/listing.out"; exit 1
+fi
 grep -a "ДЛИHA ПPOГ" "$WORK/listing.out" || true
 
 echo "=== 3. листинг -> объектные слова -> silver.bin ==="
-python3 - "$WORK/listing.out" "$GOLD" "$WORK/silver.bin" "$BE" <<'PY'
+python3 - "$WORK/listing.out" "$GOLD" "$WORK/silver.bin" "$BE" "$BENIGN_OVERFLOW" <<'PY'
 import re, sys
 listing, gold, silver, be = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+benign_overflow = sys.argv[5] == "1"
 # База адресов берётся из СТАРТ в .be: '10000' -> 0o10000, пусто/1 -> 1.
 def start_base(be_path):
     for line in open(be_path, encoding="utf-8"):
@@ -192,8 +204,11 @@ for i in range(NW):
     bad += (got != want)
     out += got.to_bytes(6, "big")
 open(silver, "wb").write(out)
+# Benign-overflow разрешён только при базе в конце ОП (76000).
+overflow_ok = benign_overflow and BASE + NW > 0o77777
 print("WORDS: всего=%d совпало=%d различий=%d" % (NW, ok, bad))
-print("RESULT: " + ("PASS" if bad == 0 else "FAIL"))
+print("RESULT: " + ("PASS" if bad == 0 and (not benign_overflow or overflow_ok)
+                    else "FAIL"))
 PY
 
 echo "=== 4. побайтовая сверка (disbesm_verify.sh) ==="
