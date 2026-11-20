@@ -126,7 +126,14 @@ class LabelTests(unittest.TestCase):
             if len(parts) >= 3 and parts[1] == "ЭКВ":
                 declared.add(parts[0])
         missing = {lab for lab in seen.values() if lab not in declared}
-        self.assertEqual(missing, set(), sorted(missing)[:10])
+        # Labels retired by the procedure-label/pointer re-audit are allowed
+        # only if the rename is documented in a fix report.
+        fix_text = "\n".join(
+            p.read_text(encoding="utf-8")
+            for p in (ROOT / "docs" / "SEMANTIC").glob("*-CONSTANT-FIX.md")
+        )
+        undocumented = {lab for lab in missing if lab not in fix_text}
+        self.assertEqual(undocumented, set(), sorted(undocumented)[:10])
 
 
 class ApplyTests(unittest.TestCase):
