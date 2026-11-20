@@ -75,8 +75,11 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 
 **Идентификация и правила БЕМШ:**
 [TRANSLATOR-VS-USER-PROGRAM.md](docs/TRANSLATOR-VS-USER-PROGRAM.md)
-(зоны 0137–0177 — сам транслятор, не программа пользователя),
-[MBE60-VS-TRANSLATOR.md](docs/MBE60-VS-TRANSLATOR.md),
+(зоны 0137–0177 — программа пользователя-транслятор под ДИСПАК;
+МВЕ60 — другая, прикладная программа пользователя),
+[MBE60-VS-TRANSLATOR.md](docs/MBE60-VS-TRANSLATOR.md).
+Внешние связи: [VHODN-VNESHN-MECHANISM.md](docs/VHODN-VNESHN-MECHANISM.md)
+(глобальное имя `владелец.символ`, владелец — определяющий модуль),
 [EQU-VS-XREF.md](docs/EQU-VS-XREF.md) (`ЭКВ` не является внешней связью),
 [VHODN-VNESHN-SYNTAX.md](docs/VHODN-VNESHN-SYNTAX.md),
 [XLABEL-AUDIT.md](docs/XLABEL-AUDIT.md).

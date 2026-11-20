@@ -158,6 +158,52 @@ class VneshnProbeTest(unittest.TestCase):
         self.assertEqual(result.returncode, 3)
         self.assertIn('REFUSE', result.stderr)
 
+    # (i) Одиночное ВНЕШН вместо ЭКВ принято.
+    #     4 слова меняются корректно, METK YЖE 0П0
+    #     относился к двойному объявлению, отозван.
+    def test_single_vneshn_declaration_foreign_symbol(self):
+        listing = self.write(
+            'listing.out',
+            'ЧYЖOЙ CИMBOЛ                  0261  0191 '
+            'X2000  BHEШH MBE.X2000\n'
+            'ЧИCЛO OШИБOK=0001. MAKC CEPЬEЗH=0.\n'
+            'ДЛИHA ПPOГ=02000 BXOДH=00000 '
+            'BHEШH=00001 ЧИCЛO METOK=00451\n'
+            'X2000  00001CA  DAT730 00730 A\n')
+        data = self.json_out('parse', listing)
+        self.assertEqual(data['errors'], 1)
+        self.assertEqual(data['program_length_octal'],
+                         '02000')
+        self.assertEqual(data['vhodn'], 0)
+        self.assertEqual(data['vneshn'], 1)
+        with open(listing, encoding='utf-8') as fh:
+            text = fh.read()
+        self.assertIn('ЧYЖOЙ CИMBOЛ', text)
+        self.assertIn('X2000  00001CA', text)
+        self.assertNotIn('METK YЖE 0П0', text)
+
+        # Адреса 4 ссылок ПБ X2000 из analysis/ §5.
+        fill = int('0300200002200000', 8).to_bytes(6, 'big')
+        gold = bytearray(fill * 1024)
+        silver = bytearray(gold)
+        bad_words = (0o1236, 0o1276, 0o1310, 0o1314)
+        for w in bad_words:
+            silver[w * 6 + 4] ^= 0x0F
+            silver[w * 6 + 5] ^= 0xF0
+        gp = self.write('gold.bin', bytes(gold),
+                        binary=True)
+        sp = self.write('silver.bin', bytes(silver),
+                        binary=True)
+        res = self.json_out('compare', gp, sp)
+        self.assertEqual(res['matched_bytes'], 6136)
+        self.assertEqual(res['different_bytes'], 8)
+        self.assertEqual(res['first_different_word'],
+                         0o1236)
+        diffs = [i for i in range(res['compared_bytes'])
+                 if gold[i] != silver[i]]
+        self.assertEqual({i // 6 for i in diffs},
+                         set(bad_words))
+
 
 if __name__ == '__main__':
     unittest.main()
