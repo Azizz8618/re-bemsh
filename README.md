@@ -56,6 +56,17 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 
 ## Документация
 
+**Как это работает (главное):** [MACRO-BEMSH-ARCHITECTURE.md](docs/MACRO-BEMSH-ARCHITECTURE.md) —
+подробное описание языка, конвейера, машинной модели и процедур.
+
+**Человеческие справочники:** [GUIDE-MODULES.md](docs/GUIDE-MODULES.md) — назначение
+всех 69 модулей; [GUIDE-PROCEDURES-{ASM,B,B2}.md](docs/GUIDE-PROCEDURES-ASM.md) —
+назначение всех 229 процедур простыми словами.
+
+**Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
+(5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)
+(6 блок-схем, рендер `drakon_markup.py`).
+
 **Семантика всех 69 зон:** [SEMANTIC/INDEX.md](docs/SEMANTIC/INDEX.md)
 (стандарт — [SEMANTIC-STANDARD.md](docs/SEMANTIC-STANDARD.md)).
 
