@@ -67,6 +67,12 @@ RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
 всех 69 модулей; [GUIDE-PROCEDURES-{ASM,B,B2}.md](docs/GUIDE-PROCEDURES-ASM.md) —
 назначение всех 229 процедур простыми словами.
 
+**Монитор и CALL-цели:** [MONITOR80-GENEALOGY.md](docs/MONITOR80-GENEALOGY.md)
+(Монитор-80 — ветвь МС «Дубна» в ДИСПАК, не другая ОС),
+[RAM-SNAPSHOT-MAP.md](analysis/RAM-SNAPSHOT-MAP.md),
+[CALL-TRACE-RUNTIME.md](analysis/CALL-TRACE-RUNTIME.md),
+[CALL-TARGETS-MONITOR80.md](analysis/CALL-TARGETS-MONITOR80.md).
+
 **Документация в СИПРОД и ДРАКОН:** [SIPROD/README.md](docs/SIPROD/README.md)
 (5 блоков `*RED…*E`, проверены в эмуляторе), [DRAKON/README.md](docs/DRAKON/README.md)
 (6 блок-схем, рендер `drakon_markup.py`).
