@@ -74,7 +74,7 @@ def main():
                 changes.append((addr, m.group(1), role))
 
     # Short alias for the START label keeps reference expressions compact.
-    alias = "S"
+    alias = "З"
     expr_suffix = "-" + alias + "+1" if offset else ""
 
     # Pass 2: emit. Replace label text and (for base != 1) rewrite references
