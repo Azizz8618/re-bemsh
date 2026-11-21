@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Rename restored A#####/D##### labels to their role ЭКВ names.
+"""Rename restored A#####/D##### labels into their role ЭКВ names.
 
-For each inserted label with dis address N, find an ЭКВ with value N and
-rename the label to that name, then delete that ЭКВ line. Alias ЭКВ on the
-same address (e.g. P477) are KEPT so all existing references still resolve.
+For each label at dis address N, find the ЭКВ with value N, rename the label
+to that role name and drop the ЭКВ line.
 
-Safety: the word addressed by a label at dis address N is the same word the
-ЭКВ 'N' pointed at (verified by pilot on 0147: OUT477, 1024/1024 PASS).
+BASE HANDLING (validated on 0137 and 0147):
+- base 1 (0147): the label value already equals the literal, no extra edit.
+- base != 1 (10000, 74000, ...): a label resolves to START+N-1 while the
+  old ЭКВ was the literal N. Replace each reference with
+  `ROLE - START_LABEL + 1`, which evaluates back to N (0137 pilot: 3, PASS).
 
 Usage:
   python3 tools/label2role.py <ZONE> <B|MBE2|ASM> [--dry-run]
@@ -16,16 +18,14 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Roles that are NOT a role name (aliases / auto numeric constants).
 NONROLE = re.compile(r"^(P\d+|AM\d+|B\d+|X\w+|C\d+|MB\d+|BR\d+|CA\d+)$")
 
 
 def pick_role(names):
-    """Pick the primary role ЭКВ name for an address, or None."""
     for n in names:
         if not NONROLE.match(n):
             return n
-    return None  # only aliases -> keep the A/D label as-is
+    return None
 
 
 def main():
@@ -40,24 +40,30 @@ def main():
         be = os.path.join(ROOT, f"bemsh/{prefix}-Z{zone}-L1.be")
 
     lines = open(be, encoding="utf-8").read().splitlines()
+
+    # Find START label (the symbol on the СТАРТ line) and its base.
+    start_label, base = None, 1
+    for s in lines:
+        m = re.match(r"^(\S+)\s+СТАРТ\s+'?([0-7]+)'?", s)
+        if m:
+            start_label, base = m.group(1), int(m.group(2), 8)
+            break
+    offset = base - 1  # 0 for base 1; nonzero otherwise
+
     eqv = {}
     for i, s in enumerate(lines):
         m = re.match(r"^\s*(\S+)\s+ЭКВ\s+'?([0-7]+)'?", s)
         if m:
             eqv.setdefault(int(m.group(2), 8), []).append((m.group(1), i))
 
-    # map: address N -> role name to use (and ЭКВ line index to drop)
     replace = {}
     for addr, entries in eqv.items():
         role = pick_role([n for n, _ in entries])
         if role:
-            idx = next(i for n, i in entries if n == role)
-            replace[addr] = (role, idx)
+            replace[addr] = (role, next(i for n, i in entries if n == role))
 
-    # Pass 1: decide all drops BEFORE emitting, because an ЭКВ line usually
-    # precedes its label; a single pass would already have emitted it.
     drop = set()
-    renamed = []
+    changes = []
     for i, s in enumerate(lines):
         m = re.match(r"^([AGD]\d{5})(\s+)(.*)$", s)
         if m:
@@ -65,30 +71,43 @@ def main():
             if addr in replace:
                 role, eidx = replace[addr]
                 drop.add(eidx)
-                renamed.append((m.group(1), role))
+                changes.append((addr, m.group(1), role))
 
+    # Pass 2: emit. Replace label text and (for base != 1) rewrite references.
     out = []
-    rename_by_addr = {}
-    for s in lines:
-        m = re.match(r"^([AGD]\d{5})(\s+)(.*)$", s)
-        if m:
-            addr = int(m.group(1)[1:], 8)
-            if addr in replace:
-                rename_by_addr[addr] = replace[addr][0]
+    refs = []
     for i, s in enumerate(lines):
         if i in drop:
             continue
-        m = re.match(r"^([AGD]\d{5})(\s+)(.*)$", s)
-        if m:
-            addr = int(m.group(1)[1:], 8)
-            if addr in rename_by_addr:
-                s = rename_by_addr[addr].ljust(8) + m.group(3)
+        for addr, old, role in changes:
+            if s.startswith(old + "  ") or s.startswith(old + " "):
+                skip = len(old)
+                while skip < len(s) and s[skip] == " ":
+                    skip += 1
+                s = role.ljust(8) + s[skip:]
+                break
+        if offset:
+            for addr, old, role in changes:
+                # Replace role as a standalone operand (not inside comment,
+                # not the label column) with ROLE-START+1.
+                if s.lstrip().startswith(role) and s[:1] != "*":
+                    continue  # label line itself
+                s2 = re.sub(
+                    r"(?<=\s)" + re.escape(role) + r"\b(?!\s*ЭКВ)",
+                    role + "-" + start_label + "+1",
+                    s,
+                )
+                if s2 != s:
+                    s = s2
         out.append(s)
 
-    print(f"зона {zone}: переименовано {len(renamed)}, удалено ЭКВ {len(drop)}")
+    print(
+        "зона %s: база=%o меток=%d удалено ЭКВ=%d"
+        % (zone, base, len(changes), len(drop))
+    )
     if dry:
-        for a, b in renamed[:5]:
-            print(f"  {a} -> {b}")
+        for addr, old, role in changes[:5]:
+            print("  %s -> %s" % (old, role))
         return 0
     open(be, "w", encoding="utf-8").write("\n".join(out) + "\n")
     return 0
