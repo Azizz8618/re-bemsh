@@ -73,11 +73,21 @@ def main():
                 drop.add(eidx)
                 changes.append((addr, m.group(1), role))
 
-    # Pass 2: emit. Replace label text and (for base != 1) rewrite references.
+    # Short alias for the START label keeps reference expressions compact.
+    alias = "S"
+    expr_suffix = "-" + alias + "+1" if offset else ""
+
+    # Pass 2: emit. Replace label text and (for base != 1) rewrite references
+    # ONLY in the operand part (before the comma), never in trailing comments.
     out = []
-    refs = []
+    inserted_alias = False
     for i, s in enumerate(lines):
         if i in drop:
+            continue
+        if offset and not inserted_alias and re.match(r"^\S+\s+СТАРТ\b", s):
+            out.append(s)
+            out.append("%-8sЭКВ %s" % (alias, start_label))
+            inserted_alias = True
             continue
         for addr, old, role in changes:
             if s.startswith(old + "  ") or s.startswith(old + " "):
@@ -86,19 +96,15 @@ def main():
                     skip += 1
                 s = role.ljust(8) + s[skip:]
                 break
-        if offset:
+        if offset and not s.lstrip().startswith("*") and "," in s:
+            head, sep, tail = s.partition(",")
             for addr, old, role in changes:
-                # Replace role as a standalone operand (not inside comment,
-                # not the label column) with ROLE-START+1.
-                if s.lstrip().startswith(role) and s[:1] != "*":
-                    continue  # label line itself
-                s2 = re.sub(
+                head = re.sub(
                     r"(?<=\s)" + re.escape(role) + r"\b(?!\s*ЭКВ)",
-                    role + "-" + start_label + "+1",
-                    s,
+                    role + expr_suffix,
+                    head,
                 )
-                if s2 != s:
-                    s = s2
+            s = head + sep + tail
         out.append(s)
 
     print(
