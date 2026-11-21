@@ -74,7 +74,7 @@ def main():
                 changes.append((addr, m.group(1), role))
 
     # Short alias for the START label keeps reference expressions compact.
-    alias = "S"
+    alias = "З"
     expr_suffix = "-" + alias + "+1" if offset else ""
 
     # Pass 2: emit. Replace label text and (for base != 1) rewrite references
@@ -105,11 +105,6 @@ def main():
                     head,
                 )
             s = head + sep + tail
-            if len(s) > 60:
-                # Longer operand: shrink only alignment whitespace.
-                s = re.sub(r" {2,}", " ", head.rstrip()) + " "
-                if sep:
-                    s += sep + re.sub(r" {2,}", " ", tail)
         out.append(s)
 
     print(
