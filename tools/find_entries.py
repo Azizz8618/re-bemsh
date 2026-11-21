@@ -82,9 +82,15 @@ def scan_be_file(path):
     entries = []
     call_targets = []
 
+    # Role labels were converted from ЭКВ to real labels; their address is
+    # preserved in the `* NAME (было NNN)` annotation comment.
+    RE_ROLE_WAS = re.compile(r"\*\s*([A-Za-z0-9_]+)\s*\(было\s+([0-7]+)\)")
     for lineno, raw in enumerate(text.splitlines(), 1):
         stripped = raw.strip()
-        if not stripped or stripped.startswith("*"):
+        if stripped.startswith("*"):
+            mw = RE_ROLE_WAS.match(stripped)
+            if mw and mw.group(1) not in equ:
+                equ[mw.group(1)] = int(mw.group(2), 8)
             continue  # комментарий, в т.ч. упоминания ВХОД в тексте
         m = RE_START.match(raw)
         if m:
@@ -108,7 +114,7 @@ def scan_be_file(path):
             continue
         m = RE_CALL.match(raw)
         if m:
-            target = re.split(r"[\.(]", m.group(2))[0]
+            target = re.split(r"[\.\(-]", m.group(2))[0]
             if target in equ:
                 addr = equ[target]
             elif target.isdigit():

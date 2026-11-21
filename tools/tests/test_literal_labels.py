@@ -7,6 +7,7 @@ Run:  python3 -m unittest tools.tests.test_literal_labels -v
 """
 
 import pathlib
+import re
 import sys
 import tempfile
 import unittest
@@ -124,6 +125,10 @@ class LabelTests(unittest.TestCase):
         for line in be_text.splitlines():
             parts = line.strip().split()
             if len(parts) >= 3 and parts[1] == "ЭКВ":
+                declared.add(parts[0])
+            elif re.match(r"^[A-Za-z0-9_]+\s", line) and not line.startswith("*"):
+                # A role label may now be a real label on a command line,
+                # not an ЭКВ (labels-to-roles conversion).
                 declared.add(parts[0])
         missing = {lab for lab in seen.values() if lab not in declared}
         # Labels retired by the procedure-label/pointer re-audit are allowed
