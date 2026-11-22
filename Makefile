@@ -187,7 +187,9 @@ rebuild-check:
 
 # 6 unit-тестов аннотатора (docs/AUTOMATION.md).
 unittest:
-	python3 -m unittest tools/tests/test_annotate_zone.py tools/tests/test_dis2be.py -v
+	python3 -m unittest tools/tests/test_annotate_zone.py tools/tests/test_dis2be.py \
+	  tools/tests/test_raw_zone_diff.py tools/tests/test_tagval_analysis.py \
+	  tools/tests/test_asm_proc_comments.py tools/tests/test_phaseb_dump_extract.py -v
 
 # Агрегатная проверка: фаза 0 + новая реконструкция + round-trip + тесты.
 check-all: stage0 rebuild-check verify unittest

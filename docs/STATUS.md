@@ -9,10 +9,10 @@
 | Команда | Ожидаемый результат (проверено 19.11.2026) |
 |---|---|
 | `make stage0` | `PASS` ×8; md5 зон `0137–0177` = `2f503f5b8f8fb6ad12632fed6f8cf17f` |
-| `make check-all` | `=== check-all: все проверки пройдены ===` (21 unit-тест, `OK`) |
+| `make check-all` | `=== check-all: все проверки пройдены ===` (47 unit-тест, `OK`) |
 | `make rebuild-check` | `rebuild-check: OK (RESULT: PASS, 1024/1024)` — зона 0137 |
 | `make rebuild-all` | `найдено=69 PASS=69 FAIL=0` — все `.be` собираются в 0 отличий |
-| `make unittest` | `Ran 21 tests … OK` |
+| `make unittest` | `Ran 47 tests … OK` |
 | `grep -c PASS analysis/REBUILD-ALL.md` | `71` (69 PASS + 2 шапки) |
 | `ls bemsh/*.be \| wc -l` | `69` |
 | `md5sum /usr/local/share/besm6/2348` | `2739b7a25a07d82fc20ba034a85ae661` (не инвариант) |
@@ -37,8 +37,8 @@
 | A1–A3 | ГОТОВО (69 `.be`, 0 отличий) |
 | B | ГОТОВО (2 ячейки ГС на макрос; `[TAG\|VAL]` не подтверждена) |
 | C | ГОТОВО (0154 → `02000₈`, breakpoint сработал) |
-| D | ОТКРЫТА (ролевые имена во всех 69 `.be`) |
-| E | ВЫПОЛНЯЕТСЯ (эта сводка) |
+| D | ГОТОВО: 50 зон (7 + 43 из §4.2b, 4 ASM — ЭКВ уже в LABELS-ASM-BE); 0-diff (см. `docs/PHASE-D-CONTINUATION.md`) |
+| E | ГОТОВО: `make check-all` — stage0 PASS, rebuild-check 1024/1024, verify FAIL=0, unittest 47 OK |
 
 ## Remotes
 

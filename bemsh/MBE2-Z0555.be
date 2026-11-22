@@ -527,2017 +527,3901 @@ C6173 ЭКВ '6173' , проверяемый лимит/счётчик
 X77316 ЭКВ '77316' , CALL-цель через М16
 *       Z0555.md §4; CA7316 в шапке; ГИПОТЕЗА
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:529; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:530; ГИПОТЕЗА]
 * Вход: проверки
 * Роль по CALL/RET, гипотеза
 * Процедура: P1; Вх/вых: ВХОД; RET@0011
 * Xref: PROCEDURES-B2.md:164; Z0555.md §4; ГИПОТЕЗА
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:535; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:536; ГИПОТЕЗА]
         ПЕ   EXT012     , перейти на EXT012
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:537; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:538; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:539; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:540; ГИПОТЕЗА]
         ПО   EXT012     , перейти на EXT012
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:541; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:542; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:543; ГИПОТЕЗА]
         ПО   EXT012     , перейти на EXT012
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:544; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:545; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:546; ГИПОТЕЗА]
         ПО   BR4021     , перейти на BR4021
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:547; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:548; ГИПОТЕЗА]
         НТЖ  B25722     , сравнить с B25722
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:549; ГИПОТЕЗА]
         ПО   X016C     , перейти на BR016
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:550; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:551; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:552; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:553; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:554; ГИПОТЕЗА]
         ПЕ   BR3770     , перейти на BR3770
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:555; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:556; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:557; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:558; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:559; ГИПОТЕЗА]
         ПБ   MON400     , перейти на MON400
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:560; ГИПОТЕЗА]
         СЧ   B26332     , прочитать B26332
+* CODE_READ; [bemsh/MBE2-Z0555.be:561; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:562; ГИПОТЕЗА]
         ПО   BR4020     , перейти на BR4020
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:563; ГИПОТЕЗА]
         ПБ   BR3770     , перейти на BR3770
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:564; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:565; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:566; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:567; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:568; ГИПОТЕЗА]
         ПЕ   EXT025     , перейти на EXT025
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:569; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:570; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:571; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:572; ГИПОТЕЗА]
         ПБ   P4021     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:573; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:574; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:575; ГИПОТЕЗА]
         НТЖ  BR5721     , сравнить с BR5721
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:576; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:577; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:578; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:579; ГИПОТЕЗА]
         ПБ   BR4033     , перейти на BR4033
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:580; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:581; ГИПОТЕЗА]
         И    MB5640     , проверить MB5640
+* CODE_AND; [bemsh/MBE2-Z0555.be:582; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:583; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:584; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:585; ГИПОТЕЗА]
         ПБ   AM4200     , перейти на AM4200
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:586; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:587; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:588; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:589; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:590; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:591; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:592; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:593; ГИПОТЕЗА]
         ПЕ   BR4001     , перейти на BR4001
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:594; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:595; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:596; ГИПОТЕЗА]
         НТЖ  MB5762     , сравнить с MB5762
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:597; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:598; ГИПОТЕЗА]
         ПО   BR4042     , перейти на BR4042
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:599; ГИПОТЕЗА]
         ПБ   BR3770     , перейти на BR3770
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:600; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:601; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:602; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:603; ГИПОТЕЗА]
         СДА  64-3       , сдвинуть на 64-3
+* CODE_MASK; [bemsh/MBE2-Z0555.be:604; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:605; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:606; ГИПОТЕЗА]
         И    BR5763     , проверить BR5763
+* CODE_AND; [bemsh/MBE2-Z0555.be:607; ГИПОТЕЗА]
         СЛЦ  B26322     , сложить с B26322
+* CODE_ADD; [bemsh/MBE2-Z0555.be:608; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:609; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:610; ГИПОТЕЗА]
         НТЖ  MB5762     , сравнить с MB5762
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:611; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:612; ГИПОТЕЗА]
         ПО   CA4043     , перейти на CA4043
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:613; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:614; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:615; ГИПОТЕЗА]
         ПО   BR4053     , перейти на BR4053
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:616; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:617; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:618; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:619; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:620; ГИПОТЕЗА]
         ПБ   P4176     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:621; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:622; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:623; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:624; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:625; ГИПОТЕЗА]
         ПЕ   BR4001     , перейти на BR4001
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:626; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:627; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:628; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:629; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:630; ГИПОТЕЗА]
         ПО   BR4063     , перейти на BR4063
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:631; ГИПОТЕЗА]
         НТЖ  B25626     , сравнить с B25626
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:632; ГИПОТЕЗА]
         ПО   AM4066     , перейти на AM4066
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:633; ГИПОТЕЗА]
         ПБ   B24071     , перейти на B24071
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:634; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:635; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:636; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:637; ГИПОТЕЗА]
         ПО   B24071     , перейти на B24071
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:638; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:639; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:640; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:641; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:642; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:643; ГИПОТЕЗА]
         ПО   B24071     , перейти на B24071
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:644; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:645; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:646; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:647; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:648; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:649; ГИПОТЕЗА]
         ПО   BR4053     , перейти на BR4053
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:650; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:651; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:652; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:653; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:654; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:655; ГИПОТЕЗА]
         СДА  64-1       , сдвинуть на 64-1
+* CODE_MASK; [bemsh/MBE2-Z0555.be:656; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:657; ГИПОТЕЗА]
         СДА  64-2       , сдвинуть на 64-2
+* CODE_MASK; [bemsh/MBE2-Z0555.be:658; ГИПОТЕЗА]
         СЛЦ  B26322     , сложить с B26322
+* CODE_ADD; [bemsh/MBE2-Z0555.be:659; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:660; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:661; ГИПОТЕЗА]
         И    MB5635     , проверить MB5635
+* CODE_AND; [bemsh/MBE2-Z0555.be:662; ГИПОТЕЗА]
         СЛЦ  B26322     , сложить с B26322
+* CODE_ADD; [bemsh/MBE2-Z0555.be:663; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:664; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:665; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:666; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:667; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:668; ГИПОТЕЗА]
         ПО   BR4075     , перейти на BR4075
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:669; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:670; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:671; ГИПОТЕЗА]
         ПО   BR4075     , перейти на BR4075
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:672; ГИПОТЕЗА]
         ПБ   P4176     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:673; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:674; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:675; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:676; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:677; ГИПОТЕЗА]
         ПЕ   BR4001     , перейти на BR4001
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:678; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:679; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:680; ГИПОТЕЗА]
         НТЖ  B25764     , сравнить с B25764
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:681; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:682; ГИПОТЕЗА]
         НТЖ  BR5765     , сравнить с BR5765
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:683; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:684; ГИПОТЕЗА]
         НТЖ  B25626     , сравнить с B25626
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:685; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:686; ГИПОТЕЗА]
         НТЖ  BR5763     , сравнить с BR5763
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:687; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:688; ГИПОТЕЗА]
         НТЖ  BR5766     , сравнить с BR5766
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:689; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:690; ГИПОТЕЗА]
         НТЖ  B25767     , сравнить с B25767
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:691; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:692; ГИПОТЕЗА]
         НТЖ  BR5765     , сравнить с BR5765
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:693; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:694; ГИПОТЕЗА]
         НТЖ  BR5766     , сравнить с BR5766
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:695; ГИПОТЕЗА]
         ПО   BR4126     , перейти на BR4126
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:696; ГИПОТЕЗА]
         НТЖ  BR5770     , сравнить с BR5770
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:697; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:698; ГИПОТЕЗА]
         ПО   CA4130     , перейти на CA4130
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:699; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:700; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:701; ГИПОТЕЗА]
         ПО   CA4130     , перейти на CA4130
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:702; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:703; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:704; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:705; ГИПОТЕЗА]
         СЛЦ  B25771     , сложить с B25771
+* CODE_ADD; [bemsh/MBE2-Z0555.be:706; ГИПОТЕЗА]
         ЗП   LIMI73     , записать в LIMI73
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:707; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:708; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:709; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:710; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:711; ГИПОТЕЗА]
         СДА  64-4       , сдвинуть на 64-4
+* CODE_MASK; [bemsh/MBE2-Z0555.be:712; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:713; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:714; ГИПОТЕЗА]
         И    MB5635     , проверить MB5635
+* CODE_AND; [bemsh/MBE2-Z0555.be:715; ГИПОТЕЗА]
         СЛЦ  B26322     , сложить с B26322
+* CODE_ADD; [bemsh/MBE2-Z0555.be:716; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:717; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:718; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:719; ГИПОТЕЗА]
         ПО   BR4053     , перейти на BR4053
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:720; ГИПОТЕЗА]
         НТЖ  MB5772     , сравнить с MB5772
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:721; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:722; ГИПОТЕЗА]
         НТЖ  BR5765     , сравнить с BR5765
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:723; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:724; ГИПОТЕЗА]
         НТЖ  B25626     , сравнить с B25626
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:725; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:726; ГИПОТЕЗА]
         НТЖ  BR5763     , сравнить с BR5763
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:727; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:728; ГИПОТЕЗА]
         НТЖ  BR5766     , сравнить с BR5766
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:729; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:730; ГИПОТЕЗА]
         НТЖ  B25767     , сравнить с B25767
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:731; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:732; ГИПОТЕЗА]
         НТЖ  BR5765     , сравнить с BR5765
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:733; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:734; ГИПОТЕЗА]
         НТЖ  BR5766     , сравнить с BR5766
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:735; ГИПОТЕЗА]
         ПО   BR4152     , перейти на BR4152
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:736; ГИПОТЕЗА]
         НТЖ  BR5770     , сравнить с BR5770
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:737; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:738; ГИПОТЕЗА]
         ПО   BR4131     , перейти на BR4131
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:739; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:740; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:741; ГИПОТЕЗА]
         ПО   BR4131     , перейти на BR4131
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:742; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:743; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:744; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:745; ГИПОТЕЗА]
         СЛЦ  B25771     , сложить с B25771
+* CODE_ADD; [bemsh/MBE2-Z0555.be:746; ГИПОТЕЗА]
         ЗП   LIMI73     , записать в LIMI73
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:747; ГИПОТЕЗА]
         ПБ   BR4131     , перейти на BR4131
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:748; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:749; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:750; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:751; ГИПОТЕЗА]
         ПЕ   BR4001     , перейти на BR4001
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:752; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:753; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:754; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:755; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:756; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:757; ГИПОТЕЗА]
         ПО   BR4163     , перейти на BR4163
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:758; ГИПОТЕЗА]
         НТЖ  B25626     , сравнить с B25626
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:759; ГИПОТЕЗА]
         ПО   BR4166     , перейти на BR4166
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:760; ГИПОТЕЗА]
         ПБ   P4171     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:761; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:762; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:763; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:764; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:765; ГИПОТЕЗА]
         ПО   BR4171     , перейти на BR4171
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:766; ГИПОТЕЗА]
         ПБ   P4176     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:767; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:768; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:769; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:770; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:771; ГИПОТЕЗА]
         ПО   BR4171     , перейти на BR4171
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:772; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:773; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:774; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:775; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:776; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:777; ГИПОТЕЗА]
         МОД  LIMI73     , установить режим LIMI73
         СЧ   B20146    , прочитать B20146
+* CODE_READ; [bemsh/MBE2-Z0555.be:779; ГИПОТЕЗА]
         И    MB5625     , проверить MB5625
+* CODE_AND; [bemsh/MBE2-Z0555.be:780; ГИПОТЕЗА]
         ИЛИ  B26322     , проверить B26322
+* CODE_OR; [bemsh/MBE2-Z0555.be:781; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:782; ГИПОТЕЗА]
         ПБ   P4157     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:783; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:784; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:785; ГИПОТЕЗА]
         И    MB5674     , проверить MB5674
+* CODE_AND; [bemsh/MBE2-Z0555.be:786; ГИПОТЕЗА]
         ПЕ   BR3770     , перейти на BR3770
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:787; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:788; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:789; ГИПОТЕЗА]
         ПО   BR4210     , перейти на BR4210
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:790; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:791; ГИПОТЕЗА]
         СДА  64+1       , сдвинуть на 64+1
+* CODE_MASK; [bemsh/MBE2-Z0555.be:792; ГИПОТЕЗА]
         ИЛИ  BR5721     , проверить BR5721
+* CODE_OR; [bemsh/MBE2-Z0555.be:793; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:794; ГИПОТЕЗА]
         ИЛИ  B26322     , проверить B26322
+* CODE_OR; [bemsh/MBE2-Z0555.be:795; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:796; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:797; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:798; ГИПОТЕЗА]
         ПО   MB4215     , перейти на MB4215
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:799; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:800; ГИПОТЕЗА]
         НТЖ  B25722     , сравнить с B25722
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:801; ГИПОТЕЗА]
         ПО   BR4212     , перейти на BR4212
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:802; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:803; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:804; ГИПОТЕЗА]
         СЧ   BR5773     , прочитать BR5773
+* CODE_READ; [bemsh/MBE2-Z0555.be:805; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:806; ГИПОТЕЗА]
         ПБ   P4204     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:807; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:808; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:809; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:810; ГИПОТЕЗА]
         СЧ   B26332     , прочитать B26332
+* CODE_READ; [bemsh/MBE2-Z0555.be:811; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:812; ГИПОТЕЗА]
         ПЕ   BR3770     , перейти на BR3770
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:813; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:814; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:815; ГИПОТЕЗА]
         И    MB5640     , проверить MB5640
+* CODE_AND; [bemsh/MBE2-Z0555.be:816; ГИПОТЕЗА]
         НТЖ  BR5774     , сравнить с BR5774
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:817; ГИПОТЕЗА]
         ПЕ   BR3773     , перейти на BR3773
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:818; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:819; ГИПОТЕЗА]
         НТЖ  B25775     , сравнить с B25775
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:820; ГИПОТЕЗА]
         ПЕ   ERR225     , перейти на ERR225
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:821; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:822; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:823; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:824; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:825; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:826; ГИПОТЕЗА]
         ПО   BR4221     , перейти на BR4221
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:827; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:828; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:829; ГИПОТЕЗА]
         ПО   BR4221     , перейти на BR4221
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:830; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:831; ГИПОТЕЗА]
         СДА  64-16      , сдвинуть на 64-16
+* CODE_MASK; [bemsh/MBE2-Z0555.be:832; ГИПОТЕЗА]
         ИЛИ  B26322     , проверить B26322
+* CODE_OR; [bemsh/MBE2-Z0555.be:833; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:834; ГИПОТЕЗА]
         ПБ   P3773     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:835; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:836; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:837; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:838; ГИПОТЕЗА]
         ПО   BR3754     , перейти на BR3754
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:839; ГИПОТЕЗА]
         СЧ   B25776     , прочитать B25776
+* CODE_READ; [bemsh/MBE2-Z0555.be:840; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:841; ГИПОТЕЗА]
         ПБ   BR4217     , перейти на BR4217
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:842; ГИПОТЕЗА]
         СЧ   CEL577     , прочитать CEL577
+* CODE_READ; [bemsh/MBE2-Z0555.be:843; ГИПОТЕЗА]
         ПБ   ERR232     , перейти на ERR232
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:844; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:845; ГИПОТЕЗА]
         СДА  64-16      , сдвинуть на 64-16
+* CODE_MASK; [bemsh/MBE2-Z0555.be:846; ГИПОТЕЗА]
         ИЛИ  BASE60     , проверить BASE60
+* CODE_OR; [bemsh/MBE2-Z0555.be:847; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:848; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:849; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:850; ГИПОТЕЗА]
         НТЖ  MB6001     , сравнить с MB6001
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:851; ГИПОТЕЗА]
         ПЕ   BR3770     , перейти на BR3770
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:852; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:853; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:854; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:855; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:856; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:857; ГИПОТЕЗА]
         ПО   CA4244     , перейти на CA4244
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:858; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:859; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:860; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:861; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:862; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:863; ГИПОТЕЗА]
         ПО   BR4254     , перейти на BR4254
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:864; ГИПОТЕЗА]
         НТЖ  B25626     , сравнить с B25626
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:865; ГИПОТЕЗА]
         ПО   BR4263     , перейти на BR4263
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:866; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:867; ГИПОТЕЗА]
         ПО   BR3770     , перейти на BR3770
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:868; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:869; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:870; ГИПОТЕЗА]
         ПО   BR4266     , перейти на BR4266
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:871; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:872; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:873; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:874; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:875; ГИПОТЕЗА]
         ПБ   CA4244     , перейти на CA4244
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:876; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:877; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:878; ГИПОТЕЗА]
         НТЖ  BR5752     , сравнить с BR5752
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:879; ГИПОТЕЗА]
         ПО   BR4252     , перейти на BR4252
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:880; ГИПОТЕЗА]
         СЧ   B26322     , прочитать B26322
+* CODE_READ; [bemsh/MBE2-Z0555.be:881; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:882; ГИПОТЕЗА]
         ЗП   B26322     , записать в B26322
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:883; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:884; ГИПОТЕЗА]
         ВЧ   B26002     , прочитать B26002
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:886; ГИПОТЕЗА]
         ВЧОБ           , нулевое слово (забел)
+* CODE_SUB_REV; [bemsh/MBE2-Z0555.be:887; ГИПОТЕЗА]
         ПЕ   AM4256     , перейти на AM4256
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:888; ГИПОТЕЗА]
         ПБ   P3773     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:889; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:890; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:891; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:892; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:893; ГИПОТЕЗА]
         ПО   BR4252     , перейти на BR4252
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:894; ГИПОТЕЗА]
         ПБ   P3770     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:895; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:896; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:897; ГИПОТЕЗА]
         СЛЦ  B26331     , сложить с B26331
+* CODE_ADD; [bemsh/MBE2-Z0555.be:898; ГИПОТЕЗА]
         ПБ   P4253     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:899; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:900; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:901; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:902; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:903; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:904; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:905; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:906; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:907; ГИПОТЕЗА]
         ПВ   CA7575(М16), вызвать подпрограмму 7575 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:908; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:909; ГИПОТЕЗА]
         И    B25661     , проверить B25661
+* CODE_AND; [bemsh/MBE2-Z0555.be:910; ГИПОТЕЗА]
         ПО   CA4276     , перейти на CA4276
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:911; ГИПОТЕЗА]
         ПВ   CA7605(М15), вызвать подпрограмму 7605 через М15
+* CODE_CALL; [bemsh/MBE2-Z0555.be:912; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:913; ГИПОТЕЗА]
         ПВ   CA7553(М13), вызвать подпрограмму 7553 через М13
+* CODE_CALL; [bemsh/MBE2-Z0555.be:914; ГИПОТЕЗА]
         СЧ   MB1171     , прочитать MB1171
+* CODE_READ; [bemsh/MBE2-Z0555.be:915; ГИПОТЕЗА]
         И    CAL003     , проверить CAL003
+* CODE_AND; [bemsh/MBE2-Z0555.be:916; ГИПОТЕЗА]
         НТЖ  BR6004     , сравнить с BR6004
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:917; ГИПОТЕЗА]
         ПЕ   BR4314     , перейти на BR4314
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:918; ГИПОТЕЗА]
         СЧ   MB1172     , прочитать MB1172
+* CODE_READ; [bemsh/MBE2-Z0555.be:919; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:920; ГИПОТЕЗА]
         ЗП   BR4313     , записать в BR4313
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:921; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:922; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:923; ГИПОТЕЗА]
         ВЧ   BR4313     , прочитать BR4313
         ПЕ   BR4314     , перейти на BR4314
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:925; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:926; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:927; ГИПОТЕЗА]
         СДА  64+24      , сдвинуть на 64+24
+* CODE_MASK; [bemsh/MBE2-Z0555.be:928; ГИПОТЕЗА]
         ЗП   BR4313     , записать в BR4313
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:929; ГИПОТЕЗА]
         СЧ   MB1172     , прочитать MB1172
+* CODE_READ; [bemsh/MBE2-Z0555.be:930; ГИПОТЕЗА]
         И    MB5640     , проверить MB5640
+* CODE_AND; [bemsh/MBE2-Z0555.be:931; ГИПОТЕЗА]
         ВЧ   BR4313     , прочитать BR4313
         ПЕ   BR4314     , перейти на BR4314
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:933; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:934; ГИПОТЕЗА]
         КОНД В'5710247300777777'    , лев call
         ПБ   P4314     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:936; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:937; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:938; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:939; ГИПОТЕЗА]
         ПБ   P3241     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:940; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:941; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:942; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:943; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:944; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:945; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:946; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:947; ГИПОТЕЗА]
         ПБ   P3521     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:948; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:949; ГИПОТЕЗА]
         УИА  B2160(М16) , установить B2160 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:950; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:951; ГИПОТЕЗА]
         УИА  B2162(М16) , установить B2162 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:952; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:953; ГИПОТЕЗА]
         УИА  AM164(М16) , установить AM164 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:954; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:955; ГИПОТЕЗА]
         УИА  BR336(М16) , установить BR336 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:956; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:957; ГИПОТЕЗА]
         УИА  MB340(М16) , установить MB340 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:958; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:959; ГИПОТЕЗА]
         УИА  AM166(М16) , установить AM166 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:960; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:961; ГИПОТЕЗА]
         УИА  BR342(М16) , установить BR342 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:962; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:963; ГИПОТЕЗА]
         УИА  B2344(М16) , установить B2344 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:964; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:965; ГИПОТЕЗА]
         УИА  BR170(М16) , установить BR170 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:966; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:967; ГИПОТЕЗА]
         УИА  AM172(М16) , установить AM172 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:968; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:969; ГИПОТЕЗА]
         УИА  AM174(М16) , установить AM174 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:970; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:971; ГИПОТЕЗА]
         УИА  AM176(М16) , установить AM176 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:972; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:973; ГИПОТЕЗА]
         УИА  B2200(М16) , установить B2200 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:974; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:975; ГИПОТЕЗА]
         УИА  AM202(М16) , установить AM202 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:976; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:977; ГИПОТЕЗА]
         УИА  AM204(М16) , установить AM204 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:978; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:979; ГИПОТЕЗА]
         УИА  MB206(М16) , установить MB206 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:980; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:981; ГИПОТЕЗА]
         УИА  MB210(М16) , установить MB210 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:982; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:983; ГИПОТЕЗА]
         УИА  BR212(М16) , установить BR212 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:984; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:985; ГИПОТЕЗА]
         УИА  MB214(М16) , установить MB214 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:986; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:987; ГИПОТЕЗА]
         УИА  MB216(М16) , установить MB216 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:988; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:989; ГИПОТЕЗА]
         УИА  AM220(М16) , установить AM220 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:990; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:991; ГИПОТЕЗА]
         УИА  MB222(М16) , установить MB222 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:992; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:993; ГИПОТЕЗА]
         УИА  MB224(М16) , установить MB224 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:994; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:995; ГИПОТЕЗА]
         УИА  BR226(М16) , установить BR226 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:996; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:997; ГИПОТЕЗА]
         УИА  B2230(М16) , установить B2230 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:998; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:999; ГИПОТЕЗА]
         УИА  BR232(М16) , установить BR232 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1000; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1001; ГИПОТЕЗА]
         УИА  BR234(М16) , установить BR234 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1002; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1003; ГИПОТЕЗА]
         УИА  B2236(М16) , установить B2236 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1004; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1005; ГИПОТЕЗА]
         УИА  AM240(М16) , установить AM240 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1006; ГИПОТЕЗА]
         ПБ   BR4356     , перейти на BR4356
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1007; ГИПОТЕЗА]
         СЧИ  М16        , считать М16
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1008; ГИПОТЕЗА]
         СДА  64-15      , сдвинуть на 64-15
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1009; ГИПОТЕЗА]
         ИЛИ  B26126     , проверить B26126
+* CODE_OR; [bemsh/MBE2-Z0555.be:1010; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1011; ГИПОТЕЗА]
         СЧ   MB1171     , прочитать MB1171
+* CODE_READ; [bemsh/MBE2-Z0555.be:1012; ГИПОТЕЗА]
         И    CAL003     , проверить CAL003
+* CODE_AND; [bemsh/MBE2-Z0555.be:1013; ГИПОТЕЗА]
         НТЖ  BR6004     , сравнить с BR6004
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1014; ГИПОТЕЗА]
         ПЕ   BR4375     , перейти на BR4375
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1015; ГИПОТЕЗА]
         СЧ   MB1172     , прочитать MB1172
+* CODE_READ; [bemsh/MBE2-Z0555.be:1016; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1017; ГИПОТЕЗА]
         ЗП   B24374     , записать в B24374
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1018; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1019; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1020; ГИПОТЕЗА]
         ВЧ   B24374     , прочитать B24374
         ПЕ   BR4375     , перейти на BR4375
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1022; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1023; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1024; ГИПОТЕЗА]
         СДА  64+24      , сдвинуть на 64+24
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1025; ГИПОТЕЗА]
         ЗП   B24374     , записать в B24374
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1026; ГИПОТЕЗА]
         СЧ   MB1172     , прочитать MB1172
+* CODE_READ; [bemsh/MBE2-Z0555.be:1027; ГИПОТЕЗА]
         И    MB5640     , проверить MB5640
+* CODE_AND; [bemsh/MBE2-Z0555.be:1028; ГИПОТЕЗА]
         ВЧ   B24374     , прочитать B24374
         ПЕ   BR4375     , перейти на BR4375
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1030; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1031; ГИПОТЕЗА]
         КОНД В'5710247300777777'    , лев call
         ПБ   P4375     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1033; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1034; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1035; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1036; ГИПОТЕЗА]
         СЧ   B26310     , прочитать B26310
+* CODE_READ; [bemsh/MBE2-Z0555.be:1037; ГИПОТЕЗА]
         ПО   BR4402     , перейти на BR4402
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1038; ГИПОТЕЗА]
         УИ   М16        , уменьшить М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1039; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1040; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:1041; ГИПОТЕЗА]
         ПО   BR4402     , перейти на BR4402
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1042; ГИПОТЕЗА]
         СЧ   MB7777(М16), прочитать MB7777(М16)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1043; ГИПОТЕЗА]
         ИЛИ  B26005     , проверить B26005
+* CODE_OR; [bemsh/MBE2-Z0555.be:1044; ГИПОТЕЗА]
         ЗП   MB7777(М16), записать в MB7777(М16)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1045; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1046; ГИПОТЕЗА]
         СЧ   B26127(М1) , прочитать B26127(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1047; ГИПОТЕЗА]
         И    MB5625     , проверить MB5625
+* CODE_AND; [bemsh/MBE2-Z0555.be:1048; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1049; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:1050; ГИПОТЕЗА]
         ЗП   B26150     , записать в B26150
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1051; ГИПОТЕЗА]
         НТЖ  BR6146     , сравнить с BR6146
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1052; ГИПОТЕЗА]
         И    BR6006     , проверить BR6006
+* CODE_AND; [bemsh/MBE2-Z0555.be:1053; ГИПОТЕЗА]
         ПО   BR4414     , перейти на BR4414
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1054; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:1055; ГИПОТЕЗА]
         ЗП   BR6146     , записать в BR6146
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1056; ГИПОТЕЗА]
         СБР  BR6006     , сбросить BR6006
         РЗБ  B26007     , разобрать B26007
+* CODE_SPLIT; [bemsh/MBE2-Z0555.be:1058; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:1059; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1060; ГИПОТЕЗА]
         СЧ   BR6143     , прочитать BR6143
+* CODE_READ; [bemsh/MBE2-Z0555.be:1061; ГИПОТЕЗА]
         СДА  64-20      , сдвинуть на 64-20
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1062; ГИПОТЕЗА]
         И    B26010     , проверить B26010
+* CODE_AND; [bemsh/MBE2-Z0555.be:1063; ГИПОТЕЗА]
         ИЛИ  B26333     , проверить B26333
+* CODE_OR; [bemsh/MBE2-Z0555.be:1064; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1065; ГИПОТЕЗА]
         Э70  B26333     , останов
+* CODE_FETCH_ADDR; [bemsh/MBE2-Z0555.be:1066; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:1067; ГИПОТЕЗА]
         И    B25673     , проверить B25673
+* CODE_AND; [bemsh/MBE2-Z0555.be:1068; ГИПОТЕЗА]
         УИ   М16        , уменьшить М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1069; ГИПОТЕЗА]
         СЧ   B26127(М1) , прочитать B26127(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1070; ГИПОТЕЗА]
         И    BR4441(М2) , проверить BR4441(М2)
+* CODE_AND; [bemsh/MBE2-Z0555.be:1071; ГИПОТЕЗА]
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1072; ГИПОТЕЗА]
         СЧ   B26127(М1) , прочитать B26127(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1073; ГИПОТЕЗА]
         СДА  64+8       , сдвинуть на 64+8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1074; ГИПОТЕЗА]
         И    BR4447(М2) , проверить BR4447(М2)
+* CODE_AND; [bemsh/MBE2-Z0555.be:1075; ГИПОТЕЗА]
         ИЛИ  B26324     , проверить B26324
+* CODE_OR; [bemsh/MBE2-Z0555.be:1076; ГИПОТЕЗА]
         ИЛИ  BR4455(М2) , проверить BR4455(М2)
+* CODE_OR; [bemsh/MBE2-Z0555.be:1077; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1078; ГИПОТЕЗА]
         МОДА MB2007(М16), установить режим MB2007(М16)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1079; ГИПОТЕЗА]
         ЗП   (М1)       , записать в М1
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1080; ГИПОТЕЗА]
         СЛИА 1(М1)      , прибавить 1 к М1
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1081; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1082; ГИПОТЕЗА]
         И    B25673     , проверить B25673
+* CODE_AND; [bemsh/MBE2-Z0555.be:1083; ГИПОТЕЗА]
         ВЧ   B25626     , прочитать B25626
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1085; ГИПОТЕЗА]
         СЧИ  М1         , считать М1
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1086; ГИПОТЕЗА]
         ВЧ   B26324     , прочитать B26324
         ПО   MB4456     , перейти на MB4456
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1088; ГИПОТЕЗА]
         СЧ   B26323     , прочитать B26323
+* CODE_READ; [bemsh/MBE2-Z0555.be:1089; ГИПОТЕЗА]
         СДА  64-40      , сдвинуть на 64-40
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1090; ГИПОТЕЗА]
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1091; ГИПОТЕЗА]
         СЧ   B26127(М1) , прочитать B26127(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1092; ГИПОТЕЗА]
         И    MB5625     , проверить MB5625
+* CODE_AND; [bemsh/MBE2-Z0555.be:1093; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1094; ГИПОТЕЗА]
         СЧ   B26127(М1) , прочитать B26127(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1095; ГИПОТЕЗА]
         СДА  64+8       , сдвинуть на 64+8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1096; ГИПОТЕЗА]
         ИЛИ  B26324     , проверить B26324
+* CODE_OR; [bemsh/MBE2-Z0555.be:1097; ГИПОТЕЗА]
         ПБ   MB4422     , перейти на MB4422
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1098; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1099; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1100; ГИПОТЕЗА]
         КОНД В'7760000000000000'    , лев пио36
         ЦИКЛ BR7400(М17), цикл BR7400(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1103; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1105; ГИПОТЕЗА]
         КОНД В'7777777777600000'    , прав пио36
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЦИКЛ BR7400(М17), цикл BR7400(М17)
         УМН  MB7777     , умножить на MB7777
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП   B2377      , записать в B2377
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1111; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1113; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1115; ГИПОТЕЗА]
         УМН  MB7777     , умножить на MB7777
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1117; ГИПОТЕЗА]
         ЗП   B2377      , записать в B2377
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1118; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1119; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1120; ГИПОТЕЗА]
         СБР  (М7)       , сбросить М7
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1122; ГИПОТЕЗА]
         ВЧАБ MB400      , прочитать MB400
+* CODE_SUB; [bemsh/MBE2-Z0555.be:1123; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1124; ГИПОТЕЗА]
         ЗП   AM161      , записать в AM161
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1125; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1126; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1127; ГИПОТЕЗА]
         СБР  (М7)       , сбросить М7
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1129; ГИПОТЕЗА]
         ВЧАБ MB400      , прочитать MB400
+* CODE_SUB; [bemsh/MBE2-Z0555.be:1130; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1131; ГИПОТЕЗА]
         ЗП   AM161      , записать в AM161
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1132; ГИПОТЕЗА]
         ПБ   P4315     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1133; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1134; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1135; ГИПОТЕЗА]
         И    B26303     , проверить B26303
+* CODE_AND; [bemsh/MBE2-Z0555.be:1136; ГИПОТЕЗА]
         ПО   BR4337     , перейти на BR4337
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1137; ГИПОТЕЗА]
         МОД  MB7777(М17), установить режим MB7777(М17)
         ПБ   P4462     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1139; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1140; ГИПОТЕЗА]
         ПБ   P4530     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1141; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1142; ГИПОТЕЗА]
         ПБ   P4771     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1143; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1144; ГИПОТЕЗА]
         ПБ   P5112     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1145; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1146; ГИПОТЕЗА]
         ПБ   P5116     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1147; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1148; ГИПОТЕЗА]
         ПБ   P4315     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1149; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1150; ГИПОТЕЗА]
         ПБ   P5144     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1151; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1152; ГИПОТЕЗА]
         ПБ   P5173     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1153; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1154; ГИПОТЕЗА]
         ПБ   P5225     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1155; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1156; ГИПОТЕЗА]
         ПБ   P5230     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1157; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1158; ГИПОТЕЗА]
         ПБ   P5232     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1159; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1160; ГИПОТЕЗА]
         ПБ   P5234     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1161; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1162; ГИПОТЕЗА]
         ПБ   P5231     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1163; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1164; ГИПОТЕЗА]
         ПБ   P5233     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1165; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1166; ГИПОТЕЗА]
         ПБ   P5235     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1167; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1168; ГИПОТЕЗА]
         ПБ   P5365     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1169; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1170; ГИПОТЕЗА]
         ПБ   P5366     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1171; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1172; ГИПОТЕЗА]
         ПБ   P5367     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1173; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1174; ГИПОТЕЗА]
         ПБ   P5415     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1175; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1176; ГИПОТЕЗА]
         ПБ   P4505     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1177; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1178; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1179; ГИПОТЕЗА]
         ЗП   B26076     , записать в B26076
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1180; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1181; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1182; ГИПОТЕЗА]
         ПО   BR4522     , перейти на BR4522
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1183; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1184; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1185; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1186; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1187; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1188; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1189; ГИПОТЕЗА]
         ПЕ   BR4340     , перейти на BR4340
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1190; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1191; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1192; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1193; ГИПОТЕЗА]
         ПЕ   BR4510     , перейти на BR4510
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1194; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1195; ГИПОТЕЗА]
         НТЖ  AM6011     , сравнить с AM6011
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1196; ГИПОТЕЗА]
         ПО   BR4523     , перейти на BR4523
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1197; ГИПОТЕЗА]
         НТЖ  BR6012     , сравнить с BR6012
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1198; ГИПОТЕЗА]
         ПО   BR4523     , перейти на BR4523
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1199; ГИПОТЕЗА]
         НТЖ  BR6013     , сравнить с BR6013
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1200; ГИПОТЕЗА]
         ПО   BR4522     , перейти на BR4522
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1201; ГИПОТЕЗА]
         НТЖ  BR6014     , сравнить с BR6014
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1202; ГИПОТЕЗА]
         ПЕ   BR4340     , перейти на BR4340
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1203; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1204; ГИПОТЕЗА]
         СЧ   B25626     , прочитать B25626
+* CODE_READ; [bemsh/MBE2-Z0555.be:1205; ГИПОТЕЗА]
         ЗП   B26076     , записать в B26076
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1206; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1207; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:1208; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1209; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1210; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1211; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1212; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1213; ГИПОТЕЗА]
         ПВ   CA7575(М16), вызвать подпрограмму 7575 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1214; ГИПОТЕЗА]
         ПБ   P3241     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1215; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1216; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1217; ГИПОТЕЗА]
         И    BR5641     , проверить BR5641
+* CODE_AND; [bemsh/MBE2-Z0555.be:1218; ГИПОТЕЗА]
         ПО   BR4336     , перейти на BR4336
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1219; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1220; ГИПОТЕЗА]
         И    MB5662     , проверить MB5662
+* CODE_AND; [bemsh/MBE2-Z0555.be:1221; ГИПОТЕЗА]
         ИЛИ  B25663     , проверить B25663
+* CODE_OR; [bemsh/MBE2-Z0555.be:1222; ГИПОТЕЗА]
         ЗП   B26313     , записать в B26313
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1223; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1224; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:1225; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1226; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1227; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1228; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1229; ГИПОТЕЗА]
         ПВ   CA7575(М16), вызвать подпрограмму 7575 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1230; ГИПОТЕЗА]
         СЧ   B26151     , прочитать B26151
+* CODE_READ; [bemsh/MBE2-Z0555.be:1231; ГИПОТЕЗА]
         ПО   BR3140     , перейти на BR3140
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1232; ГИПОТЕЗА]
         УИА  -18(М16)   , установить -18 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1233; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1234; ГИПОТЕЗА]
         СЧ   B26164(М16), прочитать B26164(М16)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1235; ГИПОТЕЗА]
         ЗП   B26141(М16), записать в B26141(М16)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1236; ГИПОТЕЗА]
         ЦИКЛ MB4541(М16), цикл MB4541(М16)
         УИА  B26142(М1) , установить B26142 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1238; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1239; ГИПОТЕЗА]
         ПВ   CA5464(М2) , вызвать подпрограмму 5464 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1240; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1241; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1242; ГИПОТЕЗА]
         МОДА MB5234    , установить режим MB5234
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1243; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1244; ГИПОТЕЗА]
         УИА  0(М1)      , установить 0 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1245; ГИПОТЕЗА]
         УИА  -6(М2)     , установить -6 в М2
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1246; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1247; ГИПОТЕЗА]
         УИА  -63(М16)   , установить -63 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1248; ГИПОТЕЗА]
         МОДА B26477(М16), установить режим B26477(М16)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1249; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1250; ГИПОТЕЗА]
         ЦИКЛ BR4550(М16), цикл BR4550(М16)
         ЗП   B26317     , записать в B26317
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1252; ГИПОТЕЗА]
         ЗП   B26310     , записать в B26310
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1253; ГИПОТЕЗА]
         СЧ   CA6015     , прочитать CA6015
+* CODE_READ; [bemsh/MBE2-Z0555.be:1254; ГИПОТЕЗА]
         ЗП   B26175     , записать в B26175
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1255; ГИПОТЕЗА]
         СЧ   B26016     , прочитать B26016
+* CODE_READ; [bemsh/MBE2-Z0555.be:1256; ГИПОТЕЗА]
         ЗП   B26307     , записать в B26307
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1257; ГИПОТЕЗА]
         СЧ   EXT017     , прочитать EXT017
+* CODE_READ; [bemsh/MBE2-Z0555.be:1258; ГИПОТЕЗА]
         ЗП   B26336     , записать в B26336
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1259; ГИПОТЕЗА]
         УИА  2(М3)      , установить 2 в М3
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1260; ГИПОТЕЗА]
         СЧ   B26020     , прочитать B26020
+* CODE_READ; [bemsh/MBE2-Z0555.be:1261; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1262; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1263; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1264; ГИПОТЕЗА]
         КОНД В'7317736500004561'    , лев call
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1266; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1267; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1268; ГИПОТЕЗА]
         ПО   BR4567     , перейти на BR4567
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1269; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1270; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1271; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1272; ГИПОТЕЗА]
         СЧИ  М3         , считать М3
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1273; ГИПОТЕЗА]
         ВЧ   AM6021     , прочитать AM6021
         ПО   B24332     , перейти на B24332
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1275; ГИПОТЕЗА]
         СЛИА 1(М3)      , прибавить 1 к М3
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1276; ГИПОТЕЗА]
         ПБ   BR4612     , перейти на BR4612
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1277; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1278; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1279; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1280; ГИПОТЕЗА]
         ПО   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1281; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1282; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1283; ГИПОТЕЗА]
         ПО   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1284; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1285; ГИПОТЕЗА]
         ИЛИ  B25716     , проверить B25716
+* CODE_OR; [bemsh/MBE2-Z0555.be:1286; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1287; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1288; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1289; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1290; ГИПОТЕЗА]
         ПЕ   MB4602     , перейти на MB4602
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1291; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1292; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1293; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1294; ГИПОТЕЗА]
         ПО   MB4602     , перейти на MB4602
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1295; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1296; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1297; ГИПОТЕЗА]
         ПО   MB4602     , перейти на MB4602
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1298; ГИПОТЕЗА]
         ПБ   BR4606     , перейти на BR4606
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1299; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1300; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1301; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1302; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1303; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1304; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1305; ГИПОТЕЗА]
         ПБ   P4574     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1306; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1307; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1308; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1309; ГИПОТЕЗА]
         КОНД В'7317736500004323'    , лев call
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1311; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1312; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1313; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1314; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1315; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1316; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1317; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1318; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1319; ГИПОТЕЗА]
         ПО   BR4623     , перейти на BR4623
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1320; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1321; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1322; ГИПОТЕЗА]
         ПО   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1323; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1324; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1325; ГИПОТЕЗА]
         ПЕ   BR4330     , перейти на BR4330
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1326; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1327; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1328; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1329; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1330; ГИПОТЕЗА]
         ПБ   P4613     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1331; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1332; ГИПОТЕЗА]
         СЧИ  М4         , считать М4
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1333; ГИПОТЕЗА]
         ЗП   B26310     , записать в B26310
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1334; ГИПОТЕЗА]
         СЧ   B25745     , прочитать B25745
+* CODE_READ; [bemsh/MBE2-Z0555.be:1335; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1336; ГИПОТЕЗА]
         КОНД В'7317741400004631'    , лев call
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1338; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1339; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1340; ГИПОТЕЗА]
         ПО   BR4656     , перейти на BR4656
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1341; ГИПОТЕЗА]
         ПБ   P4707     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1342; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1343; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1344; ГИПОТЕЗА]
         И    B26022     , проверить B26022
+* CODE_AND; [bemsh/MBE2-Z0555.be:1345; ГИПОТЕЗА]
         НТЖ  B26022     , сравнить с B26022
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1346; ГИПОТЕЗА]
         ПЕ   MB4636     , перейти на MB4636
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1347; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1348; ГИПОТЕЗА]
         И    B26023     , проверить B26023
+* CODE_AND; [bemsh/MBE2-Z0555.be:1349; ГИПОТЕЗА]
         ЗП   MB7777(М17), записать в MB7777(М17)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1350; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1351; ГИПОТЕЗА]
         ЗП   B26310     , записать в B26310
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1352; ГИПОТЕЗА]
         ПБ   IDX626     , перейти на IDX626
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1353; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1354; ГИПОТЕЗА]
         И    B26022     , проверить B26022
+* CODE_AND; [bemsh/MBE2-Z0555.be:1355; ГИПОТЕЗА]
         НТЖ  B25705     , сравнить с B25705
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1356; ГИПОТЕЗА]
         ПО   MB4643     , перейти на MB4643
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1357; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1358; ГИПОТЕЗА]
         И    B26024     , проверить B26024
+* CODE_AND; [bemsh/MBE2-Z0555.be:1359; ГИПОТЕЗА]
         ПЕ   B24645     , перейти на B24645
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1360; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1361; ГИПОТЕЗА]
         ПБ   P4635     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1362; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1363; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1364; ГИПОТЕЗА]
         ЗП   B26310     , записать в B26310
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1365; ГИПОТЕЗА]
         ПБ   P4326     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1366; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1367; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1368; ГИПОТЕЗА]
         ЗП   B26310     , записать в B26310
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1369; ГИПОТЕЗА]
         ПБ   P4323     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1370; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1371; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1372; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1373; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1374; ГИПОТЕЗА]
         ПО   BR4656     , перейти на BR4656
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1375; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1376; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1377; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1378; ГИПОТЕЗА]
         ПВ   CA7331(М16), вызвать подпрограмму 7331 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1379; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1380; ГИПОТЕЗА]
         ПО   BR4707     , перейти на BR4707
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1381; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1382; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1383; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1384; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1385; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1386; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1387; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1388; ГИПОТЕЗА]
         ПО   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1389; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1390; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1391; ГИПОТЕЗА]
         ПО   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1392; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1393; ГИПОТЕЗА]
         ИЛИ  B25716     , проверить B25716
+* CODE_OR; [bemsh/MBE2-Z0555.be:1394; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1395; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1396; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1397; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1398; ГИПОТЕЗА]
         ПЕ   AM4671     , перейти на AM4671
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1399; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1400; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1401; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1402; ГИПОТЕЗА]
         ПО   AM4671     , перейти на AM4671
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1403; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1404; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1405; ГИПОТЕЗА]
         ПО   AM4671     , перейти на AM4671
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1406; ГИПОТЕЗА]
         ПБ   AM4675     , перейти на AM4675
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1407; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1408; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1409; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1410; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1411; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1412; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1413; ГИПОТЕЗА]
         ПБ   P4663     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1414; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1415; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1416; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1417; ГИПОТЕЗА]
         КОНД В'7317736500004323'    , лев call
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1419; ГИПОТЕЗА]
         НТЖ  B26025     , сравнить с B26025
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1420; ГИПОТЕЗА]
         ПО   CA4733     , перейти на CA4733
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1421; ГИПОТЕЗА]
         СЧ   B26317     , прочитать B26317
+* CODE_READ; [bemsh/MBE2-Z0555.be:1422; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1423; ГИПОТЕЗА]
         СЧ   B26307     , прочитать B26307
+* CODE_READ; [bemsh/MBE2-Z0555.be:1424; ГИПОТЕЗА]
         СЛЦ  B26016     , сложить с B26016
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1425; ГИПОТЕЗА]
         ЗП   B26307     , записать в B26307
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1426; ГИПОТЕЗА]
         И    B26026     , проверить B26026
+* CODE_AND; [bemsh/MBE2-Z0555.be:1427; ГИПОТЕЗА]
         ПЕ   CA4341     , перейти на CA4341
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1428; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1429; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1430; ГИПОТЕЗА]
         ПО   BR4647     , перейти на BR4647
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1431; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1432; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1433; ГИПОТЕЗА]
         ПЕ   BR4326     , перейти на BR4326
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1434; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1435; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:1436; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1437; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1438; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1439; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1440; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1441; ГИПОТЕЗА]
         ПВ   CA7575(М16), вызвать подпрограмму 7575 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1442; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1443; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1444; ГИПОТЕЗА]
         НТЖ  MB6001     , сравнить с MB6001
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1445; ГИПОТЕЗА]
         ПЕ   BR4723     , перейти на BR4723
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1446; ГИПОТЕЗА]
         СЧ   MB6152     , прочитать MB6152
+* CODE_READ; [bemsh/MBE2-Z0555.be:1447; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1448; ГИПОТЕЗА]
         НТЖ  BR6027     , сравнить с BR6027
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1449; ГИПОТЕЗА]
         ПО   BR4723     , перейти на BR4723
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1450; ГИПОТЕЗА]
         СЧ   B26030     , прочитать B26030
+* CODE_READ; [bemsh/MBE2-Z0555.be:1451; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1452; ГИПОТЕЗА]
         СЧ   B26031     , прочитать B26031
+* CODE_READ; [bemsh/MBE2-Z0555.be:1453; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1454; ГИПОТЕЗА]
         КОНД В'7317736500004323'    , лев call
         ПБ   P3241     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1456; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1457; ГИПОТЕЗА]
         СЧ   B26151     , прочитать B26151
+* CODE_READ; [bemsh/MBE2-Z0555.be:1458; ГИПОТЕЗА]
         ПО   BR3140     , перейти на BR3140
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1459; ГИПОТЕЗА]
         УИА  -18(М16)   , установить -18 в М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1460; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1461; ГИПОТЕЗА]
         СЧ   B26164(М16), прочитать B26164(М16)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1462; ГИПОТЕЗА]
         ЗП   B26141(М16), записать в B26141(М16)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1463; ГИПОТЕЗА]
         ЦИКЛ AM4725(М16), цикл AM4725(М16)
         УИА  B26142(М1) , установить B26142 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1465; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1466; ГИПОТЕЗА]
         ПВ   CA5464(М2) , вызвать подпрограмму 5464 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1467; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1468; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1469; ГИПОТЕЗА]
         МОДА MB5234    , установить режим MB5234
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1470; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1471; ГИПОТЕЗА]
         ПБ   P4707     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1472; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1473; ГИПОТЕЗА]
         СЧ   B26317     , прочитать B26317
+* CODE_READ; [bemsh/MBE2-Z0555.be:1474; ГИПОТЕЗА]
         ПЕ   BR4735     , перейти на BR4735
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1475; ГИПОТЕЗА]
         СЧИ  М3         , считать М3
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1476; ГИПОТЕЗА]
         ЗП   B26311     , записать в B26311
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1477; ГИПОТЕЗА]
         СЧ   B26317     , прочитать B26317
+* CODE_READ; [bemsh/MBE2-Z0555.be:1478; ГИПОТЕЗА]
         СЛЦ  B25677     , сложить с B25677
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1479; ГИПОТЕЗА]
         ЗП   B26317     , записать в B26317
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1480; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1481; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1482; ГИПОТЕЗА]
         ПО   BR4764     , перейти на BR4764
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1483; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1484; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1485; ГИПОТЕЗА]
         ПО   BR4764     , перейти на BR4764
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1486; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1487; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1488; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1489; ГИПОТЕЗА]
         ИЛИ  B26175     , проверить B26175
+* CODE_OR; [bemsh/MBE2-Z0555.be:1490; ГИПОТЕЗА]
         ИЛИ  BR6032     , проверить BR6032
+* CODE_OR; [bemsh/MBE2-Z0555.be:1491; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1492; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1493; ГИПОТЕЗА]
         УИА  0(М7)      , установить 0 в М7
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1494; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1495; ГИПОТЕЗА]
         УИ   М6         , уменьшить М6
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1496; ГИПОТЕЗА]
         СЛИА MB6542(М6), прибавить MB6542 к М6
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1497; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1498; ГИПОТЕЗА]
         ПВ   CA7474(М16), вызвать подпрограмму 7474 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1499; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1500; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1501; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1502; ГИПОТЕЗА]
         ПО   BR4754     , перейти на BR4754
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1503; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1504; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1505; ГИПОТЕЗА]
         ПЕ   CA4747     , перейти на CA4747
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1506; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1507; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1508; ГИПОТЕЗА]
         ЗП   B26331     , записать в B26331
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1509; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1510; ГИПОТЕЗА]
         ЗП   LIMI73     , записать в LIMI73
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1511; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1512; ГИПОТЕЗА]
         ПВ   CA7474(М16), вызвать подпрограмму 7474 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1513; ГИПОТЕЗА]
         СЛИА MB1236(М6) , прибавить MB1236 к М6
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1514; ГИПОТЕЗА]
         СЧИ  М6         , считать М6
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1515; ГИПОТЕЗА]
         ВЧ   B26033     , прочитать B26033
         ПО   BR4331     , перейти на BR4331
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1517; ГИПОТЕЗА]
         СЧИ  М6         , считать М6
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1518; ГИПОТЕЗА]
         ЗП   B26175     , записать в B26175
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1519; ГИПОТЕЗА]
         СЧ   B26331     , прочитать B26331
+* CODE_READ; [bemsh/MBE2-Z0555.be:1520; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1521; ГИПОТЕЗА]
         ПО   BR4647     , перейти на BR4647
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1522; ГИПОТЕЗА]
         ПБ   BR4707     , перейти на BR4707
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1523; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1524; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1525; ГИПОТЕЗА]
         И    B25700     , проверить B25700
+* CODE_AND; [bemsh/MBE2-Z0555.be:1526; ГИПОТЕЗА]
         ИЛИ  B26034     , проверить B26034
+* CODE_OR; [bemsh/MBE2-Z0555.be:1527; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1528; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1529; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1530; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1531; ГИПОТЕЗА]
         ПО   BR4647     , перейти на BR4647
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1532; ГИПОТЕЗА]
         ПБ   BR4707     , перейти на BR4707
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1533; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1534; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:1535; ГИПОТЕЗА]
         ПО   BR4336     , перейти на BR4336
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1536; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1537; ГИПОТЕЗА]
         ЗП   B26076     , записать в B26076
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1538; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1539; ГИПОТЕЗА]
         СЛЦ  B26035     , сложить с B26035
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1540; ГИПОТЕЗА]
         ЗП   B26313     , записать в B26313
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1541; ГИПОТЕЗА]
         СЧ   B26307     , прочитать B26307
+* CODE_READ; [bemsh/MBE2-Z0555.be:1542; ГИПОТЕЗА]
         СДА  64+18      , сдвинуть на 64+18
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1543; ГИПОТЕЗА]
         ЗП   B26325     , записать в B26325
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1544; ГИПОТЕЗА]
         СЧ   B26036     , прочитать B26036
+* CODE_READ; [bemsh/MBE2-Z0555.be:1545; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1546; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1547; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1548; ГИПОТЕЗА]
         ПВ   CA7553(М13), вызвать подпрограмму 7553 через М13
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1549; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:1550; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:1551; ГИПОТЕЗА]
         ЗП   B26126     , записать в B26126
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1552; ГИПОТЕЗА]
         УИА  B26117(М1) , установить B26117 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1553; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1554; ГИПОТЕЗА]
         ПВ   CA5600(М2) , вызвать подпрограмму 5600 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1555; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1556; ГИПОТЕЗА]
         ПВ   CA7575(М16), вызвать подпрограмму 7575 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1557; ГИПОТЕЗА]
         СЧ   B26037     , прочитать B26037
+* CODE_READ; [bemsh/MBE2-Z0555.be:1558; ГИПОТЕЗА]
         ИЛИ  B26336     , проверить B26336
+* CODE_OR; [bemsh/MBE2-Z0555.be:1559; ГИПОТЕЗА]
         ЗП   B26336     , записать в B26336
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1560; ГИПОТЕЗА]
         СЧИ  М4         , считать М4
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1561; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1562; ГИПОТЕЗА]
         УИА  B21072(М17), установить B21072 в М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1563; ГИПОТЕЗА]
         СЛИА 2(М17)     , прибавить 2 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1564; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1565; ГИПОТЕЗА]
         И    BR5670     , проверить BR5670
+* CODE_AND; [bemsh/MBE2-Z0555.be:1566; ГИПОТЕЗА]
         НТЖ  B25671     , сравнить с B25671
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1567; ГИПОТЕЗА]
         ПЕ   CA5014     , перейти на CA5014
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1568; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1569; ГИПОТЕЗА]
         И    B25672     , проверить B25672
+* CODE_AND; [bemsh/MBE2-Z0555.be:1570; ГИПОТЕЗА]
         ЗП   MB7777(М17), записать в MB7777(М17)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1571; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1572; ГИПОТЕЗА]
         ВЧ   B26323     , прочитать B26323
         ПЕ   B25010     , перейти на B25010
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1574; ГИПОТЕЗА]
         СЧ   B26317     , прочитать B26317
+* CODE_READ; [bemsh/MBE2-Z0555.be:1575; ГИПОТЕЗА]
         И    CA6040     , проверить CA6040
+* CODE_AND; [bemsh/MBE2-Z0555.be:1576; ГИПОТЕЗА]
         ПО   B25106     , перейти на B25106
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1577; ГИПОТЕЗА]
         ВЧ   B25677     , прочитать B25677
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1579; ГИПОТЕЗА]
         СЧ   B26311     , прочитать B26311
+* CODE_READ; [bemsh/MBE2-Z0555.be:1580; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1581; ГИПОТЕЗА]
         СЛИА -1(М17)    , прибавить -1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1582; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1583; ГИПОТЕЗА]
         ИЛИ  B26317     , проверить B26317
+* CODE_OR; [bemsh/MBE2-Z0555.be:1584; ГИПОТЕЗА]
         МОД  B26325     , установить режим B26325
         МОДА MB4004    , установить режим MB4004
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1586; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1587; ГИПОТЕЗА]
         МОДА MB4603(М17), установить режим MB4603(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1588; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1589; ГИПОТЕЗА]
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1590; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1591; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1592; ГИПОТЕЗА]
         ПЕ   BR5031     , перейти на BR5031
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1593; ГИПОТЕЗА]
         СЧ   B26324     , прочитать B26324
+* CODE_READ; [bemsh/MBE2-Z0555.be:1594; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1595; ГИПОТЕЗА]
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1596; ГИПОТЕЗА]
         ПБ   BR5026     , перейти на BR5026
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1597; ГИПОТЕЗА]
         СЧ   B26324     , прочитать B26324
+* CODE_READ; [bemsh/MBE2-Z0555.be:1598; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1599; ГИПОТЕЗА]
         МОД  B26175     , установить режим B26175
         МОДА B24000    , установить режим B24000
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1601; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1602; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1603; ГИПОТЕЗА]
         ВЧ   B26033     , прочитать B26033
         ПО   BR4331     , перейти на BR4331
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1605; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1606; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1607; ГИПОТЕЗА]
         ЗП   B26175     , записать в B26175
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1608; ГИПОТЕЗА]
         СЛИА 1(М17)     , прибавить 1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1609; ГИПОТЕЗА]
         СЧ   B26323     , прочитать B26323
+* CODE_READ; [bemsh/MBE2-Z0555.be:1610; ГИПОТЕЗА]
         ВЧ   B25677     , прочитать B25677
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1612; ГИПОТЕЗА]
         ПО   MB5024     , перейти на MB5024
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1613; ГИПОТЕЗА]
         СЧИ  М3         , считать М3
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1614; ГИПОТЕЗА]
         ВЧОБ CA6015     , прочитать CA6015
+* CODE_SUB_REV; [bemsh/MBE2-Z0555.be:1615; ГИПОТЕЗА]
         ЗП   B26306     , записать в B26306
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1616; ГИПОТЕЗА]
         УИА  AM434(М17) , установить AM434 в М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1617; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1618; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1619; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1620; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1621; ГИПОТЕЗА]
         МОДА B24000(М3), установить режим B24000(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1622; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1623; ГИПОТЕЗА]
         СЛИА 1(М3)      , прибавить 1 к М3
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1624; ГИПОТЕЗА]
         СЛИА 1(М17)     , прибавить 1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1625; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1626; ГИПОТЕЗА]
         НТЖ  B26323     , сравнить с B26323
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1627; ГИПОТЕЗА]
         ПЕ   CA5044     , перейти на CA5044
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1628; ГИПОТЕЗА]
         СЧ   B26325     , прочитать B26325
+* CODE_READ; [bemsh/MBE2-Z0555.be:1629; ГИПОТЕЗА]
         СЛЦ  BR5765     , сложить с BR5765
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1630; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1631; ГИПОТЕЗА]
         МОДА MB3773(М17), установить режим MB3773(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1632; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1633; ГИПОТЕЗА]
         И    CA6041     , проверить CA6041
+* CODE_AND; [bemsh/MBE2-Z0555.be:1634; ГИПОТЕЗА]
         ВЧ   B26306     , прочитать B26306
         ПЕ   BR5060     , перейти на BR5060
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1636; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1637; ГИПОТЕЗА]
         МОДА MB3773(М17), установить режим MB3773(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1638; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1639; ГИПОТЕЗА]
         И    BR5721     , проверить BR5721
+* CODE_AND; [bemsh/MBE2-Z0555.be:1640; ГИПОТЕЗА]
         ИЛИ  B26323     , проверить B26323
+* CODE_OR; [bemsh/MBE2-Z0555.be:1641; ГИПОТЕЗА]
         МОДА MB3773(М17), установить режим MB3773(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1642; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1643; ГИПОТЕЗА]
         СЧИ  М3         , считать М3
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1644; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1645; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1646; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1647; ГИПОТЕЗА]
         И    B26042     , проверить B26042
+* CODE_AND; [bemsh/MBE2-Z0555.be:1648; ГИПОТЕЗА]
         НТЖ  B25675     , сравнить с B25675
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1649; ГИПОТЕЗА]
         ПЕ   MB5072     , перейти на MB5072
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1650; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1651; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1652; ГИПОТЕЗА]
         И    B26043     , проверить B26043
+* CODE_AND; [bemsh/MBE2-Z0555.be:1653; ГИПОТЕЗА]
         ВЧ   CA6015     , прочитать CA6015
         ПЕ   MB5072     , перейти на MB5072
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1655; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1656; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1657; ГИПОТЕЗА]
         И    BR6044     , проверить BR6044
+* CODE_AND; [bemsh/MBE2-Z0555.be:1658; ГИПОТЕЗА]
         ИЛИ  B26306     , проверить B26306
+* CODE_OR; [bemsh/MBE2-Z0555.be:1659; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1660; ГИПОТЕЗА]
         ВЧОБ           , нулевое слово (забел)
+* CODE_SUB_REV; [bemsh/MBE2-Z0555.be:1661; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1662; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1663; ГИПОТЕЗА]
         СЛИА 1(М17)     , прибавить 1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1664; ГИПОТЕЗА]
         СЧИ  М17        , считать М17
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1665; ГИПОТЕЗА]
         НТЖ  B26323     , сравнить с B26323
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1666; ГИПОТЕЗА]
         ПЕ   BR5061     , перейти на BR5061
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1667; ГИПОТЕЗА]
         СЧИ  М3         , считать М3
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1668; ГИПОТЕЗА]
         ВЧ   B26325     , прочитать B26325
         ВЧ   B25626     , прочитать B25626
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1671; ГИПОТЕЗА]
         СЧ   B26300     , прочитать B26300
+* CODE_READ; [bemsh/MBE2-Z0555.be:1672; ГИПОТЕЗА]
         СДА  64-24      , сдвинуть на 64-24
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1673; ГИПОТЕЗА]
         ИЛИ  B26323     , проверить B26323
+* CODE_OR; [bemsh/MBE2-Z0555.be:1674; ГИПОТЕЗА]
         МОД  B26325     , установить режим B26325
         МОДА B24003    , установить режим B24003
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1676; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1677; ГИПОТЕЗА]
         СЧ   B25667     , прочитать B25667
+* CODE_READ; [bemsh/MBE2-Z0555.be:1678; ГИПОТЕЗА]
         СЛЦ  B26325     , сложить с B26325
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1679; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1680; ГИПОТЕЗА]
         ЗП   B26165     , записать в B26165
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1681; ГИПОТЕЗА]
         УИА  B26165(М1) , установить B26165 в М1
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1682; ГИПОТЕЗА]
         ПВ   CA5541(М2) , вызвать подпрограмму 5541 через М2
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1683; ГИПОТЕЗА]
         СЧ   BR6045     , прочитать BR6045
+* CODE_READ; [bemsh/MBE2-Z0555.be:1684; ГИПОТЕЗА]
         ЗП   B26165     , записать в B26165
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1685; ГИПОТЕЗА]
         ПБ   P3241     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1686; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1687; ГИПОТЕЗА]
         СЧ   B26317     , прочитать B26317
+* CODE_READ; [bemsh/MBE2-Z0555.be:1688; ГИПОТЕЗА]
         МОД  B26325     , установить режим B26325
         МОДА MB4004    , установить режим MB4004
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1690; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1691; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1692; ГИПОТЕЗА]
         НТЖ  CA6015     , сравнить с CA6015
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1693; ГИПОТЕЗА]
         ПО   MB5074     , перейти на MB5074
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1694; ГИПОТЕЗА]
         ПБ   TAB041     , перейти на TAB041
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1695; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1696; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:1697; ГИПОТЕЗА]
         ПО   BR4336     , перейти на BR4336
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1698; ГИПОТЕЗА]
         СЧ   B26036     , прочитать B26036
+* CODE_READ; [bemsh/MBE2-Z0555.be:1699; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1700; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1701; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1702; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1703; ГИПОТЕЗА]
         СЧ   B26313     , прочитать B26313
+* CODE_READ; [bemsh/MBE2-Z0555.be:1704; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:1705; ГИПОТЕЗА]
         ПО   BR4336     , перейти на BR4336
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1706; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1707; ГИПОТЕЗА]
         НТЖ  BR5703     , сравнить с BR5703
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1708; ГИПОТЕЗА]
         ПО   BR5133     , перейти на BR5133
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1709; ГИПОТЕЗА]
         НТЖ  CA6046     , сравнить с CA6046
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1710; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1711; ГИПОТЕЗА]
         ПО   BR5137     , перейти на BR5137
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1712; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1713; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1714; ГИПОТЕЗА]
         ПО   BR5137     , перейти на BR5137
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1715; ГИПОТЕЗА]
         СЧ   B25626     , прочитать B25626
+* CODE_READ; [bemsh/MBE2-Z0555.be:1716; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1717; ГИПОТЕЗА]
         СДА  64-1       , сдвинуть на 64-1
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1718; ГИПОТЕЗА]
         СЛЦ  BR5136     , сложить с BR5136
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1719; ГИПОТЕЗА]
         УИА  0(М17)     , установить 0 в М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:1720; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1721; ГИПОТЕЗА]
         СЧ   AM6047     , прочитать AM6047
+* CODE_READ; [bemsh/MBE2-Z0555.be:1722; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1723; ГИПОТЕЗА]
         КОНД В'7317600000000003'    , лев call
         СЧ   B25747     , прочитать B25747
+* CODE_READ; [bemsh/MBE2-Z0555.be:1725; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1726; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1727; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1728; ГИПОТЕЗА]
         КОНД В'7317600000000003'    , лев call
         СЧ   BR6050     , прочитать BR6050
+* CODE_READ; [bemsh/MBE2-Z0555.be:1730; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1731; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1732; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1733; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1734; ГИПОТЕЗА]
         СЧ   MB324      , прочитать MB324
+* CODE_READ; [bemsh/MBE2-Z0555.be:1735; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1736; ГИПОТЕЗА]
         И    MB5635     , проверить MB5635
+* CODE_AND; [bemsh/MBE2-Z0555.be:1737; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1738; ГИПОТЕЗА]
         ВЧОБ BR5704     , прочитать BR5704
+* CODE_SUB_REV; [bemsh/MBE2-Z0555.be:1739; ГИПОТЕЗА]
         ПО   BR5143     , перейти на BR5143
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1740; ГИПОТЕЗА]
         СЧ   BR5704     , прочитать BR5704
+* CODE_READ; [bemsh/MBE2-Z0555.be:1741; ГИПОТЕЗА]
         ПБ   P5125     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1742; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1743; ГИПОТЕЗА]
         СЧ   B26323     , прочитать B26323
+* CODE_READ; [bemsh/MBE2-Z0555.be:1744; ГИПОТЕЗА]
         ПБ   CA5125     , перейти на CA5125
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1745; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1746; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1747; ГИПОТЕЗА]
         НТЖ  BR5754     , сравнить с BR5754
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1748; ГИПОТЕЗА]
         ПЕ   BR4343     , перейти на BR4343
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1749; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1750; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1751; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1752; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1753; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1754; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1755; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1756; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1757; ГИПОТЕЗА]
         ИЛИ  B25706     , проверить B25706
+* CODE_OR; [bemsh/MBE2-Z0555.be:1758; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1759; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1760; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1761; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1762; ГИПОТЕЗА]
         ПЕ   BR5161     , перейти на BR5161
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1763; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1764; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1765; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1766; ГИПОТЕЗА]
         ПО   BR5161     , перейти на BR5161
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1767; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1768; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1769; ГИПОТЕЗА]
         ПО   BR5161     , перейти на BR5161
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1770; ГИПОТЕЗА]
         ПБ   BR5165     , перейти на BR5165
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1771; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1772; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1773; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1774; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1775; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1776; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1777; ГИПОТЕЗА]
         ПБ   P5153     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1778; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1779; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1780; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1781; ГИПОТЕЗА]
         КОНД В'7317736500005170'    , лев call
         УИИ  М17(М3)    , увеличить М17(М3)
         СЛИА -1(М17)    , прибавить -1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1784; ГИПОТЕЗА]
         СЧ   B25661     , прочитать B25661
+* CODE_READ; [bemsh/MBE2-Z0555.be:1785; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1786; ГИПОТЕЗА]
         СЧ   B26051     , прочитать B26051
+* CODE_READ; [bemsh/MBE2-Z0555.be:1787; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1788; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1789; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1790; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1791; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1792; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1793; ГИПОТЕЗА]
         ПЕ   BR4342     , перейти на BR4342
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1794; ГИПОТЕЗА]
         КОНД В'7317625600100000'    , лев call
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1796; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1797; ГИПОТЕЗА]
         НТЖ  BR5754     , сравнить с BR5754
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1798; ГИПОТЕЗА]
         ПЕ   BR4343     , перейти на BR4343
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1799; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1800; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1801; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1802; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1803; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1804; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1805; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1806; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1807; ГИПОТЕЗА]
         ИЛИ  B25706     , проверить B25706
+* CODE_OR; [bemsh/MBE2-Z0555.be:1808; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1809; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1810; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1811; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1812; ГИПОТЕЗА]
         ПЕ   BR5213     , перейти на BR5213
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1813; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1814; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1815; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1816; ГИПОТЕЗА]
         ПО   BR5213     , перейти на BR5213
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1817; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1818; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1819; ГИПОТЕЗА]
         ПО   BR5213     , перейти на BR5213
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1820; ГИПОТЕЗА]
         ПБ   MB5217     , перейти на MB5217
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1821; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1822; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1823; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1824; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1825; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1826; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1827; ГИПОТЕЗА]
         ПБ   P5205     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1828; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1829; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1830; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1831; ГИПОТЕЗА]
         КОНД В'7317736500005222'    , лев call
         УИИ  М17(М3)    , увеличить М17(М3)
         СЛИА -1(М17)    , прибавить -1 к М17
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1834; ГИПОТЕЗА]
         СЧ   B25661     , прочитать B25661
+* CODE_READ; [bemsh/MBE2-Z0555.be:1835; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1836; ГИПОТЕЗА]
         СЧ   BR6052     , прочитать BR6052
+* CODE_READ; [bemsh/MBE2-Z0555.be:1837; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1838; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1839; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1840; ГИПОТЕЗА]
         КОНД В'7317625400200000'    , лев call
         СЧ   B26053     , прочитать B26053
+* CODE_READ; [bemsh/MBE2-Z0555.be:1842; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1843; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1844; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1845; ГИПОТЕЗА]
         СЧ   B25671     , прочитать B25671
+* CODE_READ; [bemsh/MBE2-Z0555.be:1846; ГИПОТЕЗА]
         ПБ   B25236     , перейти на B25236
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1847; ГИПОТЕЗА]
         СЧ   B26054     , прочитать B26054
+* CODE_READ; [bemsh/MBE2-Z0555.be:1848; ГИПОТЕЗА]
         ПБ   B25236     , перейти на B25236
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1849; ГИПОТЕЗА]
         СЧ   AM6055     , прочитать AM6055
+* CODE_READ; [bemsh/MBE2-Z0555.be:1850; ГИПОТЕЗА]
         ПБ   B25236     , перейти на B25236
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1851; ГИПОТЕЗА]
         СЧ   MB6056     , прочитать MB6056
+* CODE_READ; [bemsh/MBE2-Z0555.be:1852; ГИПОТЕЗА]
         ПБ   B25236     , перейти на B25236
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1853; ГИПОТЕЗА]
         СЧ   BR6057     , прочитать BR6057
+* CODE_READ; [bemsh/MBE2-Z0555.be:1854; ГИПОТЕЗА]
         ПБ   B25236     , перейти на B25236
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1855; ГИПОТЕЗА]
         СЧ   MB6060     , прочитать MB6060
+* CODE_READ; [bemsh/MBE2-Z0555.be:1856; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1857; ГИПОТЕЗА]
         ЗП   B26316     , записать в B26316
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1858; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1859; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1860; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1861; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1862; ГИПОТЕЗА]
         ПЕ   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1863; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1864; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1865; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1866; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1867; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1868; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1869; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1870; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1871; ГИПОТЕЗА]
         ИЛИ  B25716     , проверить B25716
+* CODE_OR; [bemsh/MBE2-Z0555.be:1872; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1873; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1874; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1875; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:1876; ГИПОТЕЗА]
         ПЕ   BR5254     , перейти на BR5254
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1877; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1878; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1879; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1880; ГИПОТЕЗА]
         ПО   BR5254     , перейти на BR5254
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1881; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1882; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1883; ГИПОТЕЗА]
         ПО   BR5254     , перейти на BR5254
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1884; ГИПОТЕЗА]
         ПБ   B25260     , перейти на B25260
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1885; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1886; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:1887; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1888; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:1889; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1890; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:1891; ГИПОТЕЗА]
         ПБ   P5246     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1892; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1893; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1894; ГИПОТЕЗА]
         ЗП   B26304     , записать в B26304
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1895; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1896; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1897; ГИПОТЕЗА]
         ПЕ   MB5271     , перейти на MB5271
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1898; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1899; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1900; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1901; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1902; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:1903; ГИПОТЕЗА]
         ПО   MB5273     , перейти на MB5273
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1904; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1905; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:1906; ГИПОТЕЗА]
         ПО   MB5273     , перейти на MB5273
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1907; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1908; ГИПОТЕЗА]
         НТЖ  B25722     , сравнить с B25722
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1909; ГИПОТЕЗА]
         ПЕ   BR4345     , перейти на BR4345
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1910; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:1911; ГИПОТЕЗА]
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:1912; ГИПОТЕЗА]
         И    B25705     , проверить B25705
+* CODE_AND; [bemsh/MBE2-Z0555.be:1913; ГИПОТЕЗА]
         ПЕ   B25336     , перейти на B25336
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1914; ГИПОТЕЗА]
         ПБ   MB5302     , перейти на MB5302
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1915; ГИПОТЕЗА]
         СЧ   B26304     , прочитать B26304
+* CODE_READ; [bemsh/MBE2-Z0555.be:1916; ГИПОТЕЗА]
         СДА  64-1       , сдвинуть на 64-1
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1917; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1918; ГИПОТЕЗА]
         СДА  64-2       , сдвинуть на 64-2
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1919; ГИПОТЕЗА]
         СЛЦ  B26323     , сложить с B26323
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1920; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1921; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1922; ГИПОТЕЗА]
         И    MB5635     , проверить MB5635
+* CODE_AND; [bemsh/MBE2-Z0555.be:1923; ГИПОТЕЗА]
         СЛЦ  B26323     , сложить с B26323
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1924; ГИПОТЕЗА]
         ЗП   B26304     , записать в B26304
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1925; ГИПОТЕЗА]
         И    MB6061     , проверить MB6061
+* CODE_AND; [bemsh/MBE2-Z0555.be:1926; ГИПОТЕЗА]
         ПЕ   BR4345     , перейти на BR4345
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1927; ГИПОТЕЗА]
         ПБ   P5263     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1928; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1929; ГИПОТЕЗА]
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:1930; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1931; ГИПОТЕЗА]
         КОНД В'7317736500004323'    , лев call
         СЧ   B26304     , прочитать B26304
+* CODE_READ; [bemsh/MBE2-Z0555.be:1933; ГИПОТЕЗА]
         ПО   MB5325     , перейти на MB5325
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1934; ГИПОТЕЗА]
         СДА  64-15      , сдвинуть на 64-15
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1935; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1936; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1937; ГИПОТЕЗА]
         ИЛИ  B26323     , проверить B26323
+* CODE_OR; [bemsh/MBE2-Z0555.be:1938; ГИПОТЕЗА]
         ИЛИ  B26062     , проверить B26062
+* CODE_OR; [bemsh/MBE2-Z0555.be:1939; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1940; ГИПОТЕЗА]
         ИЛИ            , нулевое слово (забел)
+* CODE_OR; [bemsh/MBE2-Z0555.be:1941; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1942; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1943; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1944; ГИПОТЕЗА]
         СЛЦ  B26304     , сложить с B26304
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1945; ГИПОТЕЗА]
         ЗП   B26304     , записать в B26304
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1946; ГИПОТЕЗА]
         ВЧ   B26033     , прочитать B26033
         ПО   BR4331     , перейти на BR4331
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1948; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1949; ГИПОТЕЗА]
         МОД  B26175     , установить режим B26175
         МОДА B24000    , установить режим B24000
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1951; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1952; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1953; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1954; ГИПОТЕЗА]
         ЗП   B26175     , записать в B26175
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1955; ГИПОТЕЗА]
         НТЖ  B26304     , сравнить с B26304
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1956; ГИПОТЕЗА]
         ПЕ   MB5314     , перейти на MB5314
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1957; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1958; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1959; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:1960; ГИПОТЕЗА]
         ПО   CA5237     , перейти на CA5237
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1961; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:1962; ГИПОТЕЗА]
         И    B25701     , проверить B25701
+* CODE_AND; [bemsh/MBE2-Z0555.be:1963; ГИПОТЕЗА]
         ПО   BR4315     , перейти на BR4315
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1964; ГИПОТЕЗА]
         ПБ   P4346     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1965; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1966; ГИПОТЕЗА]
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:1967; ГИПОТЕЗА]
         ИЛИ  B26175     , проверить B26175
+* CODE_OR; [bemsh/MBE2-Z0555.be:1968; ГИПОТЕЗА]
         ИЛИ  B26062     , проверить B26062
+* CODE_OR; [bemsh/MBE2-Z0555.be:1969; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1970; ГИПОТЕЗА]
         ИЛИ            , нулевое слово (забел)
+* CODE_OR; [bemsh/MBE2-Z0555.be:1971; ГИПОТЕЗА]
         МОДА MB3773(М3), установить режим MB3773(М3)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1972; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1973; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:1974; ГИПОТЕЗА]
         МОД  B26175     , установить режим B26175
         МОДА B24000    , установить режим B24000
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1976; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1977; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1978; ГИПОТЕЗА]
         ВЧ   B26033     , прочитать B26033
         ПО   BR4331     , перейти на BR4331
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:1980; ГИПОТЕЗА]
         СЧ   B26175     , прочитать B26175
+* CODE_READ; [bemsh/MBE2-Z0555.be:1981; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1982; ГИПОТЕЗА]
         ЗП   B26175     , записать в B26175
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1983; ГИПОТЕЗА]
         ПБ   MB5321     , перейти на MB5321
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1984; ГИПОТЕЗА]
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:1985; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1986; ГИПОТЕЗА]
         КОНД В'7317741400005346'    , лев call
         СЛИА -1(М4)     , прибавить -1 к М4
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1988; ГИПОТЕЗА]
         СЧ   B26304     , прочитать B26304
+* CODE_READ; [bemsh/MBE2-Z0555.be:1989; ГИПОТЕЗА]
         СДА  64-15      , сдвинуть на 64-15
+* CODE_MASK; [bemsh/MBE2-Z0555.be:1990; ГИПОТЕЗА]
         ИЛИ  B26341     , проверить B26341
+* CODE_OR; [bemsh/MBE2-Z0555.be:1991; ГИПОТЕЗА]
         ИЛИ  MB7776(М4) , проверить MB7776(М4)
+* CODE_OR; [bemsh/MBE2-Z0555.be:1992; ГИПОТЕЗА]
         ЗП   MB7776(М4) , записать в MB7776(М4)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1993; ГИПОТЕЗА]
         СЧИ  М4         , считать М4
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:1994; ГИПОТЕЗА]
         СЛЦ  CA6063     , сложить с CA6063
+* CODE_ADD; [bemsh/MBE2-Z0555.be:1995; ГИПОТЕЗА]
         ЗП   B26341     , записать в B26341
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:1996; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:1997; ГИПОТЕЗА]
         СЛИА 1(М4)      , прибавить 1 к М4
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:1998; ГИПОТЕЗА]
         ПБ   MB5321     , перейти на MB5321
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:1999; ГИПОТЕЗА]
         СЧ   B26304     , прочитать B26304
+* CODE_READ; [bemsh/MBE2-Z0555.be:2000; ГИПОТЕЗА]
         СДА  64-15      , сдвинуть на 64-15
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2001; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2002; ГИПОТЕЗА]
         ИЛИ  B26316     , проверить B26316
+* CODE_OR; [bemsh/MBE2-Z0555.be:2003; ГИПОТЕЗА]
         НТЖ  MB7777(М17), сравнить с MB7777(М17)
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2004; ГИПОТЕЗА]
         И    MB6064     , проверить MB6064
+* CODE_AND; [bemsh/MBE2-Z0555.be:2005; ГИПОТЕЗА]
         ПЕ   MB5356     , перейти на MB5356
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2006; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2007; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2008; ГИПОТЕЗА]
         И    B25705     , проверить B25705
+* CODE_AND; [bemsh/MBE2-Z0555.be:2009; ГИПОТЕЗА]
         ПЕ   B24323     , перейти на B24323
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2010; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2011; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:2012; ГИПОТЕЗА]
         ЗП   MB7777(М17), записать в MB7777(М17)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2013; ГИПОТЕЗА]
         ПБ   P5321     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2014; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2015; ГИПОТЕЗА]
         СЧ   B26304     , прочитать B26304
+* CODE_READ; [bemsh/MBE2-Z0555.be:2016; ГИПОТЕЗА]
         ПО   BR4347     , перейти на BR4347
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2017; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2018; ГИПОТЕЗА]
         И    MB6065     , проверить MB6065
+* CODE_AND; [bemsh/MBE2-Z0555.be:2019; ГИПОТЕЗА]
         ПО   BR4347     , перейти на BR4347
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2020; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2021; ГИПОТЕЗА]
         НТЖ  B26316     , сравнить с B26316
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2022; ГИПОТЕЗА]
         И    MB6066     , проверить MB6066
+* CODE_AND; [bemsh/MBE2-Z0555.be:2023; ГИПОТЕЗА]
         ПЕ   BR4347     , перейти на BR4347
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2024; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2025; ГИПОТЕЗА]
         И    MB6067     , проверить MB6067
+* CODE_AND; [bemsh/MBE2-Z0555.be:2026; ГИПОТЕЗА]
         ИЛИ  B26323     , проверить B26323
+* CODE_OR; [bemsh/MBE2-Z0555.be:2027; ГИПОТЕЗА]
         ЗП   MB7777(М17), записать в MB7777(М17)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2028; ГИПОТЕЗА]
         ПБ   MB5352     , перейти на MB5352
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2029; ГИПОТЕЗА]
         СЧ   B26054     , прочитать B26054
+* CODE_READ; [bemsh/MBE2-Z0555.be:2030; ГИПОТЕЗА]
         ПБ   MB5370     , перейти на MB5370
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2031; ГИПОТЕЗА]
         СЧ   MB6056     , прочитать MB6056
+* CODE_READ; [bemsh/MBE2-Z0555.be:2032; ГИПОТЕЗА]
         ПБ   MB5370     , перейти на MB5370
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2033; ГИПОТЕЗА]
         СЧ   MB6070     , прочитать MB6070
+* CODE_READ; [bemsh/MBE2-Z0555.be:2034; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2035; ГИПОТЕЗА]
         ЗП   B26316     , записать в B26316
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2036; ГИПОТЕЗА]
         СЧ   B26276     , прочитать B26276
+* CODE_READ; [bemsh/MBE2-Z0555.be:2037; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2038; ГИПОТЕЗА]
         СЧ   B26312     , прочитать B26312
+* CODE_READ; [bemsh/MBE2-Z0555.be:2039; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:2040; ГИПОТЕЗА]
         ПО   B25406     , перейти на B25406
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2041; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2042; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2043; ГИПОТЕЗА]
         НТЖ  B26316     , сравнить с B26316
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2044; ГИПОТЕЗА]
         И    MB6066     , проверить MB6066
+* CODE_AND; [bemsh/MBE2-Z0555.be:2045; ГИПОТЕЗА]
         ПЕ   BR4350     , перейти на BR4350
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2046; ГИПОТЕЗА]
         СЧ   B26303     , прочитать B26303
+* CODE_READ; [bemsh/MBE2-Z0555.be:2047; ГИПОТЕЗА]
         И    B25720     , проверить B25720
+* CODE_AND; [bemsh/MBE2-Z0555.be:2048; ГИПОТЕЗА]
         ПЕ   B25403     , перейти на B25403
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2049; ГИПОТЕЗА]
         СЧ   B26312     , прочитать B26312
+* CODE_READ; [bemsh/MBE2-Z0555.be:2050; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2051; ГИПОТЕЗА]
         КОНД В'7317625400200000'    , лев call
         СЧ   MB6071     , прочитать MB6071
+* CODE_READ; [bemsh/MBE2-Z0555.be:2053; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2054; ГИПОТЕЗА]
         ПБ   P4270     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2055; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2056; ГИПОТЕЗА]
         МОДА B25633(М10), установить режим B25633(М10)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2057; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2058; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2059; ГИПОТЕЗА]
         МОДА B25633(М10), установить режим B25633(М10)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2060; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2061; ГИПОТЕЗА]
         ПБ   B25400     , перейти на B25400
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2062; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2063; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2064; ГИПОТЕЗА]
         ПБ   P5374     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2065; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2066; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2067; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2068; ГИПОТЕЗА]
         ПБ   P5421     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2069; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2070; ГИПОТЕЗА]
         МОДА B25633(М10), установить режим B25633(М10)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2071; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2072; ГИПОТЕЗА]
         СЛЦ  B25626     , сложить с B25626
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2073; ГИПОТЕЗА]
         МОДА B25633(М10), установить режим B25633(М10)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2074; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2075; ГИПОТЕЗА]
         ПБ   B25425     , перейти на B25425
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2076; ГИПОТЕЗА]
         СЧ   MB6072     , прочитать MB6072
+* CODE_READ; [bemsh/MBE2-Z0555.be:2077; ГИПОТЕЗА]
         ЗП   B26316     , записать в B26316
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2078; ГИПОТЕЗА]
         СЧ   B26276     , прочитать B26276
+* CODE_READ; [bemsh/MBE2-Z0555.be:2079; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2080; ГИПОТЕЗА]
         СЧ   B26312     , прочитать B26312
+* CODE_READ; [bemsh/MBE2-Z0555.be:2081; ГИПОТЕЗА]
         И    B25663     , проверить B25663
+* CODE_AND; [bemsh/MBE2-Z0555.be:2082; ГИПОТЕЗА]
         ПО   BR5410     , перейти на BR5410
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2083; ГИПОТЕЗА]
         СЧ   MB7777(М17), прочитать MB7777(М17)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2084; ГИПОТЕЗА]
         НТЖ  B26054     , сравнить с B26054
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2085; ГИПОТЕЗА]
         И    MB6066     , проверить MB6066
+* CODE_AND; [bemsh/MBE2-Z0555.be:2086; ГИПОТЕЗА]
         ПЕ   BR4350     , перейти на BR4350
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2087; ГИПОТЕЗА]
         СЧ   B26303     , прочитать B26303
+* CODE_READ; [bemsh/MBE2-Z0555.be:2088; ГИПОТЕЗА]
         И    B25720     , проверить B25720
+* CODE_AND; [bemsh/MBE2-Z0555.be:2089; ГИПОТЕЗА]
         ПЕ   B25412     , перейти на B25412
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2090; ГИПОТЕЗА]
         СЧ   B26312     , прочитать B26312
+* CODE_READ; [bemsh/MBE2-Z0555.be:2091; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2092; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2093; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2094; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2095; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2096; ГИПОТЕЗА]
         НТЖ  BR5702     , сравнить с BR5702
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2097; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2098; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:2099; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:2100; ГИПОТЕЗА]
         ПО   BR4344     , перейти на BR4344
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2101; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:2102; ГИПОТЕЗА]
         ИЛИ  B25716     , проверить B25716
+* CODE_OR; [bemsh/MBE2-Z0555.be:2103; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2104; ГИПОТЕЗА]
         ЗП   B26174     , записать в B26174
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2105; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2106; ГИПОТЕЗА]
         И    B25627     , проверить B25627
+* CODE_AND; [bemsh/MBE2-Z0555.be:2107; ГИПОТЕЗА]
         ПЕ   MB5441     , перейти на MB5441
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2108; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:2109; ГИПОТЕЗА]
         НТЖ  BR5707     , сравнить с BR5707
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2110; ГИПОТЕЗА]
         И    B25710     , проверить B25710
+* CODE_AND; [bemsh/MBE2-Z0555.be:2111; ГИПОТЕЗА]
         ПО   MB5441     , перейти на MB5441
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2112; ГИПОТЕЗА]
         НТЖ  BR5711     , сравнить с BR5711
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2113; ГИПОТЕЗА]
         И    B25712     , проверить B25712
+* CODE_AND; [bemsh/MBE2-Z0555.be:2114; ГИПОТЕЗА]
         ПО   MB5441     , перейти на MB5441
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2115; ГИПОТЕЗА]
         ПБ   B25445     , перейти на B25445
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2116; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:2117; ГИПОТЕЗА]
         И    B25713     , проверить B25713
+* CODE_AND; [bemsh/MBE2-Z0555.be:2118; ГИПОТЕЗА]
         ПЕ   BR4322     , перейти на BR4322
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2119; ГИПОТЕЗА]
         СЧ   B26174     , прочитать B26174
+* CODE_READ; [bemsh/MBE2-Z0555.be:2120; ГИПОТЕЗА]
         СДА  64-8       , сдвинуть на 64-8
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2121; ГИПОТЕЗА]
         ИЛИ  LIMI73     , проверить LIMI73
+* CODE_OR; [bemsh/MBE2-Z0555.be:2122; ГИПОТЕЗА]
         ПБ   P5433     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2123; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2124; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2125; ГИПОТЕЗА]
         ПВ   CA7454(М16), вызвать подпрограмму 7454 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2126; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2127; ГИПОТЕЗА]
         ПВ   CA7503(М16), вызвать подпрограмму 7503 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2128; ГИПОТЕЗА]
         СЧ   LIMI73     , прочитать LIMI73
+* CODE_READ; [bemsh/MBE2-Z0555.be:2129; ГИПОТЕЗА]
         НТЖ  BR5723     , сравнить с BR5723
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2130; ГИПОТЕЗА]
         ПЕ   BR4346     , перейти на BR4346
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2131; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2132; ГИПОТЕЗА]
         КОНД В'7317625200400000'    , лев call
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2134; ГИПОТЕЗА]
         ПВ   CA7316(М16), вызвать подпрограмму 7316 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2135; ГИПОТЕЗА]
         НТЖ  BR5717     , сравнить с BR5717
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2136; ГИПОТЕЗА]
         ПЕ   BR4342     , перейти на BR4342
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2137; ГИПОТЕЗА]
         КОНД В'7317625600400000'    , лев call
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2139; ГИПОТЕЗА]
         ЗП   B26337     , записать в B26337
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2140; ГИПОТЕЗА]
         КОНД В'7317625200400000'    , лев call
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:2142; ГИПОТЕЗА]
         СЛЦ  B26337     , сложить с B26337
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2143; ГИПОТЕЗА]
         ЗП   B26316     , записать в B26316
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2144; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2145; ГИПОТЕЗА]
         КОНД В'7317625200100000'    , лев call
         СЧ   B26316     , прочитать B26316
+* CODE_READ; [bemsh/MBE2-Z0555.be:2147; ГИПОТЕЗА]
         ПВ   CA7520(М16), вызвать подпрограмму 7520 через М16
+* CODE_CALL; [bemsh/MBE2-Z0555.be:2148; ГИПОТЕЗА]
         ПБ   P5144     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2149; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2150; ГИПОТЕЗА]
         СЧ   3(М1)      , прочитать 3(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2151; ГИПОТЕЗА]
         И    MB5643     , проверить MB5643
+* CODE_AND; [bemsh/MBE2-Z0555.be:2152; ГИПОТЕЗА]
         ВЧОБ 2(М1)      , прочитать 2(М1)
+* CODE_SUB_REV; [bemsh/MBE2-Z0555.be:2153; ГИПОТЕЗА]
         ПЕ   BR5470     , перейти на BR5470
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2154; ГИПОТЕЗА]
         СЧ   3(М1)      , прочитать 3(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2155; ГИПОТЕЗА]
         СДА  64+24      , сдвинуть на 64+24
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2156; ГИПОТЕЗА]
         ЗП   B26334     , записать в B26334
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2157; ГИПОТЕЗА]
         ПБ   BR5531     , перейти на BR5531
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2158; ГИПОТЕЗА]
         СЧИ  М2         , считать М2
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:2159; ГИПОТЕЗА]
         ЗП   B26334     , записать в B26334
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2160; ГИПОТЕЗА]
         СЧ   2(М1)      , прочитать 2(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2161; ГИПОТЕЗА]
         НТЖ  4(М1)      , сравнить с 4(М1)
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2162; ГИПОТЕЗА]
         И    BR6006     , проверить BR6006
+* CODE_AND; [bemsh/MBE2-Z0555.be:2163; ГИПОТЕЗА]
         ПО   BR5510     , перейти на BR5510
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2164; ГИПОТЕЗА]
         СЧ   6(М1)      , прочитать 6(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2165; ГИПОТЕЗА]
         ПО   B25501     , перейти на B25501
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2166; ГИПОТЕЗА]
         СЧ   4(М1)      , прочитать 4(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2167; ГИПОТЕЗА]
         СБР  BR6006     , сбросить BR6006
         РЗБ  B26007     , разобрать B26007
+* CODE_SPLIT; [bemsh/MBE2-Z0555.be:2169; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2170; ГИПОТЕЗА]
         СЧ   1(М1)      , прочитать 1(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2171; ГИПОТЕЗА]
         СДА  64-20      , сдвинуть на 64-20
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2172; ГИПОТЕЗА]
         И    B26010     , проверить B26010
+* CODE_AND; [bemsh/MBE2-Z0555.be:2173; ГИПОТЕЗА]
         ИЛИ  B26333     , проверить B26333
+* CODE_OR; [bemsh/MBE2-Z0555.be:2174; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2175; ГИПОТЕЗА]
         Э70  B26333     , останов
+* CODE_FETCH_ADDR; [bemsh/MBE2-Z0555.be:2176; ГИПОТЕЗА]
         СЧ   2(М1)      , прочитать 2(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2177; ГИПОТЕЗА]
         ЗП   4(М1)      , записать в 4(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2178; ГИПОТЕЗА]
         СБР  BR6006     , сбросить BR6006
         РЗБ  B26007     , разобрать B26007
+* CODE_SPLIT; [bemsh/MBE2-Z0555.be:2180; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:2181; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2182; ГИПОТЕЗА]
         СЧ   1(М1)      , прочитать 1(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2183; ГИПОТЕЗА]
         СДА  64-20      , сдвинуть на 64-20
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2184; ГИПОТЕЗА]
         И    B26010     , проверить B26010
+* CODE_AND; [bemsh/MBE2-Z0555.be:2185; ГИПОТЕЗА]
         ИЛИ  B26333     , проверить B26333
+* CODE_OR; [bemsh/MBE2-Z0555.be:2186; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2187; ГИПОТЕЗА]
         Э70  B26333     , останов
+* CODE_FETCH_ADDR; [bemsh/MBE2-Z0555.be:2188; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2189; ГИПОТЕЗА]
         ЗП   6(М1)      , записать в 6(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2190; ГИПОТЕЗА]
         УИА  1(М2)      , установить 1 в М2
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2191; ГИПОТЕЗА]
         СЧ   2(М1)      , прочитать 2(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2192; ГИПОТЕЗА]
         И    B25673     , проверить B25673
+* CODE_AND; [bemsh/MBE2-Z0555.be:2193; ГИПОТЕЗА]
         ЗП   B26335     , записать в B26335
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2194; ГИПОТЕЗА]
         УИ   М16        , уменьшить М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2195; ГИПОТЕЗА]
         МОД  1(М1)      , установить режим 1(М1)
         СЧ   (М16)      , прочитать М16
+* CODE_READ; [bemsh/MBE2-Z0555.be:2197; ГИПОТЕЗА]
         И    B25673     , проверить B25673
+* CODE_AND; [bemsh/MBE2-Z0555.be:2198; ГИПОТЕЗА]
         СЛЦ  B26335     , сложить с B26335
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2199; ГИПОТЕЗА]
         ЗП   B26335     , записать в B26335
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2200; ГИПОТЕЗА]
         МОД  1(М1)      , установить режим 1(М1)
         СЧ   (М16)      , прочитать М16
+* CODE_READ; [bemsh/MBE2-Z0555.be:2202; ГИПОТЕЗА]
         МОД  (М1)       , установить режим М1
         ЗП   -1(М2)     , записать в -1(М2)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2204; ГИПОТЕЗА]
         СЛИА 1(М16)     , прибавить 1 к М16
+* CODE_MERGE; [bemsh/MBE2-Z0555.be:2205; ГИПОТЕЗА]
         СЧИ  М16        , считать М16
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:2206; ГИПОТЕЗА]
         НТЖ  B26335     , сравнить с B26335
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2207; ГИПОТЕЗА]
         ПО   B25522     , перейти на B25522
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2208; ГИПОТЕЗА]
         ЦИКЛ BR5515(М2) , цикл BR5515(М2)
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2210; ГИПОТЕЗА]
         СЧ   2(М1)      , прочитать 2(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2211; ГИПОТЕЗА]
         ЗП   5(М1)      , записать в 5(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2212; ГИПОТЕЗА]
         И    MB6061     , проверить MB6061
+* CODE_AND; [bemsh/MBE2-Z0555.be:2213; ГИПОТЕЗА]
         СЛЦ  B26335     , сложить с B26335
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2214; ГИПОТЕЗА]
         ЗП   2(М1)      , записать в 2(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2215; ГИПОТЕЗА]
         МОД  1(М1)      , установить режим 1(М1)
         СЧ   (М16)      , прочитать М16
+* CODE_READ; [bemsh/MBE2-Z0555.be:2217; ГИПОТЕЗА]
         НТЖ  MB6073     , сравнить с MB6073
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2218; ГИПОТЕЗА]
         И    MB6074     , проверить MB6074
+* CODE_AND; [bemsh/MBE2-Z0555.be:2219; ГИПОТЕЗА]
         ПЕ   BR5531     , перейти на BR5531
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2220; ГИПОТЕЗА]
         СЧ   2(М1)      , прочитать 2(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2221; ГИПОТЕЗА]
         СЛЦ  MB6075     , сложить с MB6075
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2222; ГИПОТЕЗА]
         И    MB6061     , проверить MB6061
+* CODE_AND; [bemsh/MBE2-Z0555.be:2223; ГИПОТЕЗА]
         ЗП   2(М1)      , записать в 2(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2224; ГИПОТЕЗА]
         МОД  B26334     , установить режим B26334
         ПБ             , нулевое слово (забел)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2226; ГИПОТЕЗА]
         СЧ   6(М1)      , прочитать 6(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2227; ГИПОТЕЗА]
         ПО   (М2)       , вернуться через М2
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2228; ГИПОТЕЗА]
         СЧ   4(М1)      , прочитать 4(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2229; ГИПОТЕЗА]
         СБР  BR6006     , сбросить BR6006
         РЗБ  B26007     , разобрать B26007
+* CODE_SPLIT; [bemsh/MBE2-Z0555.be:2231; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2232; ГИПОТЕЗА]
         СЧ   1(М1)      , прочитать 1(М1)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2233; ГИПОТЕЗА]
         СДА  64-20      , сдвинуть на 64-20
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2234; ГИПОТЕЗА]
         И    B26010     , проверить B26010
+* CODE_AND; [bemsh/MBE2-Z0555.be:2235; ГИПОТЕЗА]
         ИЛИ  B26333     , проверить B26333
+* CODE_OR; [bemsh/MBE2-Z0555.be:2236; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2237; ГИПОТЕЗА]
         Э70  B26333     , останов
+* CODE_FETCH_ADDR; [bemsh/MBE2-Z0555.be:2238; ГИПОТЕЗА]
         ПБ   (М2)       , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2239; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2240; ГИПОТЕЗА]
         СЧИ  М14        , считать М14
+* CODE_READ_IDX; [bemsh/MBE2-Z0555.be:2241; ГИПОТЕЗА]
         ЗП   MB6340     , записать в MB6340
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2242; ГИПОТЕЗА]
         УИА  B24001(М14), установить B24001 в М14
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2243; ГИПОТЕЗА]
         ПБ   BR4157    , перейти на BR4157
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2244; ГИПОТЕЗА]
         СЧ   MB6340     , прочитать MB6340
+* CODE_READ; [bemsh/MBE2-Z0555.be:2245; ГИПОТЕЗА]
         УИ   М14        , уменьшить М14
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2246; ГИПОТЕЗА]
         СЧ   B26336     , прочитать B26336
+* CODE_READ; [bemsh/MBE2-Z0555.be:2247; ГИПОТЕЗА]
         ПО   (М2)       , вернуться через М2
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2248; ГИПОТЕЗА]
         И    EXT017     , проверить EXT017
+* CODE_AND; [bemsh/MBE2-Z0555.be:2249; ГИПОТЕЗА]
         ПО   BR5550     , перейти на BR5550
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2250; ГИПОТЕЗА]
         СЧ   BR6167     , прочитать BR6167
+* CODE_READ; [bemsh/MBE2-Z0555.be:2251; ГИПОТЕЗА]
         ВЧ   B25626     , прочитать B25626
         ЗП   B26300     , записать в B26300
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2253; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2254; ГИПОТЕЗА]
         СЧ   B26336     , прочитать B26336
+* CODE_READ; [bemsh/MBE2-Z0555.be:2255; ГИПОТЕЗА]
         И    MB5640     , проверить MB5640
+* CODE_AND; [bemsh/MBE2-Z0555.be:2256; ГИПОТЕЗА]
         ПО   BR5562     , перейти на BR5562
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2257; ГИПОТЕЗА]
         СЧ   B26336     , прочитать B26336
+* CODE_READ; [bemsh/MBE2-Z0555.be:2258; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2259; ГИПОТЕЗА]
         СЧ   BR6167     , прочитать BR6167
+* CODE_READ; [bemsh/MBE2-Z0555.be:2260; ГИПОТЕЗА]
         ВЧ   B26300     , прочитать B26300
         ЗП   B26324     , записать в B26324
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2262; ГИПОТЕЗА]
         ПИО  BR5562(М17), перейти на BR5562(М17)
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2264; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2265; ГИПОТЕЗА]
         ЗП   B26323     , записать в B26323
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2266; ГИПОТЕЗА]
         И    MB5674     , проверить MB5674
+* CODE_AND; [bemsh/MBE2-Z0555.be:2267; ГИПОТЕЗА]
         ИЛИ  B26324     , проверить B26324
+* CODE_OR; [bemsh/MBE2-Z0555.be:2268; ГИПОТЕЗА]
         МОДА B24000(М17), установить режим B24000(М17)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2269; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2270; ГИПОТЕЗА]
         СЧ   B26323     , прочитать B26323
+* CODE_READ; [bemsh/MBE2-Z0555.be:2271; ГИПОТЕЗА]
         УИ   М17        , уменьшить М17
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2272; ГИПОТЕЗА]
         ПБ   P5554     , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2273; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2274; ГИПОТЕЗА]
         СЧ   B26336     , прочитать B26336
+* CODE_READ; [bemsh/MBE2-Z0555.be:2275; ГИПОТЕЗА]
         И    B25677     , проверить B25677
+* CODE_AND; [bemsh/MBE2-Z0555.be:2276; ГИПОТЕЗА]
         ПО   BR5567     , перейти на BR5567
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2277; ГИПОТЕЗА]
         СЧ   B26300     , прочитать B26300
+* CODE_READ; [bemsh/MBE2-Z0555.be:2278; ГИПОТЕЗА]
         СДА  64-24      , сдвинуть на 64-24
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2279; ГИПОТЕЗА]
         ИЛИ  B25663     , проверить B25663
+* CODE_OR; [bemsh/MBE2-Z0555.be:2280; ГИПОТЕЗА]
         МОДА B24003    , установить режим B24003
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2281; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2282; ГИПОТЕЗА]
         СЧ   BR6167     , прочитать BR6167
+* CODE_READ; [bemsh/MBE2-Z0555.be:2283; ГИПОТЕЗА]
         ЗП   B21127     , записать в B21127
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2284; ГИПОТЕЗА]
         СЧ   B26336     , прочитать B26336
+* CODE_READ; [bemsh/MBE2-Z0555.be:2285; ГИПОТЕЗА]
         И    B26037     , проверить B26037
+* CODE_AND; [bemsh/MBE2-Z0555.be:2286; ГИПОТЕЗА]
         ПО   MB5574     , перейти на MB5574
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2287; ГИПОТЕЗА]
         СЧ   B26307     , прочитать B26307
+* CODE_READ; [bemsh/MBE2-Z0555.be:2288; ГИПОТЕЗА]
         МОД  B26310     , установить режим B26310
         ИЛИ  MB7777     , проверить MB7777
+* CODE_OR; [bemsh/MBE2-Z0555.be:2290; ГИПОТЕЗА]
         ИЛИ  BR6167     , проверить BR6167
+* CODE_OR; [bemsh/MBE2-Z0555.be:2291; ГИПОТЕЗА]
         МОД  B26310     , установить режим B26310
         ЗП   MB7777     , записать в MB7777
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2293; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2294; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2295; ГИПОТЕЗА]
         ЗП   B26336     , записать в B26336
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2296; ГИПОТЕЗА]
         ПБ   (М2)       , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2297; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2298; ГИПОТЕЗА]
         СЧ   B23400     , прочитать B23400
+* CODE_READ; [bemsh/MBE2-Z0555.be:2299; ГИПОТЕЗА]
         СЧ   LOG001        , прочитать LOG001
+* CODE_READ; [bemsh/MBE2-Z0555.be:2300; ГИПОТЕЗА]
         ЗП   B23400     , записать в B23400
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2301; ГИПОТЕЗА]
         СЧ   LOG001        , прочитать LOG001
+* CODE_READ; [bemsh/MBE2-Z0555.be:2302; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:2303; ГИПОТЕЗА]
         ЗП   B26150     , записать в B26150
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2304; ГИПОТЕЗА]
         НТЖ  BR6146     , сравнить с BR6146
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2305; ГИПОТЕЗА]
         И    BR6006     , проверить BR6006
+* CODE_AND; [bemsh/MBE2-Z0555.be:2306; ГИПОТЕЗА]
         ПО   B25611     , перейти на B25611
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2307; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:2308; ГИПОТЕЗА]
         ЗП   BR6146     , записать в BR6146
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2309; ГИПОТЕЗА]
         СБР  BR6006     , сбросить BR6006
         РЗБ  B26007     , разобрать B26007
+* CODE_SPLIT; [bemsh/MBE2-Z0555.be:2311; ГИПОТЕЗА]
         ИЛИ  B25705     , проверить B25705
+* CODE_OR; [bemsh/MBE2-Z0555.be:2312; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2313; ГИПОТЕЗА]
         СЧ   BR6143     , прочитать BR6143
+* CODE_READ; [bemsh/MBE2-Z0555.be:2314; ГИПОТЕЗА]
         СДА  64-20      , сдвинуть на 64-20
+* CODE_MASK; [bemsh/MBE2-Z0555.be:2315; ГИПОТЕЗА]
         И    B26010     , проверить B26010
+* CODE_AND; [bemsh/MBE2-Z0555.be:2316; ГИПОТЕЗА]
         ИЛИ  B26333     , проверить B26333
+* CODE_OR; [bemsh/MBE2-Z0555.be:2317; ГИПОТЕЗА]
         ЗП   B26333     , записать в B26333
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2318; ГИПОТЕЗА]
         МОДА           , нулевое слово (забел)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2319; ГИПОТЕЗА]
         Э70  B26333     , останов
+* CODE_FETCH_ADDR; [bemsh/MBE2-Z0555.be:2320; ГИПОТЕЗА]
         СЧ   B26124     , прочитать B26124
+* CODE_READ; [bemsh/MBE2-Z0555.be:2321; ГИПОТЕЗА]
         И    B25673     , проверить B25673
+* CODE_AND; [bemsh/MBE2-Z0555.be:2322; ГИПОТЕЗА]
         УИ   М16        , уменьшить М16
+* CODE_SET_IDX; [bemsh/MBE2-Z0555.be:2323; ГИПОТЕЗА]
         СЧ   B26126     , прочитать B26126
+* CODE_READ; [bemsh/MBE2-Z0555.be:2324; ГИПОТЕЗА]
         МОДА MB2006    , установить режим MB2006
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2325; ГИПОТЕЗА]
         ЗП   (М16)      , записать в М16
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2326; ГИПОТЕЗА]
         ПБ   (М2)       , из КОНД, левая часть (гипотеза)
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2327; ГИПОТЕЗА]
         МОДА           , из КОНД, правая часть (гипотеза)
+* CODE_MOD_ADDR; [bemsh/MBE2-Z0555.be:2328; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2329; ГИПОТЕЗА]
         ЗП   B26151     , записать в B26151
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2330; ГИПОТЕЗА]
         ЗП   MB6152     , записать в MB6152
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2331; ГИПОТЕЗА]
         ПБ   (М2)       , вернуться через М2
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2332; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2333; ГИПОТЕЗА]
         ЗП   MB2002     , записать в MB2002
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2334; ГИПОТЕЗА]
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2335; ГИПОТЕЗА]
         Э64  '100'(М12) , останов
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2337; ГИПОТЕЗА]
         ЗП   AM177      , записать в AM177
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2338; ГИПОТЕЗА]
         ПЕ   BR5733(М15), перейти на BR5733(М15) через М15
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2339; ГИПОТЕЗА]
         ПО   MB0100(М15), перейти на MB0100(М15) через М15
+* CODE_BRANCH; [bemsh/MBE2-Z0555.be:2340; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2341; ГИПОТЕЗА]
         ЗП   B2162      , записать в B2162
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2342; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2345; ГИПОТЕЗА]
         ЗП   B2377      , записать в B2377
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2346; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2347; ГИПОТЕЗА]
         ЗП   LOG001        , записать в LOG001
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2348; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2349; ГИПОТЕЗА]
         ЗП   B2200      , записать в B2200
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2350; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2351; ГИПОТЕЗА]
         ЗП   MB100      , записать в MB100
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2352; ГИПОТЕЗА]
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2353; ГИПОТЕЗА]
         СЛ   MB100(М15) , сложить с MB100(М15)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2354; ГИПОТЕЗА]
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2355; ГИПОТЕЗА]
         Э64  '70100'(М14), останов
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2357; ГИПОТЕЗА]
         ПБ   MB0100(М14), перейти на MB0100(М14) через М14
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2358; ГИПОТЕЗА]
         СЛ   B2314(М4)  , сложить с B2314(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2359; ГИПОТЕЗА]
         СЛ   MB100(М15) , сложить с MB100(М15)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2360; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2361; ГИПОТЕЗА]
         ЗП   MB17       , записать в MB17
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2362; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2363; ГИПОТЕЗА]
         ЗП   B260       , записать в B260
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2364; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2365; ГИПОТЕЗА]
         ЗП   BR2313     , записать в BR2313
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2366; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2367; ГИПОТЕЗА]
         ВЧАБ MB7777     , прочитать MB7777
+* CODE_SUB; [bemsh/MBE2-Z0555.be:2368; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2369; ГИПОТЕЗА]
         СЛ             , нулевое слово (забел)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2370; ГИПОТЕЗА]
         ЗП   SYSC70(М1), записать в SYSC70(М1)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2371; ГИПОТЕЗА]
         ЗП   LOG001        , записать в LOG001
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2372; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2373; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2375; ГИПОТЕЗА]
         ЦИКЛ BR6002    , цикл BR6002
         СЛ   B24        , сложить с B24
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2377; ГИПОТЕЗА]
         СЛ   B24        , сложить с B24
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2378; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2379; ГИПОТЕЗА]
         ЗП   AM432      , записать в AM432
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2380; ГИПОТЕЗА]
         КОНД В'0004326351321664'    , прав illegal;EXP
         КОНД В'1200000000000000'    , лев illegal
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2383; ГИПОТЕЗА]
         ЗП   MB7777     , записать в MB7777
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2384; ГИПОТЕЗА]
         СЧ   MB400      , прочитать MB400
+* CODE_READ; [bemsh/MBE2-Z0555.be:2385; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2386; ГИПОТЕЗА]
         ЗП   MB100      , записать в MB100
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2387; ГИПОТЕЗА]
         ЗП   LOG001        , записать в LOG001
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2388; ГИПОТЕЗА]
         ЦИКЛ BR4071(М17), цикл BR4071(М17)
         ЦИКЛ -1(М17)    , цикл -1(М17)
         СТОП 24029(М15) , останов
         СТОП 24029(М15) , останов
         СБР            , нулевое слово (забел)
         ПБ   B22023(М2) , перейти на B22023(М2) через М2
+* CODE_RETURN; [bemsh/MBE2-Z0555.be:2394; ГИПОТЕЗА]
         КОНД В'2152024050120240'    , EXP
         КОНД В'1600000000010001'    , лев illegal
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2397; ГИПОТЕЗА]
         РЕГ            , нулевое слово (забел)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2399; ГИПОТЕЗА]
         ЗП   MON400     , записать в MON400
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2400; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2401; ГИПОТЕЗА]
         ЗПМ            , нулевое слово (забел)
         ВЧАБ MB7777     , прочитать MB7777
+* CODE_SUB; [bemsh/MBE2-Z0555.be:2403; ГИПОТЕЗА]
         ЗП   B22        , записать в B22
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2404; ГИПОТЕЗА]
         КОНД В'2360000000000000'    , лев пио36
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2406; ГИПОТЕЗА]
         ЗП   B26114     , записать в B26114
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2407; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2408; ГИПОТЕЗА]
         ВЧАБ MON400     , прочитать MON400
+* CODE_SUB; [bemsh/MBE2-Z0555.be:2409; ГИПОТЕЗА]
         СЧ   (М15)      , прочитать М15
+* CODE_READ; [bemsh/MBE2-Z0555.be:2410; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2411; ГИПОТЕЗА]
         СЧ   (М1)       , прочитать М1
+* CODE_READ; [bemsh/MBE2-Z0555.be:2412; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2413; ГИПОТЕЗА]
         КОНД В'7767777777777777'    , лев пио36
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2415; ГИПОТЕЗА]
         ЗП   B21777     , записать в B21777
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2416; ГИПОТЕЗА]
         ЦИКЛ -1(М17)    , цикл -1(М17)
         ЦИКЛ (М17)      , цикл М17
         ЗП   (М2)       , записать в М2
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2419; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2420; ГИПОТЕЗА]
         СБР  MB3407     , сбросить MB3407
         Э60  '73407'    , останов
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2423; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2424; ГИПОТЕЗА]
         ВЧАБ MB7777     , прочитать MB7777
+* CODE_SUB; [bemsh/MBE2-Z0555.be:2425; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2426; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2427; ГИПОТЕЗА]
         ЗП   AM300      , записать в AM300
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2428; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2429; ГИПОТЕЗА]
         ЗП   MB106      , записать в MB106
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2430; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2431; ГИПОТЕЗА]
         ЗП   B2112      , записать в B2112
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2432; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2433; ГИПОТЕЗА]
         ЗП   B24        , записать в B24
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2434; ГИПОТЕЗА]
         СЧ             , нулевое слово (забел)
+* CODE_READ; [bemsh/MBE2-Z0555.be:2435; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2436; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2437; ГИПОТЕЗА]
         СЛ   AM7000     , сложить с AM7000
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2438; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2439; ГИПОТЕЗА]
         ЗП   MB130      , записать в MB130
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2440; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2441; ГИПОТЕЗА]
         ЗП   B2376      , записать в B2376
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2442; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2443; ГИПОТЕЗА]
         ЗП   AM10       , записать в AM10
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2444; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2445; ГИПОТЕЗА]
         ЗП   B2370      , записать в B2370
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2446; ГИПОТЕЗА]
         КОНД В'7760000000000000'    , лев пио36
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2448; ГИПОТЕЗА]
         ЗП   (М2)       , записать в М2
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2449; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2450; ГИПОТЕЗА]
         ЗП   (М4)       , записать в М4
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2451; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2452; ГИПОТЕЗА]
         СЛ   MB3000     , сложить с MB3000
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2453; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2454; ГИПОТЕЗА]
         ЗП   MB110      , записать в MB110
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2455; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2456; ГИПОТЕЗА]
         ЗП   (М10)      , записать в М10
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2457; ГИПОТЕЗА]
         ЗП   (М10)      , записать в М10
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2458; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2459; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2460; ГИПОТЕЗА]
         ЗП   MB111      , записать в MB111
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2461; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2462; ГИПОТЕЗА]
         ЗП   MB114      , записать в MB114
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2463; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2464; ГИПОТЕЗА]
         ЗП   (М1)       , записать в М1
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2465; ГИПОТЕЗА]
         КОНД В'0000000002000000'    , прав illegal
         НТЖ  BR6641     , сравнить с BR6641
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2467; ГИПОТЕЗА]
         Э73  '1257'(М12), останов
         КОНД В'0000000002001000'    , прав illegal
         КОНД В'0012640207600007'    , прав пио36
         НТЖ  AM1427     , сравнить с AM1427
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2471; ГИПОТЕЗА]
         ЗПМ  BR7403    , записать в BR7403
         ЗП   B23036     , записать в B23036
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2473; ГИПОТЕЗА]
         СБР  BR6037(М1), сбросить BR6037(М1)
         ЗПМ  B23032     , записать в B23032
         ЗП   B20021    , записать в B20021
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2476; ГИПОТЕЗА]
         КОНД В'0013157432000021'    , прав illegal
         ЗП   B2140      , записать в B2140
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2478; ГИПОТЕЗА]
         ЗПМ  (М6)       , записать в М6
         КОНД В'0013140101413421'    , EXP
         КОНД В'0013141607600563'    , прав пио36
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2482; ГИПОТЕЗА]
         СЧРЖ           , нулевое слово (забел)
         КОНД В'6055024567526657'    , забел/данные
         НТЖ  BR1664     , сравнить с BR1664
+* CODE_COMPARE; [bemsh/MBE2-Z0555.be:2485; ГИПОТЕЗА]
         УВВ  BR264(М12) , ввести BR264(М12)
         ЗПМ            , нулевое слово (забел)
         ЗП   LOG002     , записать в LOG002
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2488; ГИПОТЕЗА]
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2489; ГИПОТЕЗА]
         СЛ   MB100(М4)  , сложить с MB100(М4)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2490; ГИПОТЕЗА]
         СБР            , нулевое слово (забел)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2492; ГИПОТЕЗА]
         ЦИКЛ (М7)       , цикл М7
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2494; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2495; ГИПОТЕЗА]
         ЗП   MB104      , записать в MB104
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2496; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2497; ГИПОТЕЗА]
         ЗП   MB103      , записать в MB103
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2498; ГИПОТЕЗА]
         ВЫПР (М12)      , из КОНД, левая часть (гипотеза)
         ЗП             , из КОНД, правая часть (гипотеза)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2500; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2501; ГИПОТЕЗА]
         ЗП   MB107      , записать в MB107
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2502; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2503; ГИПОТЕЗА]
         ЗП   B2113      , записать в B2113
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2504; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2505; ГИПОТЕЗА]
         ЗП   B2116      , записать в B2116
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2506; ГИПОТЕЗА]
         ЗП   B2243      , записать в B2243
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2507; ГИПОТЕЗА]
         СЛЦ  B20250(М13), сложить с B20250(М13)
+* CODE_ADD; [bemsh/MBE2-Z0555.be:2508; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2509; ГИПОТЕЗА]
         ЗП   B2345      , записать в B2345
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2510; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2511; ГИПОТЕЗА]
         ЗП   MB26       , записать в MB26
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2512; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2513; ГИПОТЕЗА]
         ЗП   MB14       , записать в MB14
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2514; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2515; ГИПОТЕЗА]
         ЗП   BR150      , записать в BR150
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2516; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2517; ГИПОТЕЗА]
         ЗП   B2120      , записать в B2120
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2518; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2519; ГИПОТЕЗА]
         ЗП   B27        , записать в B27
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2520; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2521; ГИПОТЕЗА]
         ЗП   MB241      , записать в MB241
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2522; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2523; ГИПОТЕЗА]
         ЗП   INIT03        , записать в INIT03
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2524; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2525; ГИПОТЕЗА]
         ЗП   B2140      , записать в B2140
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2526; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2527; ГИПОТЕЗА]
         ЗП   B2141      , записать в B2141
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2528; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2529; ГИПОТЕЗА]
         ЗП   B2236      , записать в B2236
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2530; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2531; ГИПОТЕЗА]
         ЗП   B211       , записать в B211
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2532; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2533; ГИПОТЕЗА]
         ЗП   B2346      , записать в B2346
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2534; ГИПОТЕЗА]
         СБР  SYSC70(М13), сбросить SYSC70(М13)
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2536; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2537; ГИПОТЕЗА]
         ЗП   B22        , записать в B22
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2538; ГИПОТЕЗА]
         ЗП             , нулевое слово (забел)
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2539; ГИПОТЕЗА]
         ЗП   BR255      , записать в BR255
+* CODE_WRITE; [bemsh/MBE2-Z0555.be:2540; ГИПОТЕЗА]
         КОНД В'5060000000000001'    , лев addrex
         КОНД В'5200000000000000'    , лев illegal
         ФИНИШ

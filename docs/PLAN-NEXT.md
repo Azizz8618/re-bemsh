@@ -12,8 +12,8 @@
 | A3 все зоны | ГОТОВО: 69/69 (66 semantic + 3 RAW), 0 отличий | `analysis/REBUILD-ALL.md` |
 | B макротаблица | ГОТОВО: 2 ячейки ГС на простой макрос; `[TAG\|VAL]` не подтверждено | `docs/MACRO-TABLE-FORMAT-VERIFIED.md` |
 | C карта память↔диск | ГОТОВО: 0154 → `02000₈`, breakpoint сработал; гипотеза опровергнута | `analysis/MEMORY-MAP.md` |
-| D ролевые имена в .be | НЕ НАЧАТА | — |
-| E финальная верификация | НЕ НАЧАТА | — |
+| D ролевые имена в .be | ГОТОВО: 7 зон, 53 имен, все 0-diff (36 зон без LABELS — см. `FINAL-REPORT.md` §4.2b) | `docs/STATUS.md` |
+| E финальная верификация | ГОТОВО: `make check-all` пройден, `FINAL-REPORT.md`/`ROADMAP.md` обновлены | `docs/FINAL-REPORT.md` |
 
 ## Принцип
 
