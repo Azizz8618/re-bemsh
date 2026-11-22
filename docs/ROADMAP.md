@@ -2,7 +2,12 @@
 
 Дата: 22.11.2026 · Статус сверен с `analysis/REBUILD-ALL.md`,
 `analysis/MEMORY-MAP.md`, `analysis/ARAP-*.md`, `analysis/PASSES-*.md`,
-`analysis/REG-DYN-*.md`, `docs/MACRO-TABLE-FORMAT-VERIFIED.md`
+`analysis/REG-DYN-*.md`, `analysis/MACRO-OPS-*.md`,
+`analysis/MACRO-VNESHN-MECH.md`, `MACRO-VS-FLAG.md`,
+`MACRO-DK-EVNESH.md`, `GS-CELLS-DIRECT.md`,
+`MACHINE-PAGE6-ZONE.md`, `GS-WORD-FIELDS.md`, `VS-FLAG-CELL.md`,
+`ARAP-CARD-COMPARE.md`, `LOADER-064063.md`, `ARAP-PF-EXPANSION.md`,
+`docs/MACRO-TABLE-FORMAT-VERIFIED.md`
 и командами из `docs/STATUS.md`.
 
 ## Выполнено (закрыто)

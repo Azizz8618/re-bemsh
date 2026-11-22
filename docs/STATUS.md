@@ -4,7 +4,14 @@
 Подробности — [FINAL-REPORT.md](FINAL-REPORT.md),
 [ROADMAP.md](ROADMAP.md), [REBUILD-ALL.md](../analysis/REBUILD-ALL.md).
 Новые отчёты: `analysis/ARAP-*.md`, `analysis/PASSES-*.md`,
-`analysis/REG-DYN-*.md`.
+`analysis/REG-DYN-*.md`, `analysis/MACRO-OPS-*.md`,
+`analysis/MACRO-VNESHN-MECH.md`, `MACRO-VS-FLAG.md`,
+`MACRO-DK-EVNESH.md`, `GS-CELLS-DIRECT.md`,
+`MACHINE-PAGE6-ZONE.md`, `GS-WORD-FIELDS.md`, `VS-FLAG-CELL.md`,
+`ARAP-CARD-COMPARE.md`, `LOADER-064063.md`, `ARAP-PF-EXPANSION.md`, `GOST-BYTE-FORMULA.md`,
+`GS-TAG-06445.md`, `ARAP-DISPATCH-06452.md`,
+`MONITOR80-LOADER-SRC.md`, `PF00-B2-BRANCH.md`,
+`MACHINE-ARAP-FINAL.md`.
 
 ## Проверки: команда → ожидаемый результат
 
@@ -12,6 +19,7 @@
 |---|---|
 | `make stage0` | `PASS` ×8; md5 зон `0137–0177` = `2f503f5b8f8fb6ad12632fed6f8cf17f` |
 | `make check-all` | `=== check-all: все проверки пройдены ===` (47 unit-тест, `OK`; сверено 22.11.2026) |
+| Финальная сводка | `docs/FINAL-REPORT.md` §7 п.1–11: АРАП-архив, 3 прохода, регистры, все 37 макрокоманд |
 | `make rebuild-check` | `rebuild-check: OK (RESULT: PASS, 1024/1024)` — зона 0137 |
 | `make rebuild-all` | `найдено=69 PASS=69 FAIL=0` — все `.be` собираются в 0 отличий |
 | `make unittest` | `Ran 47 tests … OK` |
