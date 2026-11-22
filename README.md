@@ -44,6 +44,23 @@ make check       # базовая итоговая проверка (верси�
 Изучены макрокоманды (37), АРАП-архив, оверлеи 0154/0170; честные
 «НЕ ИЗВЕСТНО» — в `FINAL-REPORT.md` §7.
 
+**Последние находки 22.11** (новые отчёты в `analysis/`, сводка:
+`FINAL-REPORT.md` §7 п.14-18):
+
+- GOST→БЭСМ: `GS-TABLE-0147-0561.md`, `GOST-TABLE-DETAILS.md`;
+- константы 06445/+0o31: `GS-CONSTANTS.md`, `MACRO-RECORD-25.md`;
+- дескрипторы: `ARAP-DESCRIPTOR-077143.md`, `DESCRIPTOR-WRITER.md`,
+  `POOL-DESCRIPTOR-FIELDS.md`, `DESCRIPTOR-0005.md`;
+- B2 и флаг D01167: `B2-ARCHIVE-DYN.md`, `Z0565-ROLE.md`,
+  `D01167-WRITER.md`, `D01167-NEGATIVE.md`;
+- старшая память и RLE: `HIGH-CORE-076600.md`,
+  `HIGH-CORE-LOOP-76600.md`, `LOOP-76600-BRANCHES.md`,
+  `CODE-01-EXACT.md`, `RLE-CONSUMER.md`, `ARAP-CODES-40-01.md`;
+- карты и эталоны: `CARD-074021.md`, `CARD-ETALONS.md`,
+  `FILLER-44-40.md`, `TEXT-POOL-06445.md`.
+
+Механика макрокода НЕ объявлена разобранной до конца.
+
 Эталонный образ — `/usr/local/share/besm6/2348` (только чтение). md5 целого
 файла **не инвариант** (том используется другими проектами для PERSO-записи);
 инвариант — md5 зон транслятора `0137–0177` = `2f503f5b…`, его проверяет
