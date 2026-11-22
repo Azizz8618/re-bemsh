@@ -219,3 +219,15 @@ python3 tools/macro_decode.py --scan-dir dis --out /tmp/macro_hits_test.md
 Источники: `docs/PLAN.md` §2.2–2.3, §4; `docs/ANCHORS.md`;
 `docs/TEXT-CONSTANTS.md`; `docs/ANNOT-MACRO.md`; `AGENTS.md`;
 `/home/azizz/Yandex.Disk/re-dispak/macros.be`.
+
+---
+
+## 6. Проверка механизма (22.11.2026)
+
+Динамическая и статическая проверка всех 37 команд:
+`analysis/MACRO-OPS-STATIC.md` (каталог по проходам),
+`MACRO-OPS-LOOP-DYN.md` (цикл 48→0: r[3], 03460/03462/03465),
+`MACRO-OPS-EQU-DYN.md` (ЭКВ: `0o103+48−&a` → `*МЕТ*`),
+`MACRO-OPS-MISC-DYN.md` (ВНЕШН/ВХОДН, Х', ТЕКСТ, НОП).
+Отрицательные результаты: механизм ВНЕШН, ∧ВS, DК, ЕВНЕШ,
+ГС-ячейки — НЕ ИЗВЕСТНО. Механика макрокода НЕ разобрана до конца.
