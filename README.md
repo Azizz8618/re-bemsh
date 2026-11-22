@@ -32,15 +32,15 @@ make versions    # Фаза 6: VER.06/78 ↔ VAR.12/77
 make xref        # Фаза 4: граф переходов (требует dis/)
 make rebuild-all # Фаза A3: собрать все 69 .be → 0 отличий от gold/
 make rebuild-check  # регрессия эталонной зоны 0137 (1024/1024, PASS)
-make unittest    # 21 unit-тест (аннотатор + конвертер)
+make unittest    # 47 unit-тестов (аннотатор, конвертер, tools/)
 make check-all   # агрегат: stage0 + rebuild-check + verify + unittest
 make check       # базовая итоговая проверка (версии, md5 образа)
 ```
 
-Текущий результат: **69/69 зон восстановлены в `.be` побайтово**
-(66 семантических + RAW; точное число RAW уточняется субагентом
-RAW-RECOVERY — см. `analysis/REBUILD-ALL.md`). `make check-all` — все
-проверки пройдены.
+Текущий результат: **69/69 зон восстановлены в `.be` побайтово**,
+0 отличий от `gold/`; в `0556` оставлено 2 слова `КОНД` (opcode 140
+вне таблицы OPS). `make check-all` — все проверки пройдены (47 тестов).
+Дальнейшее: `docs/PLAN-NEXT.md`, `docs/ROADMAP.md`, `docs/FINAL-REPORT.md`.
 
 Эталонный образ — `/usr/local/share/besm6/2348` (только чтение). md5 целого
 файла **не инвариант** (том используется другими проектами для PERSO-записи);

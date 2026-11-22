@@ -154,7 +154,7 @@ rebuild-zone:
 	@echo '=== rebuild-zone: зона $(Z), режим $(MODE) ==='
 	env -u BESM6_PATH bash tools/rebuild-zone.sh "$(Z)" "$(MODE)"
 
-# Все зоны, для которых есть .be-исходник (сейчас только 0137).
+# 69 .be-исходников; rebuild-all обходит все.
 rebuild-all:
 	@found=0; ok=0; fail=0; \
 	for be in bemsh/*.be; do \
@@ -185,7 +185,7 @@ rebuild-check:
 	    || { echo 'rebuild-check: FAIL (RESULT)'; exit 1; }; \
 	  echo 'rebuild-check: OK (RESULT: PASS, 1024/1024)'
 
-# 6 unit-тестов аннотатора (docs/AUTOMATION.md).
+# 47 unit-тестов (аннотатор, конвертер, tools/).
 unittest:
 	python3 -m unittest tools/tests/test_annotate_zone.py tools/tests/test_dis2be.py \
 	  tools/tests/test_raw_zone_diff.py tools/tests/test_tagval_analysis.py \
