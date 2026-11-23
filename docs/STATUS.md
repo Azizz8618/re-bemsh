@@ -1,6 +1,6 @@
 # Статус проекта re-bemsh (одна страница)
 
-Дата: 22.11.2026. Все выводы ниже сверены с живыми командами.
+Дата: 23.11.2026. Все выводы ниже сверены с живыми командами.
 Подробности — [FINAL-REPORT.md](FINAL-REPORT.md),
 [ROADMAP.md](ROADMAP.md), [REBUILD-ALL.md](../analysis/REBUILD-ALL.md).
 Новые отчёты: `analysis/ARAP-*.md`, `analysis/PASSES-*.md`,
@@ -34,16 +34,35 @@ D01167 кончается `asn 136` (знак стёрт); 0565 = код B2 (151
 в опытах не выбирается); старшая память 076600/077xxx. Механика
 макрокода НЕ объявлена разобранной до конца.
 
+## Зонды и отчёты 23.11
+
+| Инструмент | Подтверждённый факт |
+|---|---|
+| `tools/v78_token_diff.py` | 06/78 составной: 8 штампов от 20.06.78 до 12.78; 9 из 32 зон = ВАР.12/77; среда 2048/2348 |
+| `tools/v78_fsm_probe.py` | `075353-357` маркеры (`aex` = XOR), METKA `075377/075357` |
+| `tools/rvs_trace.py` | каталог 2113: 146 модулей, 87 групп; линковка → 77 программ |
+| `tools/text_pool_probe.py` | пул Э70 `05755: *70 6612` → `072000`, мост 24/24 слова |
+| `tools/z0144_probe.py` | 0144 = ГП 'РВС' = 0544 (md5 `77e852e9…`), штамп `Р В С :10/75` |
+| `tools/host_line_probe.py` | `:` +2 ячейки ГС, `;` против `,` косметика, метка 7 знаков |
+
+Отчёты: `analysis/V78-SYNTAX-PHASE{01,02,03}-RESULT.md`,
+`docs/V78-SYNTAX-{PLAN,NEXT-PLAN}.md`,
+`analysis/V78-{FSM-VALIDATION,MASK-BE-BF,RLE-DRUM-BRIDGE}.md`,
+`analysis/RVS-{MODULE-CATALOG,STATIC-CALLS,DYN-TRACE,TRACE-TOOL}.md`,
+`analysis/Z0144-{GP-RVS,TEXTS,DYNAMIC,FORCED-FULL,RVS-LINK-TRACE}.md`.
+Разбиение строки на 4 поля НЕ НАЙДЕНО (честный вывод,
+`docs/V78-SYNTAX-NEXT-PLAN.md`).
+
 ## Проверки: команда → ожидаемый результат
 
 | Команда | Ожидаемый результат (проверено 19.11.2026) |
 |---|---|
 | `make stage0` | `PASS` ×8; md5 зон `0137–0177` = `2f503f5b8f8fb6ad12632fed6f8cf17f` |
-| `make check-all` | `=== check-all: все проверки пройдены ===` (47 unit-тест, `OK`; сверено 22.11.2026) |
+| `make check-all` | `=== check-all: все проверки пройдены ===` (661 тест, FAIL=0, `OK`; сверено 23.11.2026) |
 | Финальная сводка | `docs/FINAL-REPORT.md` §7 п.1-18: АРАП-архив, 3 прохода, регистры, все 37 макрокоманд, находки 22.11 |
 | `make rebuild-check` | `rebuild-check: OK (RESULT: PASS, 1024/1024)` — зона 0137 |
 | `make rebuild-all` | `найдено=69 PASS=69 FAIL=0` — все `.be` собираются в 0 отличий |
-| `make unittest` | `Ran 47 tests … OK` |
+| `make unittest` | `Ran 661 tests … OK` |
 | `grep -c PASS analysis/REBUILD-ALL.md` | `71` (69 PASS + 2 шапки) |
 | `ls bemsh/*.be \| wc -l` | `69` |
 | `md5sum /usr/local/share/besm6/2348` | `2739b7a25a07d82fc20ba034a85ae661` (не инвариант) |
@@ -71,7 +90,7 @@ D01167 кончается `asn 136` (знак стёрт); 0565 = код B2 (151
 | B | ГОТОВО (2 ячейки ГС на макрос; `[TAG\|VAL]` не подтверждена) |
 | C | ГОТОВО (+ уточнено 22.11): 0154 и 0170 — оверлей по `02000₈`; `01311: *70 1144` → Э70 `ddio()`, зона 0170; 0137 не грузилась. См. `analysis/PASSES-OVERLAY-MECH.md` |
 | D | ГОТОВО: 50 зон (7 + 43 из §4.2b, 4 ASM — ЭКВ уже в LABELS-ASM-BE); 0-diff (см. `docs/PHASE-D-CONTINUATION.md`) |
-| E | ГОТОВО: `make check-all` — stage0 PASS, rebuild-check 1024/1024, verify FAIL=0, unittest 47 OK |
+| E | ГОТОВО: `make check-all`: stage0 PASS, rebuild-check 1024/1024, verify FAIL=0, unittest 661 OK |
 
 ## Remotes
 

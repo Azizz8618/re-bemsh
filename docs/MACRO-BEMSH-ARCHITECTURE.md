@@ -614,7 +614,7 @@ besmtool view 2348 --start=0173 --length=1 --encoding=g,k,t,i
 ```bash
 bash tools/rebuild-zone.sh 0137 MBE   # ожидаемо PASS 1024/1024
 make rebuild-check                    # 69/69 зон, 0 отличий
-make check-all                        # 47 unit-тестов OK (22.11.2026)
+make check-all                        # 661 тест OK (23.11.2026)
 ```
 
 Метод reконструкции: `dis/*.asm → tools/dis2be.py → .be →
