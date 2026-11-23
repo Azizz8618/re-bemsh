@@ -41,6 +41,10 @@ DEFAULT_REPORT = 'analysis/V78-FSM-VALIDATION.md'
 # Built-in segments: docs/PLAN-TEST-CORPUS.md, §3.4.
 # A PC may belong to more than one segment: 075353-075377
 # lies inside both S-MARK and S-METKA.
+# Extended by STEP 3 from analysis/V78-SEGMENTS.md, §6.
+# PC variants 05755/05756, 06006/06007 and 01573/01574
+# are the command word and the following DD word of the
+# same Э70 transfer, see V78-RLE-DRUM-BRIDGE.md, §4, §8.
 SEGMENT_SPECS = (
     ('S-INPUT', ('076505-076642',)),
     ('S-DISPATCH', ('076031-076123',)),
@@ -49,7 +53,31 @@ SEGMENT_SPECS = (
     ('S-METKA', ('075353-075377',)),
     ('S-SLOT', ('04200-04207',)),
     ('S-DESCR', ('06061', '01534')),
+    ('S-BRIDGE', ('012000', '072000',
+                  '05755', '05756', '06006', '06007',
+                  '01573', '01574', '01433', '01715')),
+    ('S-COPY', ('077316-077322', '03461', '04754')),
+    ('S-LOOPS', ('075000-075016', '075750-075757')),
+    ('S-BRANCH', ('076141', '076147', '076161',
+                  '076230')),
+    ('S-AREA', ('04064-04066',)),
+    ('S-BOOT', ('00110', '064000-064077')),
 )
+
+# Phase-ambiguous PC regions from V78-SEGMENTS.md, §4.
+# One address, different zone or phase label. Such a PC
+# is never silently attributed to a single owner.
+# S-MARK/S-METKA is derived from the active table above,
+# not hard-coded here, so a custom --segments table also
+# reports its own overlaps.
+PHASE_OVERLAPS = (
+    ('PAGE37', '076000-077777',
+     '0152 RLE / 0157 диспетчер'),
+    ('P02000', '02000',
+     '0154 EDITOR / 0170 MACHINE / 0172 буфер'),
+)
+
+ARTIFACT_PCS = frozenset(('040034', '042007'))
 
 # Candidate PCs read once from the report
 # analysis/V78-FSM-VALIDATION.md, section ACTION 3.
@@ -59,7 +87,7 @@ BUILTIN_CANDIDATES = (
     '04040', '04043', '04070', '04072', '04074', '04200',
     '04205', '04206', '04207', '06101', '06103', '06107',
     '06110', '06111', '06115', '06116', '06122', '06123',
-    '26116', '26117', '26120', '26121', '40034', '42007',
+    '26116', '26117', '26120', '26121',
     '75344', '75346', '75351', '75372', '75401', '76031',
     '76032', '76033', '76034', '76035', '76036', '76054',
     '76055', '76056', '76057', '76061', '76062', '76066',
@@ -145,6 +173,31 @@ def segments_for(value, segments):
     """Segment names that contain one integer address."""
     return [name for name, lo, hi in segments
             if lo <= value <= hi]
+
+
+def load_phase_overlaps(specs=PHASE_OVERLAPS):
+    """Return (label, lo, hi, note) for ambiguous PCs."""
+    result = []
+    for label, part, note in specs:
+        pair = parse_segment_part(part)
+        if pair is None:
+            raise InputError(
+                'bad overlap range: ' + str(part))
+        result.append((label, pair[0], pair[1], note))
+    return result
+
+
+def overlaps_for(value, overlaps, segments):
+    """Distinct segment names and zone labels for one PC."""
+    names = []
+    for name in segments_for(value, segments):
+        if name not in names:
+            names.append(name)
+    zones = []
+    for label, lo, hi, _ in overlaps:
+        if lo <= value <= hi and label not in zones:
+            zones.append(label)
+    return names, zones
 
 
 def normalize_event(raw, path, lineno, strict, last_n):
@@ -291,8 +344,10 @@ def phase_rows(acc_a, acc_b):
     return rows
 
 
-def coverage_rows(acc_a, acc_b, segments):
-    """Per-segment PC and hit counts for both sides."""
+def coverage_rows(acc_a, acc_b, segments, overlaps=None):
+    """Per-segment counts plus every multi-owner PC."""
+    if overlaps is None:
+        overlaps = load_phase_overlaps()
     names = []
     for name, _, _ in segments:
         if name not in names:
@@ -323,14 +378,29 @@ def coverage_rows(acc_a, acc_b, segments):
     all_pcs = set(acc_a.pc_hits) | set(acc_b.pc_hits)
     loose = sorted(oct5(v) for v in all_pcs
                    if not segments_for(v, segments))
+    shared = []
+    for value in sorted(all_pcs):
+        segs, zones = overlaps_for(value, overlaps,
+                                   segments)
+        if len(segs) > 1 or zones:
+            shared.append({
+                'pc': oct5(value),
+                'segments': segs,
+                'zones': zones,
+                'a': acc_a.pc_hits.get(value, 0),
+                'b': acc_b.pc_hits.get(value, 0),
+            })
     return {
         'segments': rows,
         'unmapped_count': len(loose),
         'unmapped_top': loose[:TOP_N],
+        'overlap_pcs': shared,
+        'overlap_count': len(shared),
     }
 
 
-def compare(path_a, path_b, strict=False, segments=None):
+def compare(path_a, path_b, strict=False, segments=None,
+            overlaps=None):
     """Compare two event files in one streaming pass."""
     if segments is None:
         segments = load_segments()
@@ -421,7 +491,7 @@ def compare(path_a, path_b, strict=False, segments=None):
         'phase_counts': phase_rows(acc_a, acc_b),
         'first_divergence_phase': phase,
         'coverage': coverage_rows(
-            acc_a, acc_b, segments),
+            acc_a, acc_b, segments, overlaps),
     }
 
 
@@ -438,8 +508,17 @@ def parse_report_candidates(text):
     for line in section.splitlines():
         match = RE_CLUSTER.match(line)
         if match:
-            values.add(int(match.group(1), 8))
-            values.add(int(match.group(2), 8))
+            # 15-bit addresses have at most 5 octal digits; a leading
+            # zero is normal (075344). The two 6-digit cluster ends
+            # in ACTION 3 carry an extra zero and are artifacts.
+            def ok(pc):
+                return len(pc) <= 5 or (len(pc) == 6 and
+                                        pc[0] == '0' and
+                                        pc not in ARTIFACT_PCS)
+            if ok(match.group(1)):
+                values.add(int(match.group(1), 8))
+            if ok(match.group(2)):
+                values.add(int(match.group(2), 8))
             count = int(match.group(3))
             clusters.append({
                 'from': match.group(1),
@@ -448,7 +527,10 @@ def parse_report_candidates(text):
             })
             declared += count
         for item in RE_PCMN.finditer(line):
-            if item.group(2) in MNEMONICS:
+            if item.group(2) in MNEMONICS and (len(item.group(1)) <= 5 or
+                    (len(item.group(1)) == 6 and
+                     item.group(1)[0] == '0' and
+                     item.group(1) not in ARTIFACT_PCS)):
                 values.add(int(item.group(1), 8))
     meta = {
         'declared_total': declared,
@@ -630,6 +712,17 @@ def format_pair_text(report):
             row['segment'], row['a_pcs'], row['b_pcs']))
     out.append('PC вне сегментов: %d' %
                cov['unmapped_count'])
+    out.append('ПЕРЕКРЫТИЯ PC: %d' %
+               cov['overlap_count'])
+    if cov['overlap_pcs']:
+        out.append('    pc  сегменты        зоны')
+        for row in cov['overlap_pcs'][:TOP_N]:
+            segs = ','.join(row['segments'])
+            zones = ','.join(row['zones'])
+            out.append('  %5s %-16s %s' % (
+                row['pc'], segs[:16], zones[:20]))
+    else:
+        out.append('  нет')
     return '\n'.join(out)
 
 

@@ -36,7 +36,10 @@ class Synthetic(unittest.TestCase):
         self.fail('нет случая ' + cid)
 
     def test_01_manifest_is_list_of_120(self):
-        self.assertEqual(len(self.cases), 120)
+        self.assertGreaterEqual(len(self.cases), 120)
+        groups = {c.get('group') for c in self.cases}
+        self.assertIn('prior-token', groups)
+        self.assertIn('pair', groups)
 
     def test_02_ids_unique(self):
         ids = [c['id'] for c in self.cases]
@@ -215,7 +218,7 @@ class Synthetic(unittest.TestCase):
     def test_26_emit_writes_only_to_target(self):
         with tempfile.TemporaryDirectory() as tmp:
             names = m.emit(self.cases, tmp)
-            self.assertEqual(len(names), 120)
+            self.assertEqual(len(names), len(self.cases))
             files = sorted(os.listdir(tmp))
             self.assertEqual(sorted(names), files)
             self.assertEqual((Path(tmp) / 'P1a.job.b6'
@@ -241,7 +244,7 @@ class Synthetic(unittest.TestCase):
         result = self.run_cli('--format', 'json')
         self.assertEqual(result.returncode, 0)
         rows = json.loads(result.stdout)
-        self.assertEqual(len(rows), 120)
+        self.assertEqual(len(rows), len(self.cases))
         self.assertIn('md5', rows[0])
 
     def test_31_cli_check(self):

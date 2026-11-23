@@ -479,7 +479,9 @@ class TestCandidates(TempMixin, unittest.TestCase):
             values, meta = m.parse_report_candidates(
                 handle.read())
         self.assertEqual(meta['declared_total'], 84)
-        self.assertGreaterEqual(meta['explicit_count'], 60)
+        self.assertGreaterEqual(meta['explicit_count'], 55)
+        self.assertNotIn(m.parse_pc('040034'), values)
+        self.assertNotIn(m.parse_pc('042007'), values)
         self.assertEqual(len(meta['clusters']), 7)
         self.assertIn(m.parse_pc('075344'), values)
 
@@ -488,7 +490,7 @@ class TestCandidates(TempMixin, unittest.TestCase):
                 m, 'DEFAULT_REPORT', '/no/such/report.md'):
             values, meta = m.load_candidates()
         self.assertEqual(meta['source'], 'builtin')
-        self.assertEqual(len(values), 66)
+        self.assertEqual(len(values), 64)
 
     def test_catalog_uncovered(self):
         folder = self.make_temp_dir()
@@ -560,6 +562,191 @@ class TestCandidates(TempMixin, unittest.TestCase):
             'cand.txt', '076031\n')
         with self.assertRaises(m.InputError):
             m.catalog(folder, candidates, strict=True)
+
+
+class TestStep3Segments(TempMixin, unittest.TestCase):
+    """STEP 3: extended table, overlaps and --segments."""
+
+    def test_new_segments_registered(self):
+        segments = m.load_segments()
+        names = []
+        for name, _, _ in segments:
+            if name not in names:
+                names.append(name)
+        old = ('S-INPUT', 'S-DISPATCH', 'S-PACK',
+               'S-MARK', 'S-METKA', 'S-SLOT',
+               'S-DESCR')
+        for name in old:
+            self.assertIn(name, names)
+        new = ('S-BRIDGE', 'S-COPY', 'S-LOOPS',
+               'S-BRANCH', 'S-AREA', 'S-BOOT')
+        for name in new:
+            self.assertIn(name, names)
+        self.assertEqual(len(names), 13)
+
+    def test_bridge_core_pages(self):
+        segments = m.load_segments()
+        for pc in ('012000', '072000'):
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-BRIDGE'])
+
+    def test_bridge_drum_pcs(self):
+        segments = m.load_segments()
+        pcs = ('01433', '01715', '05755', '05756',
+               '06006', '06007', '01573', '01574')
+        for pc in pcs:
+            self.assertIn(
+                'S-BRIDGE',
+                m.segments_for(m.parse_pc(pc), segments))
+
+    def test_copy_all_pcs(self):
+        segments = m.load_segments()
+        pcs = ('077316', '077320', '077322',
+               '03461', '04754')
+        for pc in pcs:
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-COPY'])
+
+    def test_copy_distinct_from_pack(self):
+        segments = m.load_segments()
+        self.assertNotIn(
+            'S-PACK',
+            m.segments_for(m.parse_pc('077316'),
+                           segments))
+        self.assertNotIn(
+            'S-COPY',
+            m.segments_for(m.parse_pc('077421'),
+                           segments))
+
+    def test_loops_ranges(self):
+        segments = m.load_segments()
+        for pc in ('075000', '075016', '075750',
+                   '075757'):
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-LOOPS'])
+        self.assertNotIn(
+            'S-LOOPS',
+            m.segments_for(m.parse_pc('075020'),
+                           segments))
+
+    def test_branch_pcs(self):
+        segments = m.load_segments()
+        for pc in ('076141', '076147', '076161',
+                   '076230'):
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-BRANCH'])
+        self.assertNotIn(
+            'S-BRANCH',
+            m.segments_for(m.parse_pc('076123'),
+                           segments))
+
+    def test_area_discrete(self):
+        segments = m.load_segments()
+        for pc in ('04064', '04065', '04066'):
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-AREA'])
+        self.assertEqual(
+            m.segments_for(m.parse_pc('04067'),
+                           segments), [])
+
+    def test_boot_anchors(self):
+        segments = m.load_segments()
+        for pc in ('00110', '064000', '064077'):
+            self.assertEqual(
+                m.segments_for(m.parse_pc(pc), segments),
+                ['S-BOOT'])
+        self.assertEqual(
+            m.segments_for(m.parse_pc('064100'),
+                           segments), [])
+
+    def test_phase_overlaps_parsed(self):
+        rows = m.load_phase_overlaps()
+        labels = [row[0] for row in rows]
+        self.assertEqual(labels, ['PAGE37', 'P02000'])
+        names, zones = m.overlaps_for(
+            m.parse_pc('076505'), rows,
+            m.load_segments())
+        self.assertEqual(names, ['S-INPUT'])
+        self.assertEqual(zones, ['PAGE37'])
+
+    def test_mark_metka_reports_all(self):
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '075355')])
+        cov = m.compare(path, path)['coverage']
+        row = cov['overlap_pcs'][0]
+        self.assertEqual(row['pc'], '75355')
+        self.assertEqual(
+            row['segments'], ['S-MARK', 'S-METKA'])
+        self.assertEqual(row['zones'], [])
+
+    def test_page37_zone_label(self):
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '076505')])
+        cov = m.compare(path, path)['coverage']
+        row = cov['overlap_pcs'][0]
+        self.assertEqual(row['segments'], ['S-INPUT'])
+        self.assertEqual(row['zones'], ['PAGE37'])
+
+    def test_p02000_shared(self):
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '02000')])
+        cov = m.compare(path, path)['coverage']
+        row = cov['overlap_pcs'][0]
+        self.assertEqual(row['pc'], '02000')
+        self.assertEqual(row['segments'], [])
+        self.assertEqual(row['zones'], ['P02000'])
+
+    def test_overlap_text_section(self):
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '075355')])
+        code, out, err = run_cli([path, path])
+        self.assertEqual(code, 0)
+        self.assertIn('ПЕРЕКРЫТИЯ PC: 1', out)
+        self.assertIn('75355', out)
+        self.assertIn('S-MARK,S-METKA', out)
+
+    def test_custom_segments_cli(self):
+        spec = self.raw_fixture(
+            'seg.json', json.dumps(
+                {'Z-CUSTOM': ['012000']}))
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '012000')])
+        code, out, err = run_cli([
+            path, path, '--segments', spec,
+            '--format', 'json'])
+        self.assertEqual(code, 0)
+        cov = json.loads(out)['coverage']
+        names = [r['segment'] for r in cov['segments']]
+        self.assertEqual(names, ['Z-CUSTOM'])
+        self.assertEqual(cov['unmapped_count'], 0)
+
+    def test_custom_segments_missing_file(self):
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '076505')])
+        code, out, err = run_cli([
+            path, path, '--segments',
+            path + '.noseg'])
+        self.assertEqual(code, 2)
+        self.assertIn('error', err)
+
+    def test_custom_segments_overlap_logic(self):
+        spec = self.raw_fixture(
+            'seg.json', json.dumps(
+                {'Z-A': ['075344-075401'],
+                 'Z-B': ['075353-075377']}))
+        path = self.write_fixture(
+            'a.jsonl', [ev(1, '075355')])
+        segments = m.load_segments(spec)
+        report = m.compare(path, path,
+                           segments=segments)
+        row = report['coverage']['overlap_pcs'][0]
+        self.assertEqual(
+            row['segments'], ['Z-A', 'Z-B'])
 
 
 class TestIntegration(TempMixin, unittest.TestCase):

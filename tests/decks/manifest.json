@@ -3118,5 +3118,161 @@
       "line_kind": "МАСRО",
       "directive": "ПАМ"
     }
+  },
+  {
+    "id": "U01",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "7"
+    },
+    "expect": {
+      "feature": "метка 7 знаков, форматирование METKA",
+      "note": "цель PC 40034/42007, кластер чтения и сборки"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "U02",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "метка 1 знак, короткий METKA",
+      "note": "цель PC 40034/42007, кластер чтения и сборки"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "U03",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@OPR"
+    },
+    "expect": {
+      "feature": "цифровой операнд, сборка числа",
+      "note": "цель PC 40034/42007, форматирование числа"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "U04",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@OP"
+    },
+    "expect": {
+      "feature": "буквенная операция, сборка имени",
+      "note": "цель PC 40034/42007, форматирование имени"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "U05",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "8"
+    },
+    "expect": {
+      "feature": "токен в колонке 8, байтовая сборка",
+      "note": "цель PC 40034/42007, кластер чтения и сборки"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "U06",
+    "group": "uncovered",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R3a"
+    },
+    "expect": {
+      "feature": "метка с разрывом ZL BL1, пролог S12",
+      "note": "цель PC 40034/42007, сборка байта"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
   }
 ]
