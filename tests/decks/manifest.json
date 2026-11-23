@@ -1,0 +1,3122 @@
+[
+  {
+    "id": "P1a",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "leading_space",
+      "value": "on"
+    },
+    "expect": {
+      "feature": "ведущий пробел",
+      "note": "METKA пуста, скелет трассы иной"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P1b",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "leading_space",
+      "value": "off"
+    },
+    "expect": {
+      "feature": "ведущий пробел",
+      "note": "эталон, METKA ZLBL1"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P2a",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "colon"
+    },
+    "expect": {
+      "feature": "разделитель метки",
+      "note": "ZLBL1:ZOPC1, ГС 001332"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P2b",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "space"
+    },
+    "expect": {
+      "feature": "разделитель метки",
+      "note": "пробел, ГС 001334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P3a",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "semi"
+    },
+    "expect": {
+      "feature": "разделитель комментария",
+      "note": "; только эхо, PC-диффа нет"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P3b",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "comma"
+    },
+    "expect": {
+      "feature": "разделитель комментария",
+      "note": ", только эхо, PC-диффа нет"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P4a",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "6"
+    },
+    "expect": {
+      "feature": "длина метки",
+      "note": "ZLBL16, урезания нет"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "P4b",
+    "group": "prior-token",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "7"
+    },
+    "expect": {
+      "feature": "длина метки",
+      "note": "ZLBL167, предел 6 не действует"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CB",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "COLBASE"
+    },
+    "expect": {
+      "feature": "пустая строка 22",
+      "note": "база матрицы колонок"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C1",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA=QQQQ, ГС 1332"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C3",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "3"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C5",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "5"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C8",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "8"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C10",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "10"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C15",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "15"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C20",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "20"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "C30",
+    "group": "prior-column",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "30"
+    },
+    "expect": {
+      "feature": "позиция токена",
+      "note": "METKA пуста, ГС 1334"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CD-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CD-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CD-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CD-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CL-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CL-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CL-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CL-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CC-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "colon@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CC-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "colon@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CC-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "colon@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CC-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "colon@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CS-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CS-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CS-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CS-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CM-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "comma@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CM-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "comma@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CM-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "comma@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CM-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "comma@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CT-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "star@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CT-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "star@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CT-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "star@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CT-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "star@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CP-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "space@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CP-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "space@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CP-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "space@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CP-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "space@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CA-M",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "arrow@METKA"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле METKA, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "arrow",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CA-O",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "arrow@OP"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OP, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "arrow",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CA-R",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "arrow@OPR"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле OPR, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "arrow",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "CA-C",
+    "group": "prior-char",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "arrow@CMT"
+    },
+    "expect": {
+      "feature": "класс знака",
+      "note": "поле CMT, байт 076031"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "arrow",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "B67",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "BASE1967"
+    },
+    "expect": {
+      "feature": "база 1967",
+      "note": "строка в теле макроса, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R1A",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R1a"
+    },
+    "expect": {
+      "feature": "двоеточие в кол.1",
+      "note": "PC 03477, ГС 001332"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R1B",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R1b"
+    },
+    "expect": {
+      "feature": "двоеточие без имени",
+      "note": "ГС 001332, METKA=00001"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R2A",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R2a"
+    },
+    "expect": {
+      "feature": "смешение форм",
+      "note": "две строки, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R2B",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R2b"
+    },
+    "expect": {
+      "feature": "запрещённая форма",
+      "note": "ZLBL1:ZOPC1, ГС 001332"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R3A",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R3a"
+    },
+    "expect": {
+      "feature": "пробелы в имени",
+      "note": "ZL    BL1, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R3B",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R3b"
+    },
+    "expect": {
+      "feature": "пробелы в операнде",
+      "note": "ZO PR1, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R4A",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R4a"
+    },
+    "expect": {
+      "feature": "длина 58",
+      "note": "длинный операнд, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R4B",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R4b"
+    },
+    "expect": {
+      "feature": "длина 59",
+      "note": "длинный операнд, ОШ=0"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R4C",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R4c"
+    },
+    "expect": {
+      "feature": "длина 58",
+      "note": "хвостовые пробелы, эхо не меняется"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "R4D",
+    "group": "prior-1967",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "custom",
+      "value": "R4d"
+    },
+    "expect": {
+      "feature": "длина 59",
+      "note": "хвостовые пробелы, эхо не меняется"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA001",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "arrow@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "arrow",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA002",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "comma@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "0",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ВНЕШН",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA003",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "ВХОДН"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "arrow",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ВХОДН",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA004",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "colon@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "colon",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "0",
+      "line_kind": "МАСRО",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA005",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "15"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "space",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "0",
+      "line_kind": "МАСRО",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA006",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "space@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "space",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "МАСRО",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA007",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "ВНЕШН"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "digit",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "ВНЕШН",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA008",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "8"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "4",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA009",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_params",
+      "value": "4"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "comma",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA010",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "star@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "6",
+      "nesting": "1",
+      "line_kind": "ВХОДН",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA011",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "МАСRО"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "comma",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "МАСRО",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA012",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "ФИНИШ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ВНЕШН",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA013",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "3"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "digit",
+      "label_length": "7",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ЭКВ",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA014",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "comma",
+      "label_length": "1",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "ВХОДН",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA015",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_body",
+      "value": "6"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "colon",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ВХОДН",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA016",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_params",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "7",
+      "macro_params": "1",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA017",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "nesting",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "arrow",
+      "label_length": "7",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "1",
+      "line_kind": "ВНЕШН",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA018",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "digit@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "4",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "ВХОДН",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA019",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "ЭКВ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "comma",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "6",
+      "nesting": "1",
+      "line_kind": "ЭКВ",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA020",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "КОНД"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "КОНД",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA021",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "leading_space",
+      "value": "on"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "colon",
+      "label_length": "6",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "ЭКВ",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA022",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "colon"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "colon",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "КОНД",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA023",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "comma"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "1",
+      "character_class": "arrow",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "ordinary",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA024",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "30"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "space",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "ЭКВ",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA025",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_body",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "space",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "0",
+      "line_kind": "КОНД",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA026",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "7"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "comma",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "0",
+      "line_kind": "ВНЕШН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA027",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "ВНЕШН",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA028",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "nesting",
+      "value": "2"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "arrow",
+      "label_length": "1",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ЭКВ",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA029",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "leading_space",
+      "value": "off"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "arrow",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "МАСRО",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA030",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "space"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "1",
+      "line_kind": "ЭКВ",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA031",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "semi"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "arrow",
+      "label_length": "1",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA032",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "КОНД"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "1",
+      "character_class": "star",
+      "label_length": "7",
+      "macro_params": "4",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA033",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "1",
+      "character_class": "digit",
+      "label_length": "7",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "0",
+      "line_kind": "МАСRО",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA034",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_params",
+      "value": "2"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "1",
+      "character_class": "star",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA035",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "СТАРТ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "digit",
+      "label_length": "6",
+      "macro_params": "0",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ordinary",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA036",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "semi",
+      "label_length": "1",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "КОНД",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA037",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "6"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "comma",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA038",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "nesting",
+      "value": "0"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "star",
+      "label_length": "7",
+      "macro_params": "4",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ordinary",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA039",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "colon",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ВНЕШН",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA040",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_params",
+      "value": "0"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "comma",
+      "label_length": "1",
+      "macro_params": "0",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ЭКВ",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA041",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_body",
+      "value": "3"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "1",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "ВХОДН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA042",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "nesting",
+      "value": "1"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "star",
+      "label_length": "6",
+      "macro_params": "0",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ЭКВ",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA043",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "МАСRО"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "1",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "3",
+      "nesting": "1",
+      "line_kind": "МАСRО",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA044",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "СТАРТ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "letter",
+      "label_length": "6",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "ЭКВ",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA045",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "ordinary"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ordinary",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA046",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "colon"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "3",
+      "character_class": "letter",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "КОНД",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA047",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "comma"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "semi",
+      "label_length": "1",
+      "macro_params": "2",
+      "macro_body": "6",
+      "nesting": "1",
+      "line_kind": "ВНЕШН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA048",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "30"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "6",
+      "macro_params": "1",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "ВХОДН",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA049",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "semi@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "30",
+      "character_class": "semi",
+      "label_length": "7",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ЭКВ",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA050",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_length",
+      "value": "7"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "letter",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "6",
+      "nesting": "2",
+      "line_kind": "ВХОДН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA051",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "macro_params",
+      "value": "2"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "star",
+      "label_length": "7",
+      "macro_params": "2",
+      "macro_body": "1",
+      "nesting": "1",
+      "line_kind": "ВНЕШН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA052",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "ПАМ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "semi",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "КОНД",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA053",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "nesting",
+      "value": "2"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "15",
+      "character_class": "digit",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "ФИНИШ"
+    }
+  },
+  {
+    "id": "PA054",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "line_kind",
+      "value": "ВХОДН"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "space",
+      "label_length": "6",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "ВХОДН",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA055",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "directive",
+      "value": "СТАРТ"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "8",
+      "character_class": "semi",
+      "label_length": "7",
+      "macro_params": "4",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ЭКВ",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA056",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "leading_space",
+      "value": "off"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "15",
+      "character_class": "star",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "2",
+      "line_kind": "ordinary",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA057",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "label_separator",
+      "value": "space"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "on",
+      "label_separator": "space",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "arrow",
+      "label_length": "7",
+      "macro_params": "0",
+      "macro_body": "3",
+      "nesting": "0",
+      "line_kind": "ordinary",
+      "directive": "ПАМ"
+    }
+  },
+  {
+    "id": "PA058",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "comment_separator",
+      "value": "comma"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "3",
+      "character_class": "letter",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "6",
+      "nesting": "0",
+      "line_kind": "ordinary",
+      "directive": "КОНД"
+    }
+  },
+  {
+    "id": "PA059",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "token_column",
+      "value": "8"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "space",
+      "comment_separator": "semi",
+      "token_column": "8",
+      "character_class": "star",
+      "label_length": "1",
+      "macro_params": "4",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "СТАРТ"
+    }
+  },
+  {
+    "id": "PA060",
+    "group": "pair",
+    "base_deck": "P1a.job.b6",
+    "mutation": {
+      "kind": "character_class",
+      "value": "letter@METKA"
+    },
+    "expect": {
+      "feature": "попарное покрытие",
+      "note": "вектор измерений в поле dims"
+    },
+    "dims": {
+      "leading_space": "off",
+      "label_separator": "colon",
+      "comment_separator": "comma",
+      "token_column": "30",
+      "character_class": "letter",
+      "label_length": "1",
+      "macro_params": "0",
+      "macro_body": "1",
+      "nesting": "2",
+      "line_kind": "МАСRО",
+      "directive": "ПАМ"
+    }
+  }
+]

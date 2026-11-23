@@ -224,6 +224,14 @@ test-verify: rebuild-check
 	$(MAKE) rebuild-zone Z=0147 MODE=B
 	$(MAKE) verify
 
+# Полный корпус управляемых колод 06/78 (медленная цель, не в check-all).
+v78-corpus:
+	python3 tools/v78_deckgen.py --check
+	python3 tools/v78_deckgen.py --emit
+	python3 tools/v78_runner.py tests/decks/generated/*.b6 \
+	    --out tests/decks/events --check
+	python3 tools/v78_atlas.py --catalog tests/decks/events --check
+
 # Агрегатная проверка: фаза 0 + новая реконструкция + round-trip + тесты.
 check-all: stage0 rebuild-check verify unittest
 	@echo '=== check-all: все проверки пройдены ==='

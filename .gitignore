@@ -12,3 +12,5 @@ verify/*.bin
 *.diff
 *.bak.*
 *.bak
+
+tests/decks/events/
