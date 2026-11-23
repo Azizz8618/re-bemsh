@@ -44,6 +44,19 @@ make check       # базовая итоговая проверка (верси�
 Изучены макрокоманды (37), АРАП-архив, оверлеи 0154/0170; честные
 «НЕ ИЗВЕСТНО» — в `FINAL-REPORT.md` §7.
 
+**Процедурные метки и литералы (23.11).** В зоны 0137/0147 вставлены
+43 и ~120 абсолютных `ЭКВ`-имён correspondingly; `rebuild-zone` даёт
+1024/1024, 0 отличий. Доказано (5 отчётов: `BE-LISTING-MECHANICS.md`,
+`BE-LISTING-SOURCE.md`, `BE-LISTING-MODULES.md`,
+`LABEL-MODE-EXPERIMENT.md`, `REAL-LABELS-0137.md`), что **настоящая
+метка первого поля не даёт 0 отличий** для 0137: значение метки =
+HAM + индекс, а эталон хранит индекс без базы (`01036`); HAM=0
+недостижим (`НОЛЬ ЗАПР0Щ1`), `ВНЕШН` добавляет relocation. Поэтому
+в `.be` используются абсолютные `ЭКВ`-литералы (исключение), а не
+метки слова. Полный разбор смысла 323 литералов 0137 —
+`analysis/Z0137-LITERALS-{INDEX,G4,G5,G6}.md` (большинство — гипотезы);
+активная проверка по трассе — `analysis/Z0137-LITERALS-DYN.md`.
+
 **Последние находки 22.11** (новые отчёты в `analysis/`, сводка:
 `FINAL-REPORT.md` §7 п.14-18):
 
@@ -108,8 +121,11 @@ make check       # базовая итоговая проверка (верси�
 
 **Адреса загрузки:** [RESIDENT-ZONES.md](analysis/RESIDENT-ZONES.md)
 (13 резидентов с измеренной базой ОП, 56 нерезидентов-оверлеев),
-[RAM-SNAPSHOT-EXTRA.md](analysis/RAM-SNAPSHOT-EXTRA.md)
-(0170/0171 найдены как оверлеи 0154/0155 по 02000/04000).
+[RAM-SNAPSHOT-EXTRA.md](analysis/RAM-SNAPSHOT-EXTRA.md);
+уточнение 22.11: 0154 и 0170 — **один оверлей page 01 по базе
+`02000₈`** в разные моменты (`PASSES-CODE-LOCATION.md`,
+`PASSES-OVERLAY-MECH.md`), полная карта баз —
+`analysis/ZONE-BASE-MAP.md` (14 зон ФАКТ, 52 НЕ ИЗВЕСТНО).
 Шапки `СТАРТ '<база>'`: `docs/SEMANTIC/*-START-TOP-*.md` —
 резиденты по карте ОП, остальные `10000₈`. Особые случаи
 разобраны в [START-SPECIAL-FIX.md](docs/SEMANTIC/START-SPECIAL-FIX.md),
@@ -129,10 +145,16 @@ make check       # базовая итоговая проверка (верси�
 (стандарт — [SEMANTIC-STANDARD.md](docs/SEMANTIC-STANDARD.md)).
 
 **Сводка и статус:** [FINAL-REPORT.md](docs/FINAL-REPORT.md) — итоговый
-отчёт по всем фазам; [STATUS.md](docs/STATUS.md) — одностраничный статус
-(команды → ожидаемый результат, remotes, правило read-only образов);
-[ROADMAP.md](docs/ROADMAP.md) — закрытые пункты и открытая работа;
-[PLAN-NEXT.md](docs/PLAN-NEXT.md) — план Фаз A–E.
+отчёт по всем фазам (§7 п.1–21); [STATUS.md](docs/STATUS.md) —
+одностраничный статус; [ROADMAP.md](docs/ROADMAP.md) — закрытые пункты
+и открытая работа; [PLAN-NEXT.md](docs/PLAN-NEXT.md) — план Фаз A–E.
+Механика макрокода **не объявлена разобранной до конца**.
+
+**Механика транслятора (новое):** `analysis/BEMSH-SYNTAX-PARSER.md`,
+`BEMSH-MACROEDITOR-MECH.md`, `BEMSH-MACROMACHINE-MECH.md`,
+`BEMSH-ARAP-MECH.md` — синтаксический разбор, макроредактор,
+макромашина и АРАП; `analysis/DISPAK-LISTING-PAIRS.md` (в репозитории
+`re-dispak`) — 138 пар `.be`/`.lst`, 1389 G/D-символов.
 
 **Реконструкция и эксперименты:** [DIS2BE.md](docs/DIS2BE.md) (конвертер),
 [REBUILD-TOOL.md](docs/REBUILD-TOOL.md) (универсальная сборка),

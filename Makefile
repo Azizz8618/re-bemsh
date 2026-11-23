@@ -8,7 +8,8 @@ DISK  ?= 2348
 V     := tools/disbesm_verify.sh
 
 .PHONY: stage0 inventory dis xref verify versions check clean annotate procedures variables \
-        rebuild-zone rebuild-all rebuild-check check-all unittest
+        rebuild-zone rebuild-all rebuild-check check-all \
+        unittest test-all test-core test-integration test-verify
 
 # Фаза 0 — проверка конфигурации инструментов и образа.
 stage0:
@@ -185,11 +186,43 @@ rebuild-check:
 	    || { echo 'rebuild-check: FAIL (RESULT)'; exit 1; }; \
 	  echo 'rebuild-check: OK (RESULT: PASS, 1024/1024)'
 
-# 47 unit-тестов (аннотатор, конвертер, tools/).
+# --- Тестовые режимы (подробности: docs/TEST-MODES.md) ---
+# unittest / test-all: полный discover всех test_*.py.
+# test-core: быстрые тесты, без эмуляторов и больших трасс.
+# test-integration: сканирование реальных dis/, gold/ и bemsh/.
+# test-verify: пересборка зон 0137/0147 и верификация round-trip.
+
+# Быстрые тесты: конвертер, аннотатор, дампы, декодирование.
+CORE_TESTS := tools/tests/test_dis2be.py \
+              tools/tests/test_annotate_zone.py \
+              tools/tests/test_raw_zone_diff.py \
+              tools/tests/test_tagval_analysis.py \
+              tools/tests/test_text_decode_all.py \
+              tools/tests/test_asm_proc_comments.py \
+              tools/tests/test_phaseb_dump_extract.py
+
+# Всё остальное: разница между всеми файлами и CORE_TESTS.
+INTEGRATION_TESTS := $(filter-out $(CORE_TESTS),$(wildcard tools/tests/test_*.py))
+
+# Все тесты через discover (ранее здесь был список из 6 файлов).
 unittest:
-	python3 -m unittest tools/tests/test_annotate_zone.py tools/tests/test_dis2be.py \
-	  tools/tests/test_raw_zone_diff.py tools/tests/test_tagval_analysis.py \
-	  tools/tests/test_asm_proc_comments.py tools/tests/test_phaseb_dump_extract.py -v
+	python3 -m unittest discover -s tools/tests -p 'test_*.py' -v
+
+# Псевдоним полного прогона.
+test-all: unittest
+
+# Быстрый прогон: без эмуляторов и больших трасс.
+test-core:
+	python3 -m unittest $(CORE_TESTS) -v
+
+# Интеграционные тесты: реальные дампы, листинги и карты.
+test-integration:
+	python3 -m unittest $(INTEGRATION_TESTS) -v
+
+# Верификация: эталон 0137 + зона 0147 + round-trip.
+test-verify: rebuild-check
+	$(MAKE) rebuild-zone Z=0147 MODE=B
+	$(MAKE) verify
 
 # Агрегатная проверка: фаза 0 + новая реконструкция + round-trip + тесты.
 check-all: stage0 rebuild-check verify unittest
