@@ -1,0 +1,531 @@
+{
+  "schema": "mm-call-decks-v1",
+  "date": "2026-11-24",
+  "purpose": "Корпус колод, которые РЕАЛЬНО вызывают макросы и разворачивают команды macros.be",
+  "dialect": "MONITOR-80 inp$$$ / eoi$$$",
+  "why_not_P1a": "Шаблон ВВД$$$ с терминатором ^ не пригоден: ^ попадает в текст макроса. См. MACRO-TABLE-FORMAT-VERIFIED §2.2. Поэтому взят каркас mbe60_bemsh.txt.",
+  "guard": {
+    "reference": "/usr/local/share/besm6",
+    "writes": "только копии томов в scratch runner",
+    "md5_before_after": true
+  },
+  "sources": [
+    "/home/azizz/Yandex.Disk/re-dispak/macros.be:1-234",
+    "/home/azizz/Yandex.Disk/re-dispak/testdks/mbe60_bemsh.txt",
+    "docs/MACRO-COMMANDS.md:16-70",
+    "analysis/MM-COMMAND-CATALOG.md:76-121",
+    "analysis/MACRO-TABLE-FORMAT-VERIFIED.md:2.2",
+    "tools/v78_runner.py"
+  ],
+  "decks": [
+    {
+      "id": "MC01_PRE",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "PRE"
+      ],
+      "call": [
+        " пре 1"
+      ],
+      "expect": "len=00001, слово УИА",
+      "size": 249,
+      "md5": "877bc66adc45f2ba599045e2300798ee"
+    },
+    {
+      "id": "MC02_VO",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        33,
+        34
+      ],
+      "macro_defs": [
+        "VO"
+      ],
+      "call": [
+        "m1 экв '100'",
+        "m2 экв '200'",
+        " во m1,m2"
+      ],
+      "expect": "len=00001, слова УИА и ПБ",
+      "size": 330,
+      "md5": "43ecaec8bdb7215ebe6b476c03b97578"
+    },
+    {
+      "id": "MC03_E",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        7,
+        8,
+        10,
+        12,
+        14,
+        15
+      ],
+      "macro_defs": [
+        "E"
+      ],
+      "call": [
+        " е"
+      ],
+      "expect": "met=00061, PC 03573/03610/04147",
+      "size": 312,
+      "md5": "ae93718df66c529cd74ac0de4a483ab0"
+    },
+    {
+      "id": "MC04_EE",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        7,
+        8,
+        10,
+        12,
+        14,
+        15
+      ],
+      "macro_defs": [
+        "EE"
+      ],
+      "call": [
+        " ее"
+      ],
+      "expect": "met=00061, метка .SL",
+      "size": 315,
+      "md5": "3c50baa202a775f074e00cc9ff6f7723"
+    },
+    {
+      "id": "MC05_EVNESH",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        18,
+        21,
+        7,
+        8,
+        12,
+        14
+      ],
+      "macro_defs": [
+        "EVNESH"
+      ],
+      "call": [
+        " евнеш x"
+      ],
+      "expect": "vn=00060, met=00062",
+      "size": 334,
+      "md5": "ff969ba6d81ca529d5da4434af4f15c1"
+    },
+    {
+      "id": "MC06_OPRE",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        8,
+        10,
+        12,
+        14,
+        23,
+        26
+      ],
+      "macro_defs": [
+        "OPRE"
+      ],
+      "call": [
+        " опре x"
+      ],
+      "expect": "len=00060, 48 слов КОНД",
+      "size": 389,
+      "md5": "38426e01f78e58436816efef19445c81"
+    },
+    {
+      "id": "MC07_VNESH",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        11,
+        14,
+        17,
+        18
+      ],
+      "macro_defs": [
+        "VNESH"
+      ],
+      "call": [
+        " внеш x,y"
+      ],
+      "expect": "vn=00002",
+      "size": 408,
+      "md5": "d0410886bdf106920f9bed6fdcf3bf4d"
+    },
+    {
+      "id": "MC08_VHOD",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        11,
+        14,
+        22,
+        23
+      ],
+      "macro_defs": [
+        "VHOD"
+      ],
+      "call": [
+        "x экв '100'",
+        "y экв '200'",
+        " вход x,y"
+      ],
+      "expect": "vh=00002, err=0000",
+      "size": 419,
+      "md5": "7aa23c8c6c23bf116a1ec54932c4d153"
+    },
+    {
+      "id": "MC09_VS1_KONDB",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        8,
+        27
+      ],
+      "macro_defs": [
+        "VS1",
+        "KONDB"
+      ],
+      "call": [
+        " vs1",
+        " кондб 1"
+      ],
+      "expect": "VS=1: КОНДБ не порождает слово",
+      "size": 335,
+      "md5": "880b9b640e42569faff6ee08e069793d"
+    },
+    {
+      "id": "MC10_VS0_KONDB",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        8,
+        27
+      ],
+      "macro_defs": [
+        "VS0",
+        "KONDB"
+      ],
+      "call": [
+        " vs0",
+        " кондб 1"
+      ],
+      "expect": "VS=0: len=00001",
+      "size": 335,
+      "md5": "5e589c702a28c4dc44d5a008e5cceeca"
+    },
+    {
+      "id": "MC11_VS1_KONDS",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        8,
+        28
+      ],
+      "macro_defs": [
+        "VS1",
+        "KONDS"
+      ],
+      "call": [
+        " vs1",
+        " кондс 1"
+      ],
+      "expect": "VS=1: len=00001",
+      "size": 335,
+      "md5": "be0a0b065d877365652e94e6d7b86815"
+    },
+    {
+      "id": "MC12_VS0_KONDS",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        8,
+        28
+      ],
+      "macro_defs": [
+        "VS0",
+        "KONDS"
+      ],
+      "call": [
+        " vs0",
+        " кондс 1"
+      ],
+      "expect": "VS=0: КОНДС не порождает слово",
+      "size": 335,
+      "md5": "ba1d9eb5f0fa446210c39c23454c5f1b"
+    },
+    {
+      "id": "MC13_VNESHB",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        19
+      ],
+      "macro_defs": [
+        "VNESHB",
+        "VNESH"
+      ],
+      "call": [
+        " внешб x,y"
+      ],
+      "expect": "VS=0: vn=00002",
+      "size": 585,
+      "md5": "5d8a66a62983e6e074b8dfd888887457"
+    },
+    {
+      "id": "MC14_VNESHS",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        20
+      ],
+      "macro_defs": [
+        "VS1",
+        "VNESHS",
+        "VNESH"
+      ],
+      "call": [
+        " vs1",
+        " внешс x,y"
+      ],
+      "expect": "VS=1: vn=00002",
+      "size": 629,
+      "md5": "57b917e2033b3f7d755d6a2a6bb8f64e"
+    },
+    {
+      "id": "MC15_VHODB",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        24
+      ],
+      "macro_defs": [
+        "VHODB",
+        "VHOD"
+      ],
+      "call": [
+        " входб x,y"
+      ],
+      "expect": "VS=0: vh=00002",
+      "size": 562,
+      "md5": "a05779fb045f2b68a6f00967113eb222"
+    },
+    {
+      "id": "MC16_VHODS",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        25
+      ],
+      "macro_defs": [
+        "VS1",
+        "VHODS",
+        "VHOD"
+      ],
+      "call": [
+        " vs1",
+        " входс x,y"
+      ],
+      "expect": "VS=1: vh=00002",
+      "size": 606,
+      "md5": "00b4b21500133d1c85fb5f7ba8051798"
+    },
+    {
+      "id": "MC17_SHIFAR",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        26,
+        37
+      ],
+      "macro_defs": [
+        "SHIFAR"
+      ],
+      "call": [
+        " шифар"
+      ],
+      "expect": "len=00001, слово 0000000005673567",
+      "size": 270,
+      "md5": "b2f07b0684a721576959ffe64caccc97"
+    },
+    {
+      "id": "MC18_SHIAR",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        36
+      ],
+      "macro_defs": [
+        "SHIAR"
+      ],
+      "call": [
+        " шиар"
+      ],
+      "expect": "len=00003, текст",
+      "size": 278,
+      "md5": "aa45fb1d9d96af9d83afbec2ad8d201b"
+    },
+    {
+      "id": "MC19_VTBRZ",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        30,
+        35
+      ],
+      "macro_defs": [
+        "VTBRZ"
+      ],
+      "call": [
+        " втбрз"
+      ],
+      "expect": "len=00001, КОП 36",
+      "size": 283,
+      "md5": "ad8de9aea15a2757e02e5bac53c4e0c3"
+    },
+    {
+      "id": "MC20_SPO",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        10,
+        11,
+        31,
+        32
+      ],
+      "macro_defs": [
+        "SPO"
+      ],
+      "call": [
+        "x экв '100'",
+        "y экв '200'",
+        " спо x,y"
+      ],
+      "expect": "len=00003, МNОТЕ и ПВ",
+      "size": 472,
+      "md5": "8ca5a5e3073ab35a8f0232a64510f90f"
+    },
+    {
+      "id": "MC21_B",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        13,
+        14
+      ],
+      "macro_defs": [
+        "B"
+      ],
+      "call": [
+        " б"
+      ],
+      "expect": "21 строка без кода, GВLА/GВLВ/SЕТА/SЕТВ/ОR",
+      "size": 848,
+      "md5": "c3fbbfbbe7073477e5124a152a5694b9"
+    },
+    {
+      "id": "MC22_EQVIV",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        11,
+        15,
+        16
+      ],
+      "macro_defs": [
+        "EQVIV"
+      ],
+      "call": [
+        "x экв '100'",
+        " экvic x,y,z,zh,d,e,f,g,i,j,k,l,m,n,o,p,r"
+      ],
+      "expect": "met растёт, 16 ЭКВ",
+      "size": 436,
+      "md5": "cfbd94025acfb0ada86c6f850d267bc7"
+    },
+    {
+      "id": "MC23_M",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [
+        11,
+        15,
+        16
+      ],
+      "macro_defs": [
+        "M"
+      ],
+      "call": [
+        "m1 экв '1'",
+        "m2 экв '2'",
+        "m3 экв '3'",
+        "m4 экв '4'",
+        "m5 экв '5'",
+        "m6 экв '6'",
+        "m7 экв '7'"
+      ],
+      "expect": "29 пар ЭКВ",
+      "size": 535,
+      "md5": "42268c20ead1c5b3340ddc96dd78ce00"
+    },
+    {
+      "id": "MC24_CONTROL",
+      "group": "macro-call",
+      "base": "MONITOR-80/mbe60_bemsh",
+      "commands": [],
+      "macro_defs": [
+        "VS1",
+        "VS0",
+        "PRE",
+        "VO",
+        "E",
+        "EE",
+        "EVNESH",
+        "OPRE",
+        "VNESH",
+        "VHOD",
+        "VNESHB",
+        "VNESHS",
+        "VHODS",
+        "VHODB",
+        "KONDB",
+        "KONDS",
+        "B",
+        "SHIFAR",
+        "SHIAR",
+        "VTBRZ",
+        "SPO",
+        "EQVIV",
+        "M"
+      ],
+      "call": [],
+      "expect": "нет вызова, контроль",
+      "size": 3585,
+      "md5": "a3baae2091a4370015ca007be3ef49da"
+    }
+  ]
+}
