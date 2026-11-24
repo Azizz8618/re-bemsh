@@ -923,6 +923,276 @@
       "expect": "ЭКВИВ с 16 формалами, как MC22",
       "size": 621,
       "md5": "e30a5ff8436c10adfecc5f487530eab4"
+    },
+    {
+      "id": "ISO01_GBLA",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        5
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "GВLА только: объявление &vs, кадр 03070-03077",
+      "size": 417,
+      "md5": "e3205f4cfb20cbae5f9c3513da988719"
+    },
+    {
+      "id": "ISO02_LCLA",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        7
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "замена GВLА→LСLА, тот же кадр",
+      "size": 417,
+      "md5": "67bc468f4cf374da7a82a4a08ac00144"
+    },
+    {
+      "id": "ISO03_GBLB",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        6
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "замена GВLА→GВLВ, тот же кадр",
+      "size": 417,
+      "md5": "63fa49c00e85c14c02eea99087483b9f"
+    },
+    {
+      "id": "ISO04_SETV",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ только: &vs=1, кадр 03062-03067",
+      "size": 429,
+      "md5": "460620dedb3f6b1007c0bfacf5cf86e5"
+    },
+    {
+      "id": "ISO05_SETA",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        8
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "замена SЕТВ→SЕТА, выход 03514/03515 или 03062",
+      "size": 429,
+      "md5": "bf8d79c14ee5246eee353761ecb952ab"
+    },
+    {
+      "id": "ISO06_SETV0",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ polarity 0: тот же кадр, другое значение",
+      "size": 429,
+      "md5": "6d357c0f511283d928d102933d48dafd"
+    },
+    {
+      "id": "ISO07_NE",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        12
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ne"
+      ],
+      "expect": "NЕ только: ветка взята, 1 строка .k",
+      "size": 441,
+      "md5": "03f8fe384a54fd278b766c88234e8042"
+    },
+    {
+      "id": "ISO08_EQ",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        11
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ne"
+      ],
+      "expect": "замена NЕ→ЕQ: ветка не взята, 2 строки",
+      "size": 441,
+      "md5": "78114a799ad642e4d46e887757ff6399"
+    },
+    {
+      "id": "ISO09_OR",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        13
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ne"
+      ],
+      "expect": "третье отношение ОR, цепочка 03327-03333",
+      "size": 455,
+      "md5": "db6284706b48e9bf71c6bf1040053452"
+    },
+    {
+      "id": "ISO10_METKA",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": ".МЕТКА только: .cl, GS+2",
+      "size": 417,
+      "md5": "161569d9ef16fba7298902834e35ef77"
+    },
+    {
+      "id": "ISO11_NOMARK",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": "контроль: метки нет, GS без приращения",
+      "size": 413,
+      "md5": "dc6c3f5b0dcfe1be16b066b9556a3b6f"
+    },
+    {
+      "id": "ISO12_MARK2",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": "вторая .МЕТКА: GS+4, удвоение эффекта",
+      "size": 426,
+      "md5": "4fae4e3b3cd7c280f624fcf035ec4aa8"
+    },
+    {
+      "id": "ISO16_LABRENAME",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": "замена .cl→.k: тот же эффект, имя иное",
+      "size": 416,
+      "md5": "7bad1a0cd5e7ce4c3d39b8aa1b46926a"
+    },
+    {
+      "id": "ISO13_EVNESH",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        21
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " евнеш x"
+      ],
+      "expect": "ЕВНЕШ только: BHEШH=00060, цикл 48",
+      "size": 623,
+      "md5": "67a9c05c522f8909742375aa7b57d72f"
+    },
+    {
+      "id": "ISO14_VNESH",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        18
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " vsh x"
+      ],
+      "expect": "замена ЕВНЕШ→ВНЕШН: BHEШH=00001",
+      "size": 616,
+      "md5": "46b793c0428a91441ab69ad1c4bf4a43"
+    },
+    {
+      "id": "ISO15_VNESH2",
+      "group": "macro-call-isolation",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        18
+      ],
+      "macro_defs": [
+        "ISO"
+      ],
+      "call": [
+        " vsh x,y"
+      ],
+      "expect": "ВНЕШН два имени: BHEШH=00002",
+      "size": 618,
+      "md5": "34c51a1338266f6dc9911ab8662598a2"
     }
   ]
 }
