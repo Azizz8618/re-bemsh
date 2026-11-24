@@ -116,12 +116,13 @@ _$ЕКОНЕЦ
     return head + '\n'.join(l + '^' for l in lines) + tail
 
 
-def link_job(modules, bases=None):
+def link_job(modules, bases=None, embases=None):
     """rvs.pl-style linker job; load address must be the measured base."""
     bases = bases or {}
+    embases = embases or {}
     body = []
     for zone, name, start, src, out in modules:
-        base = bases.get(zone, start)
+        base = embases.get(zone) or bases.get(zone, start)
         if str(base) in ('0', '00000', '000000'):
             base = '000001'  # HAM for zero-base zones
         body.append('мдл   %s43%04o^наз   %06s^зонгп 43%04o 0001^'
@@ -190,7 +191,18 @@ def main():
             open(job, 'w', encoding='utf-8').write(
                 compile_job(path, src, name, start, args.drop_external))
             rc, out = run(['dispak', '-l', job], work, env)
+            embase = start
+            if rc == 0:
+                obj = os.path.join(work, 'obj%s' % zone)
+                rc2, _ = run(['besmtool', 'dump', '2222',
+                              '--start=0%04o' % src, '--length=1',
+                              '--to-file=' + obj], work, env)
+                if rc2 == 0 and os.path.isfile(obj):
+                    raw = open(obj, 'rb').read()[12:18]
+                    if len(raw) == 6:
+                        embase = '%o' % int.from_bytes(raw, 'big')
             mods.append({'zone': zone, 'name': name, 'start': start,
+                         'embase': embase,
                          'src': '%04o' % src, 'out': '%04o' % int(zone, 8),
                          'compile_rc': rc})
             if rc:
@@ -210,7 +222,8 @@ def main():
                     bases.setdefault(rec['zone'], rec['base'])
         open(job, 'w', encoding='utf-8').write(link_job([
             (m['zone'], m['name'], m['start'], int(m['src'], 8),
-             int(m['out'], 8)) for m in mods], bases))
+             int(m['out'], 8)) for m in mods], bases,
+            {m['zone']: m.get('embase') for m in mods}))
         rc, out = run(['dispak', '-s', job], work, env)
         open(os.path.join(work, 'link.log'), 'w').write(out)
         print('link rc', rc)
