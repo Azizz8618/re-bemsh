@@ -1515,6 +1515,380 @@
       "expect": "ВНЕШН 1 имя: BHEШH=00001, контроль к PI15",
       "size": 616,
       "md5": "46b793c0428a91441ab69ad1c4bf4a43"
+    },
+    {
+      "id": "OP01_BARE1",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac 1^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=158866, len=00001, METOK=00001",
+      "size": 427,
+      "md5": "5145c3393d16b64d299eb50006ef0ba3"
+    },
+    {
+      "id": "OP02_BARE17",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac 17^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=158968, len=00001, METOK=00001",
+      "size": 428,
+      "md5": "c70c32272dc8f20ff503c147fef230a8"
+    },
+    {
+      "id": "OP03_QUOTED",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        "zmac '100'^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 430,
+      "md5": "caf214d533593f698044f6396961c612"
+    },
+    {
+      "id": "OP04_LABEL",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac ZLBL2^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159314, len=00001, METOK=00002",
+      "size": 431,
+      "md5": "1bc3ab519710044049ac274cbf79d791"
+    },
+    {
+      "id": "OP05_LABELOFF",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac ZLBL2+3^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159586, len=00001, METOK=00002",
+      "size": 433,
+      "md5": "e6e76229c7a95c593d59f3dba34d25ac"
+    },
+    {
+      "id": "OP06_DREL",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac D10010+5^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159688, len=00001, METOK=00002",
+      "size": 434,
+      "md5": "04e985a3a86cbe22999f54b9cf824f89"
+    },
+    {
+      "id": "OP07_AREL",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac A10010+5^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159688, len=00001, METOK=00002",
+      "size": 434,
+      "md5": "b20fa97f34be9ca166748af912e59faf"
+    },
+    {
+      "id": "OP08_GREL",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac G10010+5^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159688, len=00001, METOK=00002",
+      "size": 434,
+      "md5": "baea5c4a44d38c8b963ee4253b38d46f"
+    },
+    {
+      "id": "OP09_MN",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac М15^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159070, len=00001, METOK=00002",
+      "size": 430,
+      "md5": "1a1f1a8e38faa629eae3b08b68d89516"
+    },
+    {
+      "id": "OP10_REG13",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac (13)^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159379, len=00001, METOK=00001",
+      "size": 430,
+      "md5": "0f7b2369a167da94e3f1f7f83d0f5941"
+    },
+    {
+      "id": "OP11_REGM16",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac (М16)^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159481, len=00001, METOK=00002",
+      "size": 432,
+      "md5": "f4991be371f9a15dafa36318171c4be7"
+    },
+    {
+      "id": "OP12_STRP",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        "zmac П'ABC'^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 432,
+      "md5": "f5057845988d4152057d11bd5dd38723"
+    },
+    {
+      "id": "OP13_STRV",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        "zmac В'ABC'^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 432,
+      "md5": "1b267b6f87c1c2bf90fe526ff80a73db"
+    },
+    {
+      "id": "OP14_STRK",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        "zmac К'ABC'^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 432,
+      "md5": "1bf2043e021bc814cfbc29942729901d"
+    },
+    {
+      "id": "OP15_STRX",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        "zmac Х'41'^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 431,
+      "md5": "fa2e0e2bd29a219f9e174cd63691f0d9"
+    },
+    {
+      "id": "OP16_EQV",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac X^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=158892, len=00001, METOK=00001",
+      "size": 443,
+      "md5": "efea9a65fc60b394148f531c42ed0dc6"
+    },
+    {
+      "id": "OP17_MNOP",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac НОП^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159070, len=00001, METOK=00002",
+      "size": 432,
+      "md5": "beff659ebc2b010c9457ee973251854e"
+    },
+    {
+      "id": "OP18_MNUIA",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac УИА^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=159070, len=00001, METOK=00002",
+      "size": 432,
+      "md5": "b11a31a32e00775e3b9527fcdb17fa92"
+    },
+    {
+      "id": "OP19_MNPV",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac ПВ^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=158968, len=00001, METOK=00002",
+      "size": 430,
+      "md5": "82f36b0735815771ebe14bb6f094a0a9"
+    },
+    {
+      "id": "OP20_VNESH",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac X^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=154803, len=00001, METOK=00001",
+      "size": 442,
+      "md5": "f659541f17f4760a642914d8a154a934"
+    },
+    {
+      "id": "OP21_VHOD",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac Y^"
+      ],
+      "expect": "слово 00 22, PC 04011 MACHINE n=154827, len=00001, METOK=00002",
+      "size": 442,
+      "md5": "0124fc2351ac9fc7543b3fdbf2dd083d"
+    },
+    {
+      "id": "OP22_PARAM",
+      "group": "macro-call-operand",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        33
+      ],
+      "macro_defs": [
+        "ZMAC"
+      ],
+      "call": [
+        " zmac &ZP^"
+      ],
+      "expect": "слова нет, len=00000, PC не найден, ОПЕРАЦИИ НЕТ/ТЕРМ",
+      "size": 429,
+      "md5": "fc0b1f8b8d5905f511b39a38debc3435"
     }
   ]
 }
