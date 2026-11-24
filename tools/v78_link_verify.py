@@ -144,7 +144,8 @@ _$
 
 
 def run(cmd, work, env):
-    p = subprocess.run(cmd, cwd=work, env=env, capture_output=True, text=True)
+    p = subprocess.run(cmd, cwd=work, env=env, capture_output=True, text=True,
+                       stdin=subprocess.DEVNULL)
     return p.returncode, p.stdout + p.stderr
 
 
