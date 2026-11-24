@@ -1193,6 +1193,328 @@
       "expect": "ВНЕШН два имени: BHEШH=00002",
       "size": 618,
       "md5": "34c51a1338266f6dc9911ab8662598a2"
+    },
+    {
+      "id": "PI01_GVLA_N1",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        5
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "GВLА 1 имя (&vs): кадр 03070-03077 x2",
+      "size": 417,
+      "md5": "e3205f4cfb20cbae5f9c3513da988719"
+    },
+    {
+      "id": "PI02_GVLA_N4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        5
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "GВLА 4 имени: ГС 001333, err 0002, кадр x2 в EDITOR",
+      "size": 425,
+      "md5": "452c211cc17d906c19749073c78364f6"
+    },
+    {
+      "id": "PI03_GVLA_N8",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        5
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "GВLА 8 имён: ГС 001333, err 0002, кадр не масштабируется",
+      "size": 437,
+      "md5": "ffa13222adb41551aace36d8351d32b3"
+    },
+    {
+      "id": "PI04_LCLA_N4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        7
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "LСLА 4 имени: тот же набор параметров, другая команда",
+      "size": 425,
+      "md5": "1af0d2dec4003f0348e04b54de74579c"
+    },
+    {
+      "id": "PI05_GVLB_N4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        6
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ga"
+      ],
+      "expect": "GВЛВ 4 имени: тот же набор параметров, другая команда",
+      "size": 425,
+      "md5": "ad8d8a03820de09d9ab9438373434f47"
+    },
+    {
+      "id": "PI06_SETV_1",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ 1 присваивание, значение 1",
+      "size": 428,
+      "md5": "6da2ca0bc01f2a56d1d7489deb5502f9"
+    },
+    {
+      "id": "PI07_SETV_4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ 4 присваивания: ГС 001333, err 0003, 03062 M0",
+      "size": 473,
+      "md5": "33ae8bf9fa44a7274a7cfe38a2b81008"
+    },
+    {
+      "id": "PI08_SETV_8",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ 8 присваиваний: ГС 001333, err 0005, 03062 M0",
+      "size": 533,
+      "md5": "16dfc9779b5538cc96b98a30b41ea29f"
+    },
+    {
+      "id": "PI09_SETA_4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        8
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТА 4 присваивания: те же значения, другая команда",
+      "size": 473,
+      "md5": "36f69ace0f6567b1ac7073626f31014d"
+    },
+    {
+      "id": "PI10_SETV_VAL",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        9
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " sv"
+      ],
+      "expect": "SЕТВ значение 777: счётчик не зависит от значения",
+      "size": 430,
+      "md5": "43b55f9f3a73b5c3fd4465eef62a4300"
+    },
+    {
+      "id": "PI11_MARK_1",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": ".МЕТКА 1 метка .cl",
+      "size": 417,
+      "md5": "161569d9ef16fba7298902834e35ef77"
+    },
+    {
+      "id": "PI12_MARK_4",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": ".МЕТКА 4 метки: ГС 001340, METOK 00001, 02462=4",
+      "size": 447,
+      "md5": "d7a353ba49840fa0813af9de657b62b1"
+    },
+    {
+      "id": "PI13_MARK_NONE",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": "контроль без метки: только anop",
+      "size": 414,
+      "md5": "eeec756966de4afe6b9f6ed8ccfa124c"
+    },
+    {
+      "id": "PI14_MARK_LONG",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        14
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " ml"
+      ],
+      "expect": ".МЕТКА 2 длинных имени: ГС 001334, METOK 00001",
+      "size": 435,
+      "md5": "662357ab018d264224e52e7266518bff"
+    },
+    {
+      "id": "PI15_EVNESH_X",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        21
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " евнеш x"
+      ],
+      "expect": "ЕВНЕШ аргумент x: BHEШH=00060",
+      "size": 623,
+      "md5": "67a9c05c522f8909742375aa7b57d72f"
+    },
+    {
+      "id": "PI16_EVNESH_QQ",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        21
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " евнеш qq"
+      ],
+      "expect": "ЕВНЕШ аргумент qq: то же число, другое имя",
+      "size": 624,
+      "md5": "6eaed360e170fa05434164aa15ea0272"
+    },
+    {
+      "id": "PI17_EVNESH_2",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        21
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " евнеш x",
+        " евнеш y"
+      ],
+      "expect": "ЕВНЕШ два вызова: BHEШH=00060, петля x2, err 0050",
+      "size": 638,
+      "md5": "7e5db7aad1f0d84b4f9f3a958a56b001"
+    },
+    {
+      "id": "PI18_VSH_8",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        18
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " vsh a,b,c,d,e,f,g,h"
+      ],
+      "expect": "ВНЕШН 8 имён: BHEШH=00002, METOK=00003",
+      "size": 630,
+      "md5": "6eaf07d4dde11def2cc4c759344a3a2c"
+    },
+    {
+      "id": "PI19_VSH_1",
+      "group": "macro-call-param-iso",
+      "base": "SIPROD/listing_job-0-0",
+      "commands": [
+        18
+      ],
+      "macro_defs": [
+        "PISO"
+      ],
+      "call": [
+        " vsh x"
+      ],
+      "expect": "ВНЕШН 1 имя: BHEШH=00001, контроль к PI15",
+      "size": 616,
+      "md5": "46b793c0428a91441ab69ad1c4bf4a43"
     }
   ]
 }
