@@ -68,14 +68,15 @@ def prepare(work):
     return dict(os.environ, BESM6_PATH=images + ':' + SHARE)
 
 
-def compile_job(path, dest, name, start):
+def compile_job(path, dest, name, start, drop_external=False):
     """asm.pl-style job with 1-1 and ЗОНМОД."""
     lines = []
     for line in open(path, encoding='utf-8', errors='replace'):
         line = line.rstrip('\n')
         if line.lstrip().startswith('*'):
             continue
-        if 'ВНЕШН' in line and not re.search(r'Z\d{4}\.', line):
+        if 'ВНЕШН' in line and (drop_external or
+                not re.search(r'Z\d{4}\.', line)):
             continue
         idx = line.find('  ,')
         if idx >= 0:
@@ -167,6 +168,7 @@ def main():
     ap.add_argument('--zones', required=True)
     ap.add_argument('--work', default='/var/tmp/v78-link')
     ap.add_argument('--format', choices=('json', 'text'), default='text')
+    ap.add_argument('--drop-external', action='store_true')
     args = ap.parse_args()
     zones = args.zones.split(',')
     work = args.work
@@ -178,10 +180,10 @@ def main():
         mods = []
         for i, zone in enumerate(zones):
             path, name, start = zone_info(zone)
-            src = SRC_BASE + i
+            src = SRC_BASE + 2 * i
             job = os.path.join(work, 'c%s.b6' % zone)
             open(job, 'w', encoding='utf-8').write(
-                compile_job(path, src, name, start))
+                compile_job(path, src, name, start, args.drop_external))
             rc, out = run(['dispak', '-l', job], work, env)
             mods.append({'zone': zone, 'name': name, 'start': start,
                          'src': '%04o' % src, 'out': '%04o' % int(zone, 8),

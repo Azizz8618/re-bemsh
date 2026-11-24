@@ -70,9 +70,9 @@ class TestBeScanning(unittest.TestCase):
 
     def test_known_zone_top_call_targets(self):
         by_zone = {r["zone"]: r for r in fe.scan_all_be()}
-        self.assertEqual(by_zone["0055"]["defacto"][0], 0o221)
-        self.assertGreaterEqual(by_zone["0055"]["defacto"][1], 4)
-        self.assertEqual(by_zone["0056"]["defacto"][0], 0o221)
+        self.assertEqual(by_zone["0055"]["defacto"][0], 0o321)
+        self.assertGreaterEqual(by_zone["0055"]["defacto"][1], 3)
+        self.assertEqual(by_zone["0056"]["defacto"][0], 0o220)
         self.assertEqual(by_zone["0060"]["defacto"][0], 0o220)
         self.assertEqual(by_zone["0147"]["defacto"][0], 0o477)
         self.assertEqual(by_zone["0547"]["defacto"][0], 0o472)

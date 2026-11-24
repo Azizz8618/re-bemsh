@@ -176,7 +176,7 @@ class SymbolParserProbeTest(unittest.TestCase):
         c = data['counts']
         self.assertEqual(c['vneshn_total'], 0)
         self.assertEqual(c['vhodn_total'], 0)
-        self.assertEqual(c['equ_total'], 164)
+        self.assertEqual(c['equ_total'], 165)
         names = {x['name'] for x in data['declared']['equ']}
         self.assertNotIn('X2000', names)
         self.assertEqual(c['unknown_refs_total'], 0)

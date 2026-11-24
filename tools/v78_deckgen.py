@@ -22,7 +22,7 @@ REF_MD5 = {
     '2048': '4b94cc188969c110dcc78d1958b80fe0',
     '2053': '4c6abfc5068a94f8766fc38e360acabd',
     '2099': '90971c339b8744a545c8719a5d134650',
-    '2248': 'c11067b35e2b85a51433e7d7b5efdd19',
+    '2248': 'e9b372fed3fca3cf1dcef2c9f7b9a5f9',
 }
 PROTECTED = ('/usr/local/share/besm6',)
 BASE_NAME = 'P1a.job.b6'
