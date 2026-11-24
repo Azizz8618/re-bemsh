@@ -116,12 +116,16 @@ _$ЕКОНЕЦ
     return head + '\n'.join(l + '^' for l in lines) + tail
 
 
-def link_job(modules):
-    """rvs.pl-style linker job for our own modules."""
+def link_job(modules, bases=None):
+    """rvs.pl-style linker job; load address must be the measured base."""
+    bases = bases or {}
     body = []
     for zone, name, start, src, out in modules:
+        base = bases.get(zone, start)
+        if str(base) in ('0', '00000', '000000'):
+            base = '000001'  # HAM for zero-base zones
         body.append('мдл   %s43%04o^наз   %06s^зонгп 43%04o 0001^'
-                    % (name.ljust(6), src, start.zfill(6), out))
+                    % (name.ljust(6), src, str(base).zfill(6), out))
     return """шифр 419999^
 лен 67(2248)42(2113)^
 лен 43(2222-зп)^
@@ -198,9 +202,15 @@ def main():
     mods = json.load(open(manifest))
     if args.stage == 'link':
         job = os.path.join(work, 'link.b6')
+        bases = {}
+        labels_path = os.path.join(work, 'labels.json')
+        if os.path.isfile(labels_path):
+            for rec in json.load(open(labels_path)):
+                if rec.get('zone') and rec.get('base'):
+                    bases.setdefault(rec['zone'], rec['base'])
         open(job, 'w', encoding='utf-8').write(link_job([
             (m['zone'], m['name'], m['start'], int(m['src'], 8),
-             int(m['out'], 8)) for m in mods]))
+             int(m['out'], 8)) for m in mods], bases))
         rc, out = run(['dispak', '-s', job], work, env)
         open(os.path.join(work, 'link.log'), 'w').write(out)
         print('link rc', rc)
